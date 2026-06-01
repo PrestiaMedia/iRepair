@@ -1,0 +1,412 @@
+/* Visual fixes to match original website exactly */
+
+/* Hero Heading (H1) - Match original exactly with 4rem */
+.fl-node-hy285rz7itlo.fl-module-heading .fl-heading {
+  font-size: 4rem !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+}
+
+@media(max-width: 768px) {
+  .fl-node-hy285rz7itlo.fl-module-heading .fl-heading {
+    font-size: 2.5rem !important;
+  }
+}
+
+/* All section headings (h2) - Make them larger to match original */
+.fl-module-heading .fl-heading:not(.fl-node-hy285rz7itlo .fl-heading),
+h2.fl-heading,
+h2 .fl-heading-text {
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+}
+
+@media(max-width: 768px) {
+  .fl-module-heading .fl-heading:not(.fl-node-hy285rz7itlo .fl-heading),
+  h2.fl-heading,
+  h2 .fl-heading-text {
+    font-size: 1.75rem !important;
+  }
+}
+
+/* All buttons - Add border radius to match original rounded buttons */
+.uabb-button,
+.ast-button,
+.uabb-creative-button {
+  border-radius: 50px !important;
+}
+
+/* "Jetzt Kontakt aufnehmen" button - Add white border */
+.fl-node-ozsq5lecfyxj .uabb-button {
+  border: 2px solid #ffffff !important;
+}
+
+/* Footer text color fix - Make text visible on dark background */
+footer,
+footer *,
+.site-footer,
+.site-footer *,
+.site-footer p,
+.site-footer a,
+.site-footer .widget-title,
+.site-footer h1,
+.site-footer h2,
+.site-footer h3,
+.site-footer h4,
+.site-footer h5,
+.site-footer h6,
+.site-footer span,
+.site-footer div {
+  color: #ffffff !important;
+}
+
+/* Contact Footer Info Section - Make text black on light background */
+.fl-node-dcb4fxg8h7tw,
+.fl-node-dcb4fxg8h7tw *,
+.fl-node-dcb4fxg8h7tw h4,
+.fl-node-dcb4fxg8h7tw .fl-heading-text,
+.fl-node-dcb4fxg8h7tw p,
+.fl-node-dcb4fxg8h7tw strong,
+.fl-node-dcb4fxg8h7tw .fl-rich-text {
+  color: #000000 !important;
+}
+
+/* Locations Section - Make text black */
+.fl-node-ch8f0teiwm1o,
+.fl-node-ch8f0teiwm1o *,
+.fl-node-ch8f0teiwm1o h2,
+.fl-node-ch8f0teiwm1o h3,
+.fl-node-ch8f0teiwm1o .fl-heading-text,
+.fl-node-ch8f0teiwm1o p,
+.fl-node-ch8f0teiwm1o strong,
+.fl-node-ch8f0teiwm1o a,
+.fl-node-ch8f0teiwm1o .fl-rich-text {
+  color: #000000 !important;
+}
+
+/* Services Section - Banner heading (10% discount) */
+.fl-node-9e7uxdckom0s.fl-module-heading .fl-heading {
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+}
+
+@media(max-width: 768px) {
+  .fl-node-9e7uxdckom0s.fl-module-heading .fl-heading {
+    font-size: 1.25rem !important;
+  }
+}
+
+/* Services Section - Main heading (Wir reparieren...) */
+.fl-node-vpoh9arldbk2.fl-module-heading .fl-heading {
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+}
+
+@media(max-width: 768px) {
+  .fl-node-vpoh9arldbk2.fl-module-heading .fl-heading {
+    font-size: 1.75rem !important;
+  }
+}
+
+/* RepairSpecs Section - Change gray text to black */
+.uabb-infobox-text,
+.uabb-infobox-text p {
+  color: #000000 !important;
+}
+
+.uabb-infobox-title {
+  color: #000000 !important;
+}
+
+/* DividerImage Section (Ramil Fatullaew) - Change text to black */
+.fl-node-8rib3czky6wg h2,
+.fl-node-8rib3czky6wg .fl-heading-text,
+.fl-node-8rib3czky6wg .fl-rich-text,
+.fl-node-8rib3czky6wg .fl-rich-text p,
+.fl-node-8rib3czky6wg .fl-rich-text span {
+  color: #000000 !important;
+}
+
+/* FAQs Section - Change all text to black */
+.fl-node-oi12exudzp6t h2,
+.fl-node-oi12exudzp6t .fl-heading-text,
+.fl-node-oi12exudzp6t .fl-rich-text,
+.fl-node-oi12exudzp6t .fl-rich-text p,
+.fl-node-oi12exudzp6t .uabb-faq-question-label,
+.fl-node-oi12exudzp6t .uabb-faq-content,
+.fl-node-oi12exudzp6t .uabb-faq-content p,
+.fl-node-oi12exudzp6t .uabb-faq-content a {
+  color: #000000 !important;
+}
+
+/* FAQ Accordion Animation */
+.uabb-faq-content.faq-closed {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out, padding 0.4s ease-in-out;
+}
+
+.uabb-faq-content.faq-open {
+  max-height: 2000px;
+  opacity: 1;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out, padding 0.4s ease-in-out;
+}
+
+/* Google Reviews Section - Match Original Exactly */
+.fl-node-hzm7f0yxlvce {
+  background: #ffffff !important;
+  padding: 20px 0 !important;
+}
+
+.reviews-section-header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.reviews-title {
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  color: #000000 !important;
+  margin-bottom: 8px !important;
+}
+
+.reviews-subtitle {
+  font-size: 15px;
+  color: #5f6368;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+.reviews-rating-badge {
+  text-align: center;
+  margin: 15px 0 20px 0;
+}
+
+.rating-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #5f6368;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.rating-stars-large {
+  margin: 8px 0;
+}
+
+.star-icon-large {
+  color: #FBBC05;
+  font-size: 28px;
+  margin: 0 2px;
+}
+
+.rating-info {
+  font-size: 13px;
+  color: #000000;
+  margin: 8px 0 10px 0;
+}
+
+.rating-info strong {
+  font-weight: 700;
+  color: #000000;
+}
+
+.google-brand {
+  font-size: 28px;
+  font-weight: 500;
+  font-family: Arial, sans-serif;
+  margin-top: 10px;
+  letter-spacing: -1px;
+}
+
+/* Reviews Carousel Container */
+.reviews-carousel-container {
+  position: relative;
+  margin: 15px auto;
+  padding: 0;
+  max-width: 1050px;
+}
+
+.carousel-nav-btn {
+  display: none !important;
+}
+
+.reviews-carousel-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.reviews-carousel-track {
+  display: flex;
+  gap: 18px;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.review-item {
+  flex: 0 0 calc(33.333% - 12px);
+  background: #ffffff;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 2px rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+  transition: box-shadow 0.3s ease;
+  min-height: 160px;
+}
+
+.review-item:hover {
+  box-shadow: 0 1px 3px rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15);
+}
+
+.review-header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.review-author-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.author-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+  flex-shrink: 0;
+  text-transform: uppercase;
+}
+
+.author-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.author-name {
+  font-weight: 500;
+  font-size: 14px;
+  color: #202124;
+  line-height: 1.4;
+}
+
+.review-date {
+  font-size: 12px;
+  color: #5f6368;
+  line-height: 1.4;
+}
+
+.google-icon-badge {
+  flex-shrink: 0;
+}
+
+.review-rating-stars {
+  margin: 10px 0 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.star-icon-small {
+  color: #FBBC05;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.verified-icon {
+  color: #1a73e8;
+  font-size: 14px;
+  margin-left: 6px;
+  font-weight: 700;
+}
+
+.review-content-text {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #3c4043;
+  word-wrap: break-word;
+}
+
+/* Carousel Dots Navigation */
+.carousel-dots-nav {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 30px;
+}
+
+.dot-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #dadce0;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.dot-indicator.active {
+  background: #4285F4;
+  width: 12px;
+  height: 12px;
+}
+
+.dot-indicator:hover {
+  background: #999;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .review-card {
+    flex: 0 0 calc(50% - 10px);
+  }
+  
+  .reviews-carousel {
+    padding: 0 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .review-card {
+    flex: 0 0 100%;
+  }
+  
+  .reviews-carousel {
+    padding: 0 40px;
+  }
+  
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+  
+  .rating-text {
+    font-size: 18px;
+  }
+  
+  .star-large {
+    font-size: 28px;
+  }
+  
+  .google-logo {
+    font-size: 28px;
+  }
+}

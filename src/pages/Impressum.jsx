@@ -2,7 +2,12 @@ import React from 'react';
 
 const Impressum = () => {
   return (
-    <div style={{ padding: '80px 20px', maxWidth: '1200px', margin: '0 auto', color: '#000000', fontFamily: 'sans-serif', fontSize: '18px' }}>
+    <div className="legal-page" style={{ padding: '80px 20px', maxWidth: '1200px', margin: '0 auto', color: '#000000', fontFamily: 'sans-serif', fontSize: '18px' }}>
+      <style>{`
+        .legal-page, .legal-page p, .legal-page h1, .legal-page h2, .legal-page h3, .legal-page a, .legal-page strong {
+          color: #000000 !important;
+        }
+      `}</style>
       <h1 style={{ fontSize: '54px', marginBottom: '40px', fontWeight: 'bold' }}>Impressum</h1>
       
       <p style={{ lineHeight: '1.6', marginBottom: '25px' }}>Angaben gemäß § 5 DDG</p>

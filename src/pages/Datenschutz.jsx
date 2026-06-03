@@ -2,8 +2,13 @@ import React from 'react';
 
 const Datenschutz = () => {
   return (
-    <div style={{ padding: '60px 20px', maxWidth: '1200px', margin: '0 auto', color: '#1a1a1a', fontFamily: 'sans-serif' }}>
-      <h1 style={{ fontSize: '36px', marginBottom: '30px' }}>Datenschutzerklärung</h1>
+    <div className="legal-page" style={{ padding: '80px 20px', maxWidth: '1200px', margin: '0 auto', color: '#000000', fontFamily: 'sans-serif', fontSize: '18px' }}>
+      <style>{`
+        .legal-page, .legal-page p, .legal-page h1, .legal-page h2, .legal-page h3, .legal-page a, .legal-page strong {
+          color: #000000 !important;
+        }
+      `}</style>
+      <h1 style={{ fontSize: '54px', marginBottom: '40px', fontWeight: 'bold' }}>Datenschutzerklärung</h1>
       
       <h2 style={{ fontSize: '20px', marginTop: '20px' }}>1. Datenschutz auf einen Blick</h2>
       <h3 style={{ fontSize: '18px', marginTop: '15px' }}>Allgemeine Hinweise</h3>

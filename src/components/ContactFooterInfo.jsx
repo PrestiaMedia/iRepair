@@ -1,4 +1,4 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ContactFooterInfo = () => {
   return (
@@ -62,9 +62,9 @@ const ContactFooterInfo = () => {
           {/* Footer Links */}
           <div style={{ textAlign: 'center', marginTop: '60px', paddingTop: '20px', borderTop: '1px solid #eaeaea', color: '#4a4a4a', fontSize: '14px', fontFamily: 'sans-serif' }}>
             <p style={{ margin: '0 0 10px 0' }}>
-              <a href="/impressum" style={{ color: '#4a4a4a', textDecoration: 'none' }}>IMPRESSUM</a>
+              <Link to="/impressum" style={{ color: '#4a4a4a', textDecoration: 'none' }}>IMPRESSUM</Link>
               {' | '}
-              <a href="/datenschutz" style={{ color: '#4a4a4a', textDecoration: 'none' }}>DATENSCHUTZ</a>
+              <Link to="/datenschutz" style={{ color: '#4a4a4a', textDecoration: 'none' }}>DATENSCHUTZ</Link>
             </p>
             <p style={{ margin: '0' }}>
               Copyright © 2026 iRepairStore GmbH

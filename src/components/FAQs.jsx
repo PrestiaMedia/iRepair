@@ -86,18 +86,17 @@ const FAQs = () => {
           <div 
             id={`faq-content-${index}`}
             role="tabpanel" 
-            className={`uabb-faq-content fl-clearfix ${openIndex === index ? 'faq-open' : 'faq-closed'}`}
+            className={`uabb-faq-content fl-clearfix`}
             aria-expanded={openIndex === index}
             style={{
-              display: 'grid',
-              gridTemplateRows: openIndex === index ? '1fr' : '0fr',
-              transition: 'grid-template-rows 0.3s ease-in-out',
+              maxHeight: openIndex === index ? '1000px' : '0px',
+              opacity: openIndex === index ? 1 : 0,
+              overflow: 'hidden',
+              transition: 'max-height 0.4s ease-in-out, opacity 0.4s ease-in-out',
             }}
           >
-            <div style={{ overflow: 'hidden' }}>
-              <div style={{ padding: '0 20px 15px 20px' }}>
-                <p style={{ whiteSpace: 'pre-line', margin: 0, lineHeight: '1.6', color: '#4a4a4a', fontSize: '15px' }}>{faq.answer}</p>
-              </div>
+            <div style={{ padding: '0 20px 15px 20px' }}>
+              <p style={{ whiteSpace: 'pre-line', margin: 0, lineHeight: '1.6', color: '#4a4a4a', fontSize: '15px' }}>{faq.answer}</p>
             </div>
           </div>
         </div>

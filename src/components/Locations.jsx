@@ -61,7 +61,7 @@ Handy Reparatur Ingolstadt</strong><br />
 Theresienstraße 2<br />
 85049 Ingolstadt</p>
 <p className="bodytext">Telefon: <strong><a href="tel:004984199351750">0841 993517-50</a></strong><br />
-E-Mail: <strong><a href="mailto:leipzig@ferchland-steuerberatung.de">info@irepairstore24.de</a></strong></p>
+<span style={{ whiteSpace: 'nowrap' }}>E-Mail: <strong><a href="mailto:info@irepairstore24.de">info@irepairstore24.de</a></strong></span></p>
 </div>
 	</div>
 </div>
@@ -108,7 +108,7 @@ Handy Reparatur Am Westpark</strong><br />
 Am Westpark 6<br />
 85057 Ingolstadt</p>
 <p className="bodytext">Telefon: <strong><a href="tel:004984190042129">0841 900421-29</a></strong><br />
-E-Mail: <a href="mailto:westpark@irepairstore24.de"><strong>westpark@irepairstore24.de</strong></a></p>
+<span style={{ whiteSpace: 'nowrap' }}>E-Mail: <a href="mailto:westpark@irepairstore24.de"><strong>westpark@irepairstore24.de</strong></a></span></p>
 </div>
 	</div>
 </div>

@@ -89,7 +89,8 @@ const FAQs = () => {
             className={`uabb-faq-content uabb-faq-contentzd2094bpho36 fl-clearfix ${openIndex === index ? 'faq-open' : 'faq-closed'}`}
             aria-expanded={openIndex === index}
             style={{
-              padding: openIndex === index ? '15px 20px' : '0 20px'
+              padding: openIndex === index ? '15px 20px' : '0 20px',
+              display: openIndex === index ? 'block' : 'none'
             }}
           >
             <p style={{ whiteSpace: 'pre-line', margin: 0, lineHeight: '1.6' }}>{faq.answer}</p>

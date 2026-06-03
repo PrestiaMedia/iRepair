@@ -86,9 +86,10 @@ const FAQs = () => {
           <div 
             id={`faq-content-${index}`}
             role="tabpanel" 
-            className={`uabb-faq-content fl-clearfix`}
+            className={`faq-content-animated`}
             aria-expanded={openIndex === index}
             style={{
+              display: 'block',
               maxHeight: openIndex === index ? '1000px' : '0px',
               opacity: openIndex === index ? 1 : 0,
               overflow: 'hidden',

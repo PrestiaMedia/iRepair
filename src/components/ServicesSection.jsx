@@ -224,20 +224,36 @@ const ServicesSection = () => {
       <p style={{ fontSize: '13px', color: '#6c757d', margin: 0, fontStyle: 'italic' }}>+ Diagnose, Reinigung & Datenrettung</p>
     </div>
 
-    {/* Konsolen & Controller */}
+    {/* Spielekonsolen */}
     <div style={{ backgroundColor: '#ffffff', borderRadius: '8px', padding: '20px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)', border: '1px solid #eaeaea', borderLeft: '4px solid #0056b3' }}>
       <div style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
         <i className="fas fa-gamepad" style={{ color: '#0056b3', fontSize: '20px', marginRight: '10px' }}></i>
-        <h4 style={{ fontSize: '18px', color: '#1a1a1a', fontWeight: 'bold', margin: 0 }}>Konsolen & Controller</h4>
+        <h4 style={{ fontSize: '18px', color: '#1a1a1a', fontWeight: 'bold', margin: 0 }}>Spielekonsolen</h4>
       </div>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '15px' }}>
-        {['PlayStation 5 / 4', 'Xbox Series / One', 'Nintendo Switch / Switch 2', 'Steam Deck / ROG Ally', 'Controller & Joy-Con'].map(item => (
+        {['PlayStation 5 / 4', 'Xbox Series / One', 'Nintendo Switch / Switch 2', 'Steam Deck', 'ROG Ally'].map(item => (
           <span key={item} style={{ backgroundColor: '#f0f7ff', color: '#0056b3', padding: '5px 10px', borderRadius: '20px', fontSize: '13px', border: '1px solid #cce5ff' }}>
             {item}
           </span>
         ))}
       </div>
-      <p style={{ fontSize: '13px', color: '#6c757d', margin: 0, fontStyle: 'italic' }}>+ HDMI, Stick Drift, Reinigung & mehr</p>
+      <p style={{ fontSize: '13px', color: '#6c757d', margin: 0, fontStyle: 'italic' }}>+ HDMI, Überhitzung & Laufwerke</p>
+    </div>
+
+    {/* Controller */}
+    <div style={{ backgroundColor: '#ffffff', borderRadius: '8px', padding: '20px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)', border: '1px solid #eaeaea', borderLeft: '4px solid #0056b3' }}>
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
+        <i className="fas fa-headset" style={{ color: '#0056b3', fontSize: '20px', marginRight: '10px' }}></i>
+        <h4 style={{ fontSize: '18px', color: '#1a1a1a', fontWeight: 'bold', margin: 0 }}>Controller</h4>
+      </div>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '15px' }}>
+        {['DualSense Controller', 'DualShock 4', 'Xbox Elite Controller', 'Xbox Wireless', 'Joy-Con & Pro Controller'].map(item => (
+          <span key={item} style={{ backgroundColor: '#f0f7ff', color: '#0056b3', padding: '5px 10px', borderRadius: '20px', fontSize: '13px', border: '1px solid #cce5ff' }}>
+            {item}
+          </span>
+        ))}
+      </div>
+      <p style={{ fontSize: '13px', color: '#6c757d', margin: 0, fontStyle: 'italic' }}>+ Stick Drift, Trigger & Akku</p>
     </div>
 
     {/* Smartwatches */}

@@ -160,80 +160,100 @@ const ServicesSection = () => {
 </div>
 	</div>
 
-<div className="custom-services-grid" style={{ maxWidth: '1200px', margin: '60px auto 40px auto', padding: '0 20px', fontFamily: 'sans-serif' }}>
-  <div style={{ textAlign: 'center', marginBottom: '50px' }}>
-    <h3 style={{ fontSize: '32px', color: '#1a1a1a', marginBottom: '20px', fontWeight: 'bold' }}>
-      Wir reparieren Handys, Tablets, Notebooks, Spielekonsolen, Controller und Smartwatches
+<div className="custom-services-grid" style={{ maxWidth: '1000px', margin: '40px auto 30px auto', padding: '0 20px', fontFamily: 'sans-serif' }}>
+  <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+    <h3 style={{ fontSize: '28px', color: '#1a1a1a', marginBottom: '15px', fontWeight: 'bold' }}>
+      Reparatur für fast jedes Gerät
     </h3>
-    <p style={{ fontSize: '18px', color: '#4a4a4a', lineHeight: '1.6', maxWidth: '800px', margin: '0 auto' }}>
-      Ob Smartphone, Tablet, MacBook, Laptop, Spielekonsole, Controller oder Smartwatch – wir reparieren viele aktuelle Geräte und Modelle direkt in Ingolstadt.
+    <p style={{ fontSize: '16px', color: '#4a4a4a', lineHeight: '1.6', maxWidth: '700px', margin: '0 auto' }}>
+      Ob Smartphone, Tablet, MacBook, Laptop, Spielekonsole, Controller oder Smartwatch – wir reparieren viele aktuelle Geräte und Modelle direkt in Ingolstadt oder per Versand.
     </p>
   </div>
   
   <div style={{ 
     display: 'grid', 
     gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
-    gap: '30px',
-    marginBottom: '80px'
+    gap: '20px',
+    marginBottom: '50px'
   }}>
     {/* Smartphones */}
-    <div style={{ backgroundColor: '#ffffff', borderRadius: '8px', padding: '30px', boxShadow: '0 5px 20px rgba(0,0,0,0.05)', borderTop: '4px solid #0056b3' }}>
-      <h4 style={{ fontSize: '22px', marginBottom: '20px', color: '#1a1a1a', fontWeight: 'bold' }}>Smartphones</h4>
-      <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-        {['iPhone Reparatur', 'Samsung Reparatur', 'Google Pixel Reparatur', 'Xiaomi Reparatur', 'Huawei Reparatur', 'Honor Reparatur', 'Oppo Reparatur', 'OnePlus Reparatur', 'Sony Xperia Reparatur', 'Motorola Reparatur'].map(item => (
-          <li key={item} style={{ marginBottom: '12px', display: 'flex', alignItems: 'center', color: '#4a4a4a', fontSize: '16px' }}>
-            <i className="fas fa-check-circle" style={{ color: '#0056b3', marginRight: '12px', fontSize: '16px' }}></i> {item}
-          </li>
+    <div style={{ backgroundColor: '#ffffff', borderRadius: '8px', padding: '20px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)', border: '1px solid #eaeaea', borderLeft: '4px solid #0056b3' }}>
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
+        <i className="fas fa-mobile-alt" style={{ color: '#0056b3', fontSize: '20px', marginRight: '10px' }}></i>
+        <h4 style={{ fontSize: '18px', color: '#1a1a1a', fontWeight: 'bold', margin: 0 }}>Smartphones</h4>
+      </div>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '15px' }}>
+        {['iPhone', 'Samsung Galaxy', 'Google Pixel', 'Xiaomi / Redmi / Poco', 'Huawei / Honor', 'OnePlus / Oppo / Sony'].map(item => (
+          <span key={item} style={{ backgroundColor: '#f0f7ff', color: '#0056b3', padding: '5px 10px', borderRadius: '20px', fontSize: '13px', border: '1px solid #cce5ff' }}>
+            {item}
+          </span>
         ))}
-      </ul>
+      </div>
+      <p style={{ fontSize: '13px', color: '#6c757d', margin: 0, fontStyle: 'italic' }}>+ weitere Android-Modelle</p>
     </div>
 
     {/* Tablets & iPads */}
-    <div style={{ backgroundColor: '#ffffff', borderRadius: '8px', padding: '30px', boxShadow: '0 5px 20px rgba(0,0,0,0.05)', borderTop: '4px solid #0056b3' }}>
-      <h4 style={{ fontSize: '22px', marginBottom: '20px', color: '#1a1a1a', fontWeight: 'bold' }}>Tablets & iPads</h4>
-      <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-        {['iPad Reparatur', 'Samsung Galaxy Tab Reparatur', 'Lenovo Tablet Reparatur', 'Huawei MatePad Reparatur', 'Microsoft Surface Reparatur'].map(item => (
-          <li key={item} style={{ marginBottom: '12px', display: 'flex', alignItems: 'center', color: '#4a4a4a', fontSize: '16px' }}>
-            <i className="fas fa-check-circle" style={{ color: '#0056b3', marginRight: '12px', fontSize: '16px' }}></i> {item}
-          </li>
+    <div style={{ backgroundColor: '#ffffff', borderRadius: '8px', padding: '20px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)', border: '1px solid #eaeaea', borderLeft: '4px solid #0056b3' }}>
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
+        <i className="fas fa-tablet-alt" style={{ color: '#0056b3', fontSize: '20px', marginRight: '10px' }}></i>
+        <h4 style={{ fontSize: '18px', color: '#1a1a1a', fontWeight: 'bold', margin: 0 }}>Tablets & iPads</h4>
+      </div>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '15px' }}>
+        {['iPad', 'Samsung Galaxy Tab', 'Microsoft Surface', 'Lenovo Tab', 'Huawei MatePad'].map(item => (
+          <span key={item} style={{ backgroundColor: '#f0f7ff', color: '#0056b3', padding: '5px 10px', borderRadius: '20px', fontSize: '13px', border: '1px solid #cce5ff' }}>
+            {item}
+          </span>
         ))}
-      </ul>
+      </div>
+      <p style={{ fontSize: '13px', color: '#6c757d', margin: 0, fontStyle: 'italic' }}>+ weitere Tablet-Modelle</p>
     </div>
 
     {/* Laptops & MacBooks */}
-    <div style={{ backgroundColor: '#ffffff', borderRadius: '8px', padding: '30px', boxShadow: '0 5px 20px rgba(0,0,0,0.05)', borderTop: '4px solid #0056b3' }}>
-      <h4 style={{ fontSize: '22px', marginBottom: '20px', color: '#1a1a1a', fontWeight: 'bold' }}>Laptops & MacBooks</h4>
-      <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-        {['MacBook Reparatur', 'Windows Laptop Reparatur', 'Lenovo Laptop Reparatur', 'HP Laptop Reparatur', 'Dell Laptop Reparatur', 'Asus Laptop Reparatur', 'Acer Laptop Reparatur', 'MSI Laptop Reparatur'].map(item => (
-          <li key={item} style={{ marginBottom: '12px', display: 'flex', alignItems: 'center', color: '#4a4a4a', fontSize: '16px' }}>
-            <i className="fas fa-check-circle" style={{ color: '#0056b3', marginRight: '12px', fontSize: '16px' }}></i> {item}
-          </li>
+    <div style={{ backgroundColor: '#ffffff', borderRadius: '8px', padding: '20px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)', border: '1px solid #eaeaea', borderLeft: '4px solid #0056b3' }}>
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
+        <i className="fas fa-laptop" style={{ color: '#0056b3', fontSize: '20px', marginRight: '10px' }}></i>
+        <h4 style={{ fontSize: '18px', color: '#1a1a1a', fontWeight: 'bold', margin: 0 }}>Laptops & MacBooks</h4>
+      </div>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '15px' }}>
+        {['MacBook Air / Pro', 'Windows Laptops', 'Lenovo / HP / Dell', 'Asus / Acer / MSI', 'Surface Laptop'].map(item => (
+          <span key={item} style={{ backgroundColor: '#f0f7ff', color: '#0056b3', padding: '5px 10px', borderRadius: '20px', fontSize: '13px', border: '1px solid #cce5ff' }}>
+            {item}
+          </span>
         ))}
-      </ul>
+      </div>
+      <p style={{ fontSize: '13px', color: '#6c757d', margin: 0, fontStyle: 'italic' }}>+ Diagnose, Reinigung & Datenrettung</p>
     </div>
 
     {/* Konsolen & Controller */}
-    <div style={{ backgroundColor: '#ffffff', borderRadius: '8px', padding: '30px', boxShadow: '0 5px 20px rgba(0,0,0,0.05)', borderTop: '4px solid #0056b3' }}>
-      <h4 style={{ fontSize: '22px', marginBottom: '20px', color: '#1a1a1a', fontWeight: 'bold' }}>Konsolen & Controller</h4>
-      <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-        {['PlayStation Reparatur', 'Xbox Reparatur', 'Nintendo Switch Reparatur', 'Nintendo Switch 2 Reparatur', 'Steam Deck Reparatur', 'Controller Reparatur', 'Joy-Con Reparatur', 'DualSense Controller Reparatur'].map(item => (
-          <li key={item} style={{ marginBottom: '12px', display: 'flex', alignItems: 'center', color: '#4a4a4a', fontSize: '16px' }}>
-            <i className="fas fa-check-circle" style={{ color: '#0056b3', marginRight: '12px', fontSize: '16px' }}></i> {item}
-          </li>
+    <div style={{ backgroundColor: '#ffffff', borderRadius: '8px', padding: '20px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)', border: '1px solid #eaeaea', borderLeft: '4px solid #0056b3' }}>
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
+        <i className="fas fa-gamepad" style={{ color: '#0056b3', fontSize: '20px', marginRight: '10px' }}></i>
+        <h4 style={{ fontSize: '18px', color: '#1a1a1a', fontWeight: 'bold', margin: 0 }}>Konsolen & Controller</h4>
+      </div>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '15px' }}>
+        {['PlayStation 5 / 4', 'Xbox Series / One', 'Nintendo Switch / Switch 2', 'Steam Deck / ROG Ally', 'Controller & Joy-Con'].map(item => (
+          <span key={item} style={{ backgroundColor: '#f0f7ff', color: '#0056b3', padding: '5px 10px', borderRadius: '20px', fontSize: '13px', border: '1px solid #cce5ff' }}>
+            {item}
+          </span>
         ))}
-      </ul>
+      </div>
+      <p style={{ fontSize: '13px', color: '#6c757d', margin: 0, fontStyle: 'italic' }}>+ HDMI, Stick Drift, Reinigung & mehr</p>
     </div>
 
     {/* Smartwatches */}
-    <div style={{ backgroundColor: '#ffffff', borderRadius: '8px', padding: '30px', boxShadow: '0 5px 20px rgba(0,0,0,0.05)', borderTop: '4px solid #0056b3' }}>
-      <h4 style={{ fontSize: '22px', marginBottom: '20px', color: '#1a1a1a', fontWeight: 'bold' }}>Smartwatches</h4>
-      <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-        {['Apple Watch Reparatur', 'Samsung Galaxy Watch Reparatur', 'Google Pixel Watch Reparatur', 'Huawei Watch Reparatur', 'Garmin Smartwatch Reparatur'].map(item => (
-          <li key={item} style={{ marginBottom: '12px', display: 'flex', alignItems: 'center', color: '#4a4a4a', fontSize: '16px' }}>
-            <i className="fas fa-check-circle" style={{ color: '#0056b3', marginRight: '12px', fontSize: '16px' }}></i> {item}
-          </li>
+    <div style={{ backgroundColor: '#ffffff', borderRadius: '8px', padding: '20px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)', border: '1px solid #eaeaea', borderLeft: '4px solid #0056b3' }}>
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
+        <i className="fas fa-clock" style={{ color: '#0056b3', fontSize: '20px', marginRight: '10px' }}></i>
+        <h4 style={{ fontSize: '18px', color: '#1a1a1a', fontWeight: 'bold', margin: 0 }}>Smartwatches</h4>
+      </div>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '15px' }}>
+        {['Apple Watch', 'Samsung Galaxy Watch', 'Google Pixel Watch', 'Huawei Watch', 'Garmin Smartwatch'].map(item => (
+          <span key={item} style={{ backgroundColor: '#f0f7ff', color: '#0056b3', padding: '5px 10px', borderRadius: '20px', fontSize: '13px', border: '1px solid #cce5ff' }}>
+            {item}
+          </span>
         ))}
-      </ul>
+      </div>
+      <p style={{ fontSize: '13px', color: '#6c757d', margin: 0, fontStyle: 'italic' }}>+ Akku, Display & Ladeprobleme</p>
     </div>
   </div>
 

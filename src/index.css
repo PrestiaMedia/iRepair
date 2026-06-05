@@ -97,6 +97,7 @@ color: #40464d;
 }
 html{
 font-size:100%;
+scroll-behavior: smooth;
 }
 a,.page-title{
 color:#1d3a8f;

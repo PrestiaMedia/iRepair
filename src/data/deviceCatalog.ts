@@ -72,6 +72,18 @@ export const deviceCatalog: DeviceCategory[] = [
         models: ["OnePlus 13", "OnePlus 13R", "OnePlus 12", "OnePlus 12R", "OnePlus 11", "OnePlus 10 Pro", "OnePlus Nord 5", "OnePlus Nord 4", "OnePlus Nord CE 5", "OnePlus Nord CE 4", "OnePlus Nord 3", "OnePlus Nord 2"]
       },
       {
+        name: "Nothing",
+        models: ["Nothing Phone (3a) Pro", "Nothing Phone (3a)", "Nothing Phone (2a) Plus", "Nothing Phone (2a)", "Nothing Phone (2)", "Nothing Phone (1)", "CMF Phone 2 Pro", "CMF Phone 1"]
+      },
+      {
+        name: "Realme",
+        models: ["Realme GT 7 Pro", "Realme GT 6", "Realme GT 6T", "Realme 14 Pro+", "Realme 14 Pro", "Realme 13 Pro+", "Realme 13 Pro", "Realme Note Serie", "Realme C-Serie"]
+      },
+      {
+        name: "Vivo",
+        models: ["Vivo X200 Pro", "Vivo X200", "Vivo X100 Pro", "Vivo X100", "Vivo V50", "Vivo V40", "Vivo Y-Serie"]
+      },
+      {
         name: "Sony",
         models: ["Sony Xperia 1 VII", "Sony Xperia 1 VI", "Sony Xperia 5 V", "Sony Xperia 10 VII", "Sony Xperia 10 VI"]
       },
@@ -81,11 +93,39 @@ export const deviceCatalog: DeviceCategory[] = [
       },
       {
         name: "Nokia",
-        models: ["Nokia XR21", "Nokia X30", "Nokia G60", "Nokia G42", "Nokia G22", "Nokia C32"]
+        models: ["Nokia G-Serie", "Nokia X-Serie", "Nokia XR-Serie"]
       },
       {
         name: "Fairphone",
-        models: ["Fairphone 5", "Fairphone 4"]
+        models: ["Fairphone 6", "Fairphone 5", "Fairphone 4"]
+      },
+      {
+        name: "Asus",
+        models: ["Asus ROG Phone 9 Pro", "Asus ROG Phone 9", "Asus ROG Phone 8 Pro", "Asus ROG Phone 8", "Asus Zenfone 12 Ultra", "Asus Zenfone 11 Ultra", "Asus Zenfone 10"]
+      },
+      {
+        name: "ZTE",
+        models: ["ZTE Axon Serie"]
+      },
+      {
+        name: "Nubia",
+        models: ["Nubia Z70 Ultra", "Nubia Z60 Ultra", "Nubia RedMagic 10 Pro", "Nubia RedMagic 9 Pro", "Nubia RedMagic 8 Pro"]
+      },
+      {
+        name: "TCL",
+        models: ["TCL 50 Serie", "TCL 40 Serie"]
+      },
+      {
+        name: "Blackview",
+        models: ["Blackview Outdoor-Serie"]
+      },
+      {
+        name: "Ulefone",
+        models: ["Ulefone Armor Serie"]
+      },
+      {
+        name: "Cat Phones",
+        models: ["Cat Phones Outdoor-Serie"]
       }
     ],
     issues: [
@@ -271,12 +311,7 @@ export const deviceCatalog: DeviceCategory[] = [
   },
   {
     category: "Sonstiges Gerät",
-    brands: [
-      {
-        name: "Sonstiger Hersteller",
-        models: []
-      }
-    ],
+    brands: [],
     issues: ["Sonstiges Problem"]
   }
 ];

@@ -10,6 +10,7 @@ const PreisanfrageForm = () => {
   const [formData, setFormData] = useState({
     category: '',
     brand: '',
+    customBrand: '',
     model: '',
     customModel: '',
     issue: '',
@@ -44,19 +45,36 @@ const PreisanfrageForm = () => {
     
     // Reset dependents
     if (name === 'category') {
-      setFormData(prev => ({ ...prev, brand: '', model: '', customModel: '', issue: '', customIssue: '' }));
+      setFormData(prev => ({ ...prev, brand: '', customBrand: '', model: '', customModel: '', issue: '', customIssue: '' }));
       setModelSearch('');
     }
     if (name === 'brand') {
-      setFormData(prev => ({ ...prev, model: '', customModel: '' }));
+      setFormData(prev => ({ ...prev, customBrand: '', model: '', customModel: '' }));
       setModelSearch('');
+    }
+    if (name === 'issue' && value !== 'Sonstiges Problem') {
+      setFormData(prev => ({ ...prev, customIssue: '' }));
     }
   };
 
   const validateStep1 = () => {
-    if (!formData.category || !formData.brand || !formData.issue || !formData.repairMethod) return false;
-    if (formData.model === '' && formData.customModel === '') return false;
-    if (formData.issue === 'Sonstiges Problem' && !formData.customIssue) return false;
+    if (!formData.category || !formData.repairMethod) return false;
+    
+    if (formData.category === 'Sonstiges Gerät') {
+      if (!formData.customBrand || !formData.customModel || !formData.customIssue) return false;
+    } else {
+      if (!formData.brand) return false;
+      if (formData.brand === 'Andere / nicht gelistet') {
+        if (!formData.customBrand || !formData.customModel) return false;
+      } else {
+        if (!formData.model && formData.model !== 'Mein Modell ist nicht dabei' && !formData.customModel) return false;
+        if (formData.model === 'Mein Modell ist nicht dabei' && !formData.customModel) return false;
+      }
+      
+      if (!formData.issue) return false;
+      if (formData.issue === 'Sonstiges Problem' && !formData.customIssue) return false;
+    }
+    
     return true;
   };
 
@@ -86,10 +104,22 @@ const PreisanfrageForm = () => {
     setIsSubmitting(true);
     setError('');
 
+    // Prepare payload dynamically requested by user
     const payload = {
-      ...formData,
-      finalModel: formData.model === 'Mein Modell ist nicht dabei' ? formData.customModel : formData.model,
-      finalIssue: formData.issue === 'Sonstiges Problem' ? formData.customIssue : formData.issue,
+      category: formData.category,
+      brand: formData.brand,
+      customBrand: formData.customBrand,
+      model: formData.model,
+      manualModel: formData.customModel,
+      issue: formData.issue,
+      customIssue: formData.customIssue,
+      serviceMethod: formData.repairMethod,
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      preferredContact: formData.contactMethod,
+      message: formData.message,
+      privacyAccepted: formData.privacyAccepted,
       timestamp: new Date().toISOString(),
       source: 'Website Preisanfrage'
     };
@@ -200,87 +230,107 @@ const PreisanfrageForm = () => {
             {deviceCatalog.map(c => <option key={c.category} value={c.category}>{c.category}</option>)}
           </select>
 
-          {formData.category && (
+          {formData.category === 'Sonstiges Gerät' && (
+            <div style={{ backgroundColor: '#f8f9fa', padding: '20px', borderRadius: '8px', marginBottom: '15px', border: '1px dashed #ccc' }}>
+              <label style={labelStyle}>Hersteller manuell eingeben *</label>
+              <input type="text" name="customBrand" value={formData.customBrand} onChange={handleInputChange} style={inputStyle} placeholder="Z.B. Dyson, Vorwerk, DJI..." />
+              
+              <label style={labelStyle}>Modell manuell eingeben *</label>
+              <input type="text" name="customModel" value={formData.customModel} onChange={handleInputChange} style={inputStyle} placeholder="Genaue Modellbezeichnung" />
+              
+              <label style={labelStyle}>Problem kurz beschreiben *</label>
+              <input type="text" name="customIssue" value={formData.customIssue} onChange={handleInputChange} style={{...inputStyle, marginBottom: 0}} placeholder="Was genau ist defekt?" />
+            </div>
+          )}
+
+          {formData.category && formData.category !== 'Sonstiges Gerät' && (
             <>
               <label style={labelStyle}>Hersteller *</label>
               <select name="brand" value={formData.brand} onChange={handleInputChange} style={inputStyle}>
                 <option value="">Bitte wählen...</option>
                 {brands.map(b => <option key={b.name} value={b.name}>{b.name}</option>)}
+                <option value="Andere / nicht gelistet">Andere / nicht gelistet</option>
               </select>
-            </>
-          )}
 
-          {formData.brand && (
-            <>
-              <label style={labelStyle}>Modell *</label>
-              <div style={{ position: 'relative' }}>
-                <input 
-                  type="text" 
-                  placeholder="Modell suchen oder auswählen..." 
-                  value={formData.model === 'Mein Modell ist nicht dabei' ? 'Mein Modell ist nicht dabei' : modelSearch}
-                  onChange={(e) => {
-                    setModelSearch(e.target.value);
-                    if (formData.model === 'Mein Modell ist nicht dabei') setFormData(prev => ({...prev, model: ''}));
-                    setShowModelDropdown(true);
-                  }}
-                  onFocus={() => setShowModelDropdown(true)}
-                  style={inputStyle}
-                />
-                {showModelDropdown && (
-                  <div style={{ position: 'absolute', top: '100%', left: 0, right: 0, backgroundColor: '#fff', border: '1px solid #ccc', borderRadius: '0 0 6px 6px', maxHeight: '250px', overflowY: 'auto', zIndex: 10, marginTop: '-15px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}>
-                    {filteredModels.map(m => (
-                      <div 
-                        key={m} 
-                        style={{ padding: '12px 15px', cursor: 'pointer', borderBottom: '1px solid #eee' }}
-                        onMouseDown={() => {
-                          setFormData(prev => ({ ...prev, model: m, customModel: '' }));
-                          setModelSearch(m);
-                          setShowModelDropdown(false);
-                        }}
-                        onMouseOver={(e) => e.target.style.backgroundColor = '#f8f9fa'}
-                        onMouseOut={(e) => e.target.style.backgroundColor = '#fff'}
-                      >
-                        {m}
-                      </div>
-                    ))}
-                    <div 
-                      style={{ padding: '12px 15px', cursor: 'pointer', fontWeight: 'bold', color: '#0056b3', backgroundColor: '#f8f9fa' }}
-                      onMouseDown={() => {
-                        setFormData(prev => ({ ...prev, model: 'Mein Modell ist nicht dabei' }));
-                        setModelSearch('');
-                        setShowModelDropdown(false);
+              {formData.brand === 'Andere / nicht gelistet' && (
+                <div style={{ backgroundColor: '#f8f9fa', padding: '15px', borderRadius: '8px', marginBottom: '15px', border: '1px dashed #ccc' }}>
+                  <label style={labelStyle}>Hersteller manuell eingeben *</label>
+                  <input type="text" name="customBrand" value={formData.customBrand} onChange={handleInputChange} style={inputStyle} placeholder="Wie heißt der Hersteller?" />
+                  
+                  <label style={labelStyle}>Modell manuell eingeben *</label>
+                  <input type="text" name="customModel" value={formData.customModel} onChange={handleInputChange} style={{...inputStyle, marginBottom: 0}} placeholder="Genaue Modellbezeichnung" />
+                </div>
+              )}
+
+              {formData.brand && formData.brand !== 'Andere / nicht gelistet' && (
+                <>
+                  <label style={labelStyle}>Modell *</label>
+                  <div style={{ position: 'relative' }}>
+                    <input 
+                      type="text" 
+                      placeholder="Modell suchen oder auswählen..." 
+                      value={formData.model === 'Mein Modell ist nicht dabei' ? 'Mein Modell ist nicht dabei' : modelSearch}
+                      onChange={(e) => {
+                        setModelSearch(e.target.value);
+                        if (formData.model === 'Mein Modell ist nicht dabei') setFormData(prev => ({...prev, model: ''}));
+                        setShowModelDropdown(true);
                       }}
-                    >
-                      + Mein Modell ist nicht dabei (Manuell eingeben)
-                    </div>
+                      onFocus={() => setShowModelDropdown(true)}
+                      style={inputStyle}
+                    />
+                    {showModelDropdown && (
+                      <div style={{ position: 'absolute', top: '100%', left: 0, right: 0, backgroundColor: '#fff', border: '1px solid #ccc', borderRadius: '0 0 6px 6px', maxHeight: '250px', overflowY: 'auto', zIndex: 10, marginTop: '-15px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}>
+                        {filteredModels.map(m => (
+                          <div 
+                            key={m} 
+                            style={{ padding: '12px 15px', cursor: 'pointer', borderBottom: '1px solid #eee' }}
+                            onMouseDown={() => {
+                              setFormData(prev => ({ ...prev, model: m, customModel: '' }));
+                              setModelSearch(m);
+                              setShowModelDropdown(false);
+                            }}
+                            onMouseOver={(e) => e.target.style.backgroundColor = '#f8f9fa'}
+                            onMouseOut={(e) => e.target.style.backgroundColor = '#fff'}
+                          >
+                            {m}
+                          </div>
+                        ))}
+                        <div 
+                          style={{ padding: '12px 15px', cursor: 'pointer', fontWeight: 'bold', color: '#0056b3', backgroundColor: '#f8f9fa' }}
+                          onMouseDown={() => {
+                            setFormData(prev => ({ ...prev, model: 'Mein Modell ist nicht dabei' }));
+                            setModelSearch('');
+                            setShowModelDropdown(false);
+                          }}
+                        >
+                          + Mein Modell ist nicht dabei (Manuell eingeben)
+                        </div>
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
-            </>
-          )}
 
-          {formData.model === 'Mein Modell ist nicht dabei' && (
-            <div style={{ backgroundColor: '#f8f9fa', padding: '15px', borderRadius: '8px', marginBottom: '15px', border: '1px dashed #ccc' }}>
-              <label style={labelStyle}>Bitte Modell manuell eintragen *</label>
-              <input type="text" name="customModel" value={formData.customModel} onChange={handleInputChange} style={{...inputStyle, marginBottom: 0}} placeholder="Z.B. iPhone 8 Plus" />
-            </div>
-          )}
+                  {formData.model === 'Mein Modell ist nicht dabei' && (
+                    <div style={{ backgroundColor: '#f8f9fa', padding: '15px', borderRadius: '8px', marginBottom: '15px', border: '1px dashed #ccc' }}>
+                      <label style={labelStyle}>Bitte Modell manuell eintragen *</label>
+                      <input type="text" name="customModel" value={formData.customModel} onChange={handleInputChange} style={{...inputStyle, marginBottom: 0}} placeholder="Z.B. iPhone 8 Plus" />
+                    </div>
+                  )}
+                </>
+              )}
 
-          {formData.category && (
-            <>
               <label style={labelStyle}>Welches Problem liegt vor? *</label>
               <select name="issue" value={formData.issue} onChange={handleInputChange} style={inputStyle}>
                 <option value="">Bitte wählen...</option>
                 {issues.map(i => <option key={i} value={i}>{i}</option>)}
               </select>
-            </>
-          )}
 
-          {formData.issue === 'Sonstiges Problem' && (
-            <div style={{ backgroundColor: '#f8f9fa', padding: '15px', borderRadius: '8px', marginBottom: '15px', border: '1px dashed #ccc' }}>
-              <label style={labelStyle}>Problem kurz beschreiben *</label>
-              <input type="text" name="customIssue" value={formData.customIssue} onChange={handleInputChange} style={{...inputStyle, marginBottom: 0}} placeholder="Was genau ist defekt?" />
-            </div>
+              {formData.issue === 'Sonstiges Problem' && (
+                <div style={{ backgroundColor: '#f8f9fa', padding: '15px', borderRadius: '8px', marginBottom: '15px', border: '1px dashed #ccc' }}>
+                  <label style={labelStyle}>Problem kurz beschreiben *</label>
+                  <input type="text" name="customIssue" value={formData.customIssue} onChange={handleInputChange} style={{...inputStyle, marginBottom: 0}} placeholder="Was genau ist defekt?" />
+                </div>
+              )}
+            </>
           )}
 
           <label style={{...labelStyle, marginTop: '20px'}}>Wo möchtest Du die Reparatur durchführen lassen? *</label>

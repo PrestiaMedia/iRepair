@@ -2,7 +2,22 @@
 const ServicesSection = () => {
   return (
     <div className="fl-row fl-row-full-width fl-row-bg-photo fl-node-x2erslcpq5mn fl-row-default-height fl-row-align-center" data-node="x2erslcpq5mn">
-	<div className="fl-row-content-wrap">
+<div className="fl-row-content-wrap">
+<style>
+{`
+  @media (max-width: 768px) {
+    .fl-node-opkrflauw3mx {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 20px !important;
+    }
+    .fl-node-opkrflauw3mx > .fl-col {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+  }
+`}
+</style>
 								<div className="fl-row-content fl-row-fixed-width fl-node-content">
 		
 <div className="fl-col-group fl-node-vpgrd1jbfaxe" data-node="vpgrd1jbfaxe">
@@ -34,7 +49,7 @@ const ServicesSection = () => {
 	<div className="fl-module-content fl-node-content">
 		
 <div className="uabb-module-content uabb-button-wrap uabb-creative-button-wrap uabb-button-width-auto uabb-creative-button-width-auto uabb-button-center uabb-creative-button-center uabb-button-reponsive-center uabb-creative-button-reponsive-center">
-			<a href="#handy-reparatur" title="Hier klicken" target="_self" className="uabb-button ast-button uabb-creative-button uabb-creative-default-btn   " role="button" aria-label="Handy Reparatur">
+			<a href="#preisanfrage" title="Hier klicken" target="_self" className="uabb-button ast-button uabb-creative-button uabb-creative-default-btn   " role="button" aria-label="Handy Reparatur">
 							<span className="uabb-button-text uabb-creative-button-text">Handy Reparatur</span>
 							
 						
@@ -84,7 +99,7 @@ const ServicesSection = () => {
 	<div className="fl-module-content fl-node-content">
 		
 <div className="uabb-module-content uabb-button-wrap uabb-creative-button-wrap uabb-button-width-auto uabb-creative-button-width-auto uabb-button-center uabb-creative-button-center uabb-button-reponsive-center uabb-creative-button-reponsive-center">
-			<a href="/kontakt" title="Hier klicken" target="_self" className="uabb-button ast-button uabb-creative-button uabb-creative-default-btn   " role="button" aria-label="Laptop Reparatur">
+			<a href="#preisanfrage" title="Hier klicken" target="_self" className="uabb-button ast-button uabb-creative-button uabb-creative-default-btn   " role="button" aria-label="Laptop Reparatur">
 							<span className="uabb-button-text uabb-creative-button-text">Laptop Reparatur</span>
 							
 						
@@ -109,7 +124,7 @@ const ServicesSection = () => {
 	<div className="fl-module-content fl-node-content">
 		
 <div className="uabb-module-content uabb-button-wrap uabb-creative-button-wrap uabb-button-width-auto uabb-creative-button-width-auto uabb-button-center uabb-creative-button-center uabb-button-reponsive-center uabb-creative-button-reponsive-center">
-			<a href="/kontakt" title="Hier klicken" target="_self" className="uabb-button ast-button uabb-creative-button uabb-creative-default-btn   " role="button" aria-label="Konsolen Reparatur">
+			<a href="#preisanfrage" title="Hier klicken" target="_self" className="uabb-button ast-button uabb-creative-button uabb-creative-default-btn   " role="button" aria-label="Konsolen Reparatur">
 							<span className="uabb-button-text uabb-creative-button-text">Konsolen Reparatur</span>
 							
 						

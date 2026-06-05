@@ -204,7 +204,20 @@ const PreisanfrageForm = () => {
   }
 
   return (
-    <div id="preisanfrage" style={{ maxWidth: '750px', margin: '40px auto', backgroundColor: '#fff', padding: '40px', borderRadius: '12px', boxShadow: '0 8px 30px rgba(0,0,0,0.08)', fontFamily: 'sans-serif' }}>
+    <>
+    <style>
+    {`
+      #preisanfrage {
+        padding: 40px;
+      }
+      @media (max-width: 600px) {
+        #preisanfrage {
+          padding: 20px !important;
+        }
+      }
+    `}
+    </style>
+    <div id="preisanfrage" style={{ maxWidth: '750px', margin: '40px auto', backgroundColor: '#fff', borderRadius: '12px', boxShadow: '0 8px 30px rgba(0,0,0,0.08)', fontFamily: 'sans-serif' }}>
       <h3 style={{ textAlign: 'center', fontSize: '28px', marginBottom: '20px', color: '#1a1a1a', fontWeight: 'bold' }}>Reparatur anfragen</h3>
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '40px' }}>
         <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -428,6 +441,7 @@ const PreisanfrageForm = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 

@@ -26,6 +26,7 @@ const PreisanfrageForm = () => {
 
   const [modelSearch, setModelSearch] = useState('');
   const [showModelDropdown, setShowModelDropdown] = useState(false);
+  const [failedFields, setFailedFields] = useState([]);
 
   // Derived data based on selections
   const selectedCategoryData = deviceCatalog.find(c => c.category === formData.category);
@@ -42,6 +43,7 @@ const PreisanfrageForm = () => {
       ...prev,
       [name]: type === 'checkbox' ? checked : value
     }));
+    setFailedFields(prev => prev.filter(f => f !== name));
     
     // Reset dependents
     if (name === 'category') {
@@ -58,31 +60,41 @@ const PreisanfrageForm = () => {
   };
 
   const validateStep1 = () => {
-    if (!formData.category || !formData.repairMethod) return false;
+    let failed = [];
+    if (!formData.category) failed.push('category');
+    if (!formData.repairMethod) failed.push('repairMethod');
     
     if (formData.category === 'Sonstiges Gerät') {
-      if (!formData.customBrand || !formData.customModel || !formData.customIssue) return false;
-    } else {
-      if (!formData.brand) return false;
+      if (!formData.customBrand) failed.push('customBrand');
+      if (!formData.customModel) failed.push('customModel');
+      if (!formData.customIssue) failed.push('customIssue');
+    } else if (formData.category) {
+      if (!formData.brand) failed.push('brand');
       if (formData.brand === 'Andere / nicht gelistet') {
-        if (!formData.customBrand || !formData.customModel) return false;
-      } else {
-        if (!formData.model && formData.model !== 'Mein Modell ist nicht dabei' && !formData.customModel) return false;
-        if (formData.model === 'Mein Modell ist nicht dabei' && !formData.customModel) return false;
+        if (!formData.customBrand) failed.push('customBrand');
+        if (!formData.customModel) failed.push('customModel');
+      } else if (formData.brand) {
+        if (!formData.model && formData.model !== 'Mein Modell ist nicht dabei' && !formData.customModel) failed.push('modelSearch');
+        if (formData.model === 'Mein Modell ist nicht dabei' && !formData.customModel) failed.push('customModel');
       }
       
-      if (!formData.issue) return false;
-      if (formData.issue === 'Sonstiges Problem' && !formData.customIssue) return false;
+      if (!formData.issue) failed.push('issue');
+      if (formData.issue === 'Sonstiges Problem' && !formData.customIssue) failed.push('customIssue');
     }
     
-    return true;
+    setFailedFields(failed);
+    return failed.length === 0;
   };
 
   const validateStep2 = () => {
-    if (!formData.contactMethod || !formData.name || !formData.privacyAccepted) return false;
-    if (formData.contactMethod === 'Email' && !formData.email) return false;
-    if (formData.contactMethod === 'Telefon' && !formData.phone) return false;
-    return true;
+    let failed = [];
+    if (!formData.contactMethod) failed.push('contactMethod');
+    if (!formData.name) failed.push('name');
+    if (!formData.privacyAccepted) failed.push('privacyAccepted');
+    if (formData.contactMethod === 'Email' && !formData.email) failed.push('email');
+    if (formData.contactMethod === 'Telefon' && !formData.phone) failed.push('phone');
+    setFailedFields(failed);
+    return failed.length === 0;
   };
 
   const handleNext = () => {
@@ -150,6 +162,12 @@ const PreisanfrageForm = () => {
       setIsSubmitting(false);
     }
   };
+
+  const getInputStyle = (fieldName) => ({
+    ...inputStyle,
+    borderColor: failedFields.includes(fieldName) ? '#dc3545' : '#ccc',
+    backgroundColor: failedFields.includes(fieldName) ? '#fff8f8' : '#fff'
+  });
 
   const inputStyle = {
     width: '100%',
@@ -238,7 +256,7 @@ const PreisanfrageForm = () => {
           <h4 style={{ fontSize: '22px', marginBottom: '25px', borderBottom: '2px solid #f0f0f0', paddingBottom: '15px', color: '#1a1a1a' }}>Gerätedetails</h4>
           
           <label style={labelStyle}>Was möchtest Du reparieren lassen? *</label>
-          <select name="category" value={formData.category} onChange={handleInputChange} style={inputStyle}>
+          <select name="category" value={formData.category} onChange={handleInputChange} style={getInputStyle('category')}>
             <option value="">Bitte wählen...</option>
             {deviceCatalog.map(c => <option key={c.category} value={c.category}>{c.category}</option>)}
           </select>
@@ -246,20 +264,20 @@ const PreisanfrageForm = () => {
           {formData.category === 'Sonstiges Gerät' && (
             <div style={{ backgroundColor: '#f8f9fa', padding: '20px', borderRadius: '8px', marginBottom: '15px', border: '1px dashed #ccc' }}>
               <label style={labelStyle}>Hersteller manuell eingeben *</label>
-              <input type="text" name="customBrand" value={formData.customBrand} onChange={handleInputChange} style={inputStyle} placeholder="Z.B. Dyson, Vorwerk, DJI..." />
+              <input type="text" name="customBrand" value={formData.customBrand} onChange={handleInputChange} style={getInputStyle('customBrand')} placeholder="Z.B. Dyson, Vorwerk, DJI..." />
               
               <label style={labelStyle}>Modell manuell eingeben *</label>
               <input type="text" name="customModel" value={formData.customModel} onChange={handleInputChange} style={inputStyle} placeholder="Genaue Modellbezeichnung" />
               
               <label style={labelStyle}>Problem kurz beschreiben *</label>
-              <input type="text" name="customIssue" value={formData.customIssue} onChange={handleInputChange} style={{...inputStyle, marginBottom: 0}} placeholder="Was genau ist defekt?" />
+              <input type="text" name="customIssue" value={formData.customIssue} onChange={handleInputChange} style={{...getInputStyle('customIssue'), marginBottom: 0}} placeholder="Was genau ist defekt?" />
             </div>
           )}
 
           {formData.category && formData.category !== 'Sonstiges Gerät' && (
             <>
               <label style={labelStyle}>Hersteller *</label>
-              <select name="brand" value={formData.brand} onChange={handleInputChange} style={inputStyle}>
+              <select name="brand" value={formData.brand} onChange={handleInputChange} style={getInputStyle('brand')}>
                 <option value="">Bitte wählen...</option>
                 {brands.map(b => <option key={b.name} value={b.name}>{b.name}</option>)}
                 <option value="Andere / nicht gelistet">Andere / nicht gelistet</option>
@@ -271,7 +289,7 @@ const PreisanfrageForm = () => {
                   <input type="text" name="customBrand" value={formData.customBrand} onChange={handleInputChange} style={inputStyle} placeholder="Wie heißt der Hersteller?" />
                   
                   <label style={labelStyle}>Modell manuell eingeben *</label>
-                  <input type="text" name="customModel" value={formData.customModel} onChange={handleInputChange} style={{...inputStyle, marginBottom: 0}} placeholder="Genaue Modellbezeichnung" />
+                  <input type="text" name="customModel" value={formData.customModel} onChange={handleInputChange} style={{...getInputStyle('customModel'), marginBottom: 0}} placeholder="Genaue Modellbezeichnung" />
                 </div>
               )}
 
@@ -325,14 +343,14 @@ const PreisanfrageForm = () => {
                   {formData.model === 'Mein Modell ist nicht dabei' && (
                     <div style={{ backgroundColor: '#f8f9fa', padding: '15px', borderRadius: '8px', marginBottom: '15px', border: '1px dashed #ccc' }}>
                       <label style={labelStyle}>Bitte Modell manuell eintragen *</label>
-                      <input type="text" name="customModel" value={formData.customModel} onChange={handleInputChange} style={{...inputStyle, marginBottom: 0}} placeholder="Z.B. iPhone 8 Plus" />
+                      <input type="text" name="customModel" value={formData.customModel} onChange={handleInputChange} style={{...getInputStyle('customModel'), marginBottom: 0}} placeholder="Z.B. iPhone 8 Plus" />
                     </div>
                   )}
                 </>
               )}
 
               <label style={labelStyle}>Welches Problem liegt vor? *</label>
-              <select name="issue" value={formData.issue} onChange={handleInputChange} style={inputStyle}>
+              <select name="issue" value={formData.issue} onChange={handleInputChange} style={getInputStyle('issue')}>
                 <option value="">Bitte wählen...</option>
                 {issues.map(i => <option key={i} value={i}>{i}</option>)}
               </select>
@@ -340,14 +358,14 @@ const PreisanfrageForm = () => {
               {formData.issue === 'Sonstiges Problem' && (
                 <div style={{ backgroundColor: '#f8f9fa', padding: '15px', borderRadius: '8px', marginBottom: '15px', border: '1px dashed #ccc' }}>
                   <label style={labelStyle}>Problem kurz beschreiben *</label>
-                  <input type="text" name="customIssue" value={formData.customIssue} onChange={handleInputChange} style={{...inputStyle, marginBottom: 0}} placeholder="Was genau ist defekt?" />
+                  <input type="text" name="customIssue" value={formData.customIssue} onChange={handleInputChange} style={{...getInputStyle('customIssue'), marginBottom: 0}} placeholder="Was genau ist defekt?" />
                 </div>
               )}
             </>
           )}
 
           <label style={{...labelStyle, marginTop: '20px'}}>Wo möchtest Du die Reparatur durchführen lassen? *</label>
-          <select name="repairMethod" value={formData.repairMethod} onChange={handleInputChange} style={inputStyle}>
+          <select name="repairMethod" value={formData.repairMethod} onChange={handleInputChange} style={getInputStyle('repairMethod')}>
             <option value="">Bitte wählen...</option>
             <option value="iRepairStore - Stadtmitte">iRepairStore - Stadtmitte (Vor Ort)</option>
             <option value="iRepairStore - Westpark">iRepairStore - Westpark (Vor Ort)</option>
@@ -403,7 +421,7 @@ const PreisanfrageForm = () => {
           {formData.contactMethod === 'Telefon' && (
             <>
               <label style={labelStyle}>Telefonnummer *</label>
-              <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange} style={inputStyle} placeholder="0170 1234567" />
+              <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange} style={getInputStyle('phone')} placeholder="0170 1234567" />
             </>
           )}
 
@@ -411,7 +429,7 @@ const PreisanfrageForm = () => {
           <textarea name="message" value={formData.message} onChange={handleInputChange} style={{ ...inputStyle, minHeight: '120px', resize: 'vertical' }} placeholder="Gibt es noch etwas, das wir wissen sollten?"></textarea>
 
           <div style={{ margin: '25px 0', display: 'flex', alignItems: 'flex-start', backgroundColor: '#f8f9fa', padding: '15px', borderRadius: '8px' }}>
-            <input type="checkbox" id="privacy" name="privacyAccepted" checked={formData.privacyAccepted} onChange={handleInputChange} style={{ marginTop: '5px', marginRight: '15px', cursor: 'pointer', transform: 'scale(1.2)' }} />
+            <input type="checkbox" id="privacy" name="privacyAccepted" checked={formData.privacyAccepted} onChange={handleInputChange} style={{ marginTop: '5px', marginRight: '15px', cursor: 'pointer', transform: 'scale(1.2)', outline: failedFields.includes('privacyAccepted') ? '2px solid red' : 'none', outlineOffset: '2px' }} />
             <label htmlFor="privacy" style={{ fontSize: '14px', color: '#555', cursor: 'pointer', lineHeight: '1.5' }}>
               Ich akzeptiere die <a href="/datenschutz" target="_blank" style={{ color: '#0056b3', textDecoration: 'underline' }}>Datenschutzerklärung</a> und stimme zu, dass meine Daten zur Bearbeitung meiner Anfrage gespeichert werden. *
             </label>

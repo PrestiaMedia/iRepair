@@ -225,15 +225,15 @@ export const deviceCatalog: DeviceCategory[] = [
     brands: [
       {
         name: "Sony PlayStation",
-        models: ["PlayStation 5 Pro", "PlayStation 5 Slim", "PlayStation 5", "PlayStation 4 Pro", "PlayStation 4"]
+        models: ["PlayStation 5 Pro", "PlayStation 5 Slim", "PlayStation 5", "PlayStation 4 Pro", "PlayStation 4", "PlayStation 3", "PlayStation 2", "PlayStation Portable (PSP)", "PlayStation Vita"]
       },
       {
         name: "Microsoft Xbox",
-        models: ["Xbox Series X", "Xbox Series S", "Xbox One X", "Xbox One S", "Xbox One"]
+        models: ["Xbox Series X", "Xbox Series S", "Xbox One X", "Xbox One S", "Xbox One", "Xbox 360", "Xbox (Original)"]
       },
       {
         name: "Nintendo",
-        models: ["Nintendo Switch 2", "Nintendo Switch OLED", "Nintendo Switch", "Nintendo Switch Lite"]
+        models: ["Nintendo Switch 2", "Nintendo Switch OLED", "Nintendo Switch", "Nintendo Switch Lite", "Wii U", "Wii", "Nintendo 3DS / 2DS", "Nintendo DS", "GameCube", "Nintendo 64", "SNES", "NES"]
       },
       {
         name: "Valve",
@@ -258,15 +258,15 @@ export const deviceCatalog: DeviceCategory[] = [
     brands: [
       {
         name: "Sony PlayStation",
-        models: ["DualSense Edge Controller", "DualSense PS5 Controller", "DualShock 4 PS4 Controller"]
+        models: ["DualSense Edge Controller", "DualSense PS5 Controller", "DualShock 4 PS4 Controller", "DualShock 3 PS3 Controller", "DualShock 2 PS2 Controller"]
       },
       {
         name: "Microsoft Xbox",
-        models: ["Xbox Elite Wireless Controller Series 2", "Xbox Wireless Controller"]
+        models: ["Xbox Elite Wireless Controller Series 2", "Xbox Wireless Controller", "Xbox 360 Controller"]
       },
       {
         name: "Nintendo",
-        models: ["Nintendo Switch 2 Joy-Con", "Nintendo Switch 2 Pro Controller", "Nintendo Switch Joy-Con", "Nintendo Switch Pro Controller"]
+        models: ["Nintendo Switch 2 Joy-Con", "Nintendo Switch 2 Pro Controller", "Nintendo Switch Joy-Con", "Nintendo Switch Pro Controller", "Wii Remote & Nunchuk", "GameCube Controller"]
       }
     ],
     issues: [

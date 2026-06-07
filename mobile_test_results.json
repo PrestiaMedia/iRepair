@@ -1,0 +1,1250 @@
+[
+  {
+    "tag": "DIV",
+    "className": "reviews-carousel-container",
+    "id": "",
+    "width": 1050,
+    "right": 1070,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "reviews-carousel-viewport",
+    "id": "",
+    "width": 1050,
+    "right": 1070,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "reviews-carousel-track",
+    "id": "",
+    "width": 1050,
+    "right": 1070,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-item",
+    "id": "",
+    "width": 1050,
+    "right": 1070,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-header-section",
+    "id": "",
+    "width": 1016,
+    "right": 1053,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-author-info",
+    "id": "",
+    "width": 996,
+    "right": 1033,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "author-details",
+    "id": "",
+    "width": 946,
+    "right": 1033,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "author-name",
+    "id": "",
+    "width": 946,
+    "right": 1033,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-date",
+    "id": "",
+    "width": 946,
+    "right": 1033,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "google-icon-badge",
+    "id": "",
+    "width": 20,
+    "right": 1053,
+    "vw": 390
+  },
+  {
+    "tag": "svg",
+    "className": {},
+    "id": "",
+    "width": 20,
+    "right": 1053,
+    "vw": 390
+  },
+  {
+    "tag": "circle",
+    "className": {},
+    "id": "",
+    "width": 20,
+    "right": 1053,
+    "vw": 390
+  },
+  {
+    "tag": "text",
+    "className": {},
+    "id": "",
+    "width": 9.015625,
+    "right": 1047.5078125,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-rating-stars",
+    "id": "",
+    "width": 1016,
+    "right": 1053,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-content-text",
+    "id": "",
+    "width": 1016,
+    "right": 1053,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-item",
+    "id": "",
+    "width": 1050,
+    "right": 2138,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-header-section",
+    "id": "",
+    "width": 1016,
+    "right": 2121,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-author-info",
+    "id": "",
+    "width": 996,
+    "right": 2101,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "author-avatar",
+    "id": "",
+    "width": 40,
+    "right": 1145,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "author-details",
+    "id": "",
+    "width": 946,
+    "right": 2101,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "author-name",
+    "id": "",
+    "width": 946,
+    "right": 2101,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-date",
+    "id": "",
+    "width": 946,
+    "right": 2101,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "google-icon-badge",
+    "id": "",
+    "width": 20,
+    "right": 2121,
+    "vw": 390
+  },
+  {
+    "tag": "svg",
+    "className": {},
+    "id": "",
+    "width": 20,
+    "right": 2121,
+    "vw": 390
+  },
+  {
+    "tag": "circle",
+    "className": {},
+    "id": "",
+    "width": 20,
+    "right": 2121,
+    "vw": 390
+  },
+  {
+    "tag": "text",
+    "className": {},
+    "id": "",
+    "width": 9.015625,
+    "right": 2115.5078125,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-rating-stars",
+    "id": "",
+    "width": 1016,
+    "right": 2121,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 1118.328125,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 1133.65625,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 1148.984375,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 1164.3125,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 1179.640625,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "verified-icon",
+    "id": "",
+    "width": 10.5,
+    "right": 1198.140625,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-content-text",
+    "id": "",
+    "width": 1016,
+    "right": 2121,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-item",
+    "id": "",
+    "width": 1050,
+    "right": 3206,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-header-section",
+    "id": "",
+    "width": 1016,
+    "right": 3189,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-author-info",
+    "id": "",
+    "width": 996,
+    "right": 3169,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "author-avatar",
+    "id": "",
+    "width": 40,
+    "right": 2213,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "author-details",
+    "id": "",
+    "width": 946,
+    "right": 3169,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "author-name",
+    "id": "",
+    "width": 946,
+    "right": 3169,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-date",
+    "id": "",
+    "width": 946,
+    "right": 3169,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "google-icon-badge",
+    "id": "",
+    "width": 20,
+    "right": 3189,
+    "vw": 390
+  },
+  {
+    "tag": "svg",
+    "className": {},
+    "id": "",
+    "width": 20,
+    "right": 3189,
+    "vw": 390
+  },
+  {
+    "tag": "circle",
+    "className": {},
+    "id": "",
+    "width": 20,
+    "right": 3189,
+    "vw": 390
+  },
+  {
+    "tag": "text",
+    "className": {},
+    "id": "",
+    "width": 9.015625,
+    "right": 3183.5078125,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-rating-stars",
+    "id": "",
+    "width": 1016,
+    "right": 3189,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 2186.328125,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 2201.65625,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 2216.984375,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 2232.3125,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 2247.640625,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "verified-icon",
+    "id": "",
+    "width": 10.5,
+    "right": 2266.140625,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-content-text",
+    "id": "",
+    "width": 1016,
+    "right": 3189,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-item",
+    "id": "",
+    "width": 1050,
+    "right": 4274,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-header-section",
+    "id": "",
+    "width": 1016,
+    "right": 4257,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-author-info",
+    "id": "",
+    "width": 996,
+    "right": 4237,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "author-avatar",
+    "id": "",
+    "width": 40,
+    "right": 3281,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "author-details",
+    "id": "",
+    "width": 946,
+    "right": 4237,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "author-name",
+    "id": "",
+    "width": 946,
+    "right": 4237,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-date",
+    "id": "",
+    "width": 946,
+    "right": 4237,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "google-icon-badge",
+    "id": "",
+    "width": 20,
+    "right": 4257,
+    "vw": 390
+  },
+  {
+    "tag": "svg",
+    "className": {},
+    "id": "",
+    "width": 20,
+    "right": 4257,
+    "vw": 390
+  },
+  {
+    "tag": "circle",
+    "className": {},
+    "id": "",
+    "width": 20,
+    "right": 4257,
+    "vw": 390
+  },
+  {
+    "tag": "text",
+    "className": {},
+    "id": "",
+    "width": 9.015625,
+    "right": 4251.5078125,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-rating-stars",
+    "id": "",
+    "width": 1016,
+    "right": 4257,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 3254.328125,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 3269.65625,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 3284.984375,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 3300.3125,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 3315.640625,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "verified-icon",
+    "id": "",
+    "width": 10.5,
+    "right": 3334.140625,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-content-text",
+    "id": "",
+    "width": 1016,
+    "right": 4257,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-item",
+    "id": "",
+    "width": 1050,
+    "right": 5342,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-header-section",
+    "id": "",
+    "width": 1016,
+    "right": 5325,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-author-info",
+    "id": "",
+    "width": 996,
+    "right": 5305,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "author-avatar",
+    "id": "",
+    "width": 40,
+    "right": 4349,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "author-details",
+    "id": "",
+    "width": 946,
+    "right": 5305,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "author-name",
+    "id": "",
+    "width": 946,
+    "right": 5305,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-date",
+    "id": "",
+    "width": 946,
+    "right": 5305,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "google-icon-badge",
+    "id": "",
+    "width": 20,
+    "right": 5325,
+    "vw": 390
+  },
+  {
+    "tag": "svg",
+    "className": {},
+    "id": "",
+    "width": 20,
+    "right": 5325,
+    "vw": 390
+  },
+  {
+    "tag": "circle",
+    "className": {},
+    "id": "",
+    "width": 20,
+    "right": 5325,
+    "vw": 390
+  },
+  {
+    "tag": "text",
+    "className": {},
+    "id": "",
+    "width": 9.015625,
+    "right": 5319.5078125,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-rating-stars",
+    "id": "",
+    "width": 1016,
+    "right": 5325,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 4322.328125,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 4337.65625,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 4352.984375,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 4368.3125,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 4383.640625,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "verified-icon",
+    "id": "",
+    "width": 10.5,
+    "right": 4402.140625,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-content-text",
+    "id": "",
+    "width": 1016,
+    "right": 5325,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-item",
+    "id": "",
+    "width": 1050,
+    "right": 6410,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-header-section",
+    "id": "",
+    "width": 1016,
+    "right": 6393,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-author-info",
+    "id": "",
+    "width": 996,
+    "right": 6373,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "author-avatar",
+    "id": "",
+    "width": 40,
+    "right": 5417,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "author-details",
+    "id": "",
+    "width": 946,
+    "right": 6373,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "author-name",
+    "id": "",
+    "width": 946,
+    "right": 6373,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-date",
+    "id": "",
+    "width": 946,
+    "right": 6373,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "google-icon-badge",
+    "id": "",
+    "width": 20,
+    "right": 6393,
+    "vw": 390
+  },
+  {
+    "tag": "svg",
+    "className": {},
+    "id": "",
+    "width": 20,
+    "right": 6393,
+    "vw": 390
+  },
+  {
+    "tag": "circle",
+    "className": {},
+    "id": "",
+    "width": 20,
+    "right": 6393,
+    "vw": 390
+  },
+  {
+    "tag": "text",
+    "className": {},
+    "id": "",
+    "width": 9.015625,
+    "right": 6387.5078125,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-rating-stars",
+    "id": "",
+    "width": 1016,
+    "right": 6393,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 5390.328125,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 5405.65625,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 5420.984375,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 5436.3125,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 5451.640625,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "verified-icon",
+    "id": "",
+    "width": 10.5,
+    "right": 5470.140625,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-content-text",
+    "id": "",
+    "width": 1016,
+    "right": 6393,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-item",
+    "id": "",
+    "width": 1050,
+    "right": 7478,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-header-section",
+    "id": "",
+    "width": 1016,
+    "right": 7461,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-author-info",
+    "id": "",
+    "width": 996,
+    "right": 7441,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "author-avatar",
+    "id": "",
+    "width": 40,
+    "right": 6485,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "author-details",
+    "id": "",
+    "width": 946,
+    "right": 7441,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "author-name",
+    "id": "",
+    "width": 946,
+    "right": 7441,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-date",
+    "id": "",
+    "width": 946,
+    "right": 7441,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "google-icon-badge",
+    "id": "",
+    "width": 20,
+    "right": 7461,
+    "vw": 390
+  },
+  {
+    "tag": "svg",
+    "className": {},
+    "id": "",
+    "width": 20,
+    "right": 7461,
+    "vw": 390
+  },
+  {
+    "tag": "circle",
+    "className": {},
+    "id": "",
+    "width": 20,
+    "right": 7461,
+    "vw": 390
+  },
+  {
+    "tag": "text",
+    "className": {},
+    "id": "",
+    "width": 9.015625,
+    "right": 7455.5078125,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-rating-stars",
+    "id": "",
+    "width": 1016,
+    "right": 7461,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 6458.328125,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 6473.65625,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 6488.984375,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 6504.3125,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 6519.640625,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "verified-icon",
+    "id": "",
+    "width": 10.5,
+    "right": 6538.140625,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-content-text",
+    "id": "",
+    "width": 1016,
+    "right": 7461,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-item",
+    "id": "",
+    "width": 1050,
+    "right": 8546,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-header-section",
+    "id": "",
+    "width": 1016,
+    "right": 8529,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-author-info",
+    "id": "",
+    "width": 996,
+    "right": 8509,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "author-avatar",
+    "id": "",
+    "width": 40,
+    "right": 7553,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "author-details",
+    "id": "",
+    "width": 946,
+    "right": 8509,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "author-name",
+    "id": "",
+    "width": 946,
+    "right": 8509,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-date",
+    "id": "",
+    "width": 946,
+    "right": 8509,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "google-icon-badge",
+    "id": "",
+    "width": 20,
+    "right": 8529,
+    "vw": 390
+  },
+  {
+    "tag": "svg",
+    "className": {},
+    "id": "",
+    "width": 20,
+    "right": 8529,
+    "vw": 390
+  },
+  {
+    "tag": "circle",
+    "className": {},
+    "id": "",
+    "width": 20,
+    "right": 8529,
+    "vw": 390
+  },
+  {
+    "tag": "text",
+    "className": {},
+    "id": "",
+    "width": 9.015625,
+    "right": 8523.5078125,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-rating-stars",
+    "id": "",
+    "width": 1016,
+    "right": 8529,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 7526.328125,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 7541.65625,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 7556.984375,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 7572.3125,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "star-icon-small",
+    "id": "",
+    "width": 13.328125,
+    "right": 7587.640625,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "verified-icon",
+    "id": "",
+    "width": 10.5,
+    "right": 7606.140625,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-content-text",
+    "id": "",
+    "width": 1016,
+    "right": 8529,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "fl-module fl-module-box fl-node-z2vsc4p83uq7",
+    "id": "",
+    "width": 92.5625,
+    "right": 427.953125,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "fl-module fl-module-uabb-numbers fl-node-eh0y4afd7c3w",
+    "id": "",
+    "width": 92.5625,
+    "right": 427.953125,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "fl-module-content fl-node-content",
+    "id": "",
+    "width": 92.5625,
+    "right": 427.953125,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "uabb-module-content uabb-number uabb-number-none-above-title uabb-number-default",
+    "id": "",
+    "width": 92.5625,
+    "right": 427.953125,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "uabb-number-text",
+    "id": "",
+    "width": 92.5625,
+    "right": 427.953125,
+    "vw": 390
+  },
+  {
+    "tag": "H2",
+    "className": "uabb-number-string",
+    "id": "",
+    "width": 92.5625,
+    "right": 427.953125,
+    "vw": 390
+  },
+  {
+    "tag": "SPAN",
+    "className": "uabb-number-after-text",
+    "id": "",
+    "width": 92.5625,
+    "right": 427.953125,
+    "vw": 390
+  },
+  {
+    "tag": "path",
+    "className": {},
+    "id": "",
+    "width": 390.0006408691406,
+    "right": 389.9999930469785,
+    "vw": 390
+  }
+]

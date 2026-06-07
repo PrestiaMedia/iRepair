@@ -35,7 +35,7 @@ const CookieBanner = () => {
       right: 0,
       backgroundColor: '#ffffff',
       boxShadow: '0 -10px 30px rgba(0,0,0,0.1)',
-      padding: '25px 20px',
+      padding: '20px 15px',
       zIndex: 99999,
       display: 'flex',
       flexDirection: 'column',
@@ -44,26 +44,33 @@ const CookieBanner = () => {
       fontFamily: 'sans-serif',
       color: '#1a1a1a',
       textAlign: 'center',
-      borderTop: '1px solid #eaeaea'
+      borderTop: '1px solid #eaeaea',
+      boxSizing: 'border-box',
+      maxHeight: '90vh',
+      overflowY: 'auto'
     }}>
-      <div style={{ maxWidth: '1000px', width: '100%', display: 'flex', flexDirection: 'column', gap: '20px' }}>
-        <p style={{ margin: '0', fontSize: '15px', lineHeight: '1.6' }}>
+      <div style={{ maxWidth: '1000px', width: '100%', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', gap: '15px' }}>
+        <p style={{ margin: '0', fontSize: '14px', lineHeight: '1.5' }}>
           <strong>Wir verwenden Cookies.</strong> Um unsere Webseite für Sie optimal zu gestalten und fortlaufend verbessern zu können, verwenden wir Cookies. Durch die weitere Nutzung der Webseite stimmen Sie der Verwendung von Cookies zu. Weitere Informationen zu Cookies erhalten Sie in unserer <Link to="/datenschutz" style={{ color: '#0056b3', textDecoration: 'underline', fontWeight: 'bold' }}>Datenschutzerklärung</Link>.
         </p>
-        <div style={{ display: 'flex', gap: '15px', justifyContent: 'center', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', flexWrap: 'wrap', width: '100%' }}>
           <button 
             onClick={handleAccept}
             style={{
               backgroundColor: '#0056b3',
               color: '#ffffff',
               border: 'none',
-              padding: '12px 30px',
+              padding: '12px 15px',
               borderRadius: '6px',
-              fontSize: '15px',
+              fontSize: '14px',
               fontWeight: 'bold',
               cursor: 'pointer',
               transition: 'all 0.2s',
-              boxShadow: '0 4px 6px rgba(0,86,179,0.2)'
+              boxShadow: '0 4px 6px rgba(0,86,179,0.2)',
+              flex: '1 1 200px',
+              maxWidth: '100%',
+              whiteSpace: 'normal',
+              wordWrap: 'break-word'
             }}
             onMouseOver={(e) => { e.target.style.backgroundColor = '#004494'; e.target.style.transform = 'translateY(-2px)' }}
             onMouseOut={(e) => { e.target.style.backgroundColor = '#0056b3'; e.target.style.transform = 'translateY(0)' }}
@@ -76,12 +83,16 @@ const CookieBanner = () => {
               backgroundColor: '#f1f1f1',
               color: '#4a4a4a',
               border: '1px solid #d1d1d1',
-              padding: '12px 30px',
+              padding: '12px 15px',
               borderRadius: '6px',
-              fontSize: '15px',
+              fontSize: '14px',
               fontWeight: 'bold',
               cursor: 'pointer',
-              transition: 'all 0.2s'
+              transition: 'all 0.2s',
+              flex: '1 1 200px',
+              maxWidth: '100%',
+              whiteSpace: 'normal',
+              wordWrap: 'break-word'
             }}
             onMouseOver={(e) => { e.target.style.backgroundColor = '#e1e1e1'; e.target.style.transform = 'translateY(-2px)' }}
             onMouseOut={(e) => { e.target.style.backgroundColor = '#f1f1f1'; e.target.style.transform = 'translateY(0)' }}

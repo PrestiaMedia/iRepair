@@ -78,7 +78,19 @@ const GoogleReviews = () => {
     }
   ];
 
-  const totalSlides = reviews.length - 2; // Show 3 at a time
+  const [slidesToShow, setSlidesToShow] = useState(3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setSlidesToShow(window.innerWidth < 768 ? 1 : 3);
+    };
+    handleResize(); // Set initial value
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const totalSlides = reviews.length - (slidesToShow - 1);
+  const slideWidth = 100 / slidesToShow;
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -147,15 +159,17 @@ const GoogleReviews = () => {
                     ‹
                   </button>
 
-                  <div className="reviews-carousel-viewport">
+                  <div className="reviews-carousel-viewport" style={{ overflow: 'hidden', width: '100%' }}>
                     <div 
                       className="reviews-carousel-track"
                       style={{
-                        transform: `translateX(-${currentSlide * 33.333}%)`
+                        display: 'flex',
+                        transition: 'transform 0.5s ease',
+                        transform: `translateX(-${currentSlide * slideWidth}%)`
                       }}
                     >
                       {reviews.map((review) => (
-                        <div key={review.id} className="review-item">
+                        <div key={review.id} className="review-item" style={{ flex: `0 0 ${slideWidth}%`, maxWidth: `${slideWidth}%`, boxSizing: 'border-box' }}>
                           <div className="review-header-section">
                             <div className="review-author-info">
                               <div 

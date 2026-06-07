@@ -33657,16 +33657,28 @@ content:"768";
 
 /* Mobile Optimization - Global Layout Overrides */
 @media (max-width: 768px) {
-    .fl-col-group, .fl-col-group-nested, .fl-row-content {
+    html, body {
+        overflow-x: hidden;
+        width: 100vw;
+        position: relative;
+    }
+    .fl-col-group:not(.fl-col-small), .fl-col-group-nested:not(.fl-col-small), .fl-row-content:not(.fl-col-small) {
         display: flex !important;
         flex-direction: column !important;
         flex-wrap: nowrap !important;
     }
-    .fl-col {
+    .fl-col:not(.fl-col-small) {
         width: 100% !important;
         max-width: 100% !important;
         flex: 0 0 100% !important;
         margin-bottom: 20px !important;
+    }
+    /* Global Button fixes for mobile */
+    .fl-button, .uabb-button, .ast-button, button, .menu-link {
+        max-width: 100%;
+        white-space: normal !important;
+        word-wrap: break-word;
+        height: auto;
     }
     h1, .fl-heading-text, .fl-heading h1 {
         font-size: 32px !important;
@@ -33691,32 +33703,39 @@ content:"768";
     .main-navigation {
         display: none;
     }
+    .main-header-bar-navigation {
+        position: relative;
+    }
     .main-navigation.toggled {
         display: block !important;
         position: absolute;
         top: 100%;
-        left: 0;
-        width: 100%;
+        left: -20px; /* Offset to hit screen edge if container has padding */
+        width: 100vw;
         background: #fff;
-        z-index: 999;
+        z-index: 9999;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        padding: 20px 0;
     }
-    .main-header-menu {
+    .main-navigation.toggled ul.main-header-menu {
+        display: flex !important;
         flex-direction: column !important;
         width: 100%;
+        margin: 0;
+        padding: 0;
     }
-    .main-header-menu .menu-item {
+    .main-navigation.toggled ul.main-header-menu .menu-item {
         width: 100%;
         text-align: left;
         border-bottom: 1px solid #eee;
     }
-    .main-header-menu .menu-link {
+    .main-navigation.toggled ul.main-header-menu .menu-link {
         padding: 15px 20px !important;
         display: block;
+        width: 100%;
     }
     .ast-main-header-bar-alignment {
         width: 100%;
-        position: static;
     }
     /* Hide desktop sub-menus initially */
     .sub-menu {

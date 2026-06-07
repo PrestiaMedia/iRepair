@@ -26,7 +26,7 @@ const Locations = () => {
 	</div>
 
 <div className="fl-col-group fl-node-7u493qnkjolz" data-node="7u493qnkjolz">
-			<div className="fl-col fl-node-2pqx1d8rhca7 fl-col-bg-color fl-col-small" data-node="2pqx1d8rhca7">
+			<div className="fl-col fl-node-2pqx1d8rhca7 fl-col-bg-color" data-node="2pqx1d8rhca7">
 	<div className="fl-col-content fl-node-content"><div className="fl-module fl-module-heading fl-node-qkafbo6w9ct4" data-node="qkafbo6w9ct4">
 	<div className="fl-module-content fl-node-content">
 		<h3 className="fl-heading">
@@ -36,7 +36,7 @@ const Locations = () => {
 </div>
 </div>
 </div>
-			<div className="fl-col fl-node-5el3rkn4tsq0 fl-col-bg-color fl-col-small" data-node="5el3rkn4tsq0">
+			<div className="fl-col fl-node-5el3rkn4tsq0 fl-col-bg-color" data-node="5el3rkn4tsq0">
 	<div className="fl-col-content fl-node-content"><div className="fl-module fl-module-heading fl-node-q6nw4hiolp3d fl-visible-desktop fl-visible-large fl-visible-medium" data-node="q6nw4hiolp3d">
 	<div className="fl-module-content fl-node-content">
 		<h3 className="fl-heading">
@@ -49,10 +49,10 @@ const Locations = () => {
 	</div>
 
 <div className="fl-col-group fl-node-jgl10w7f3y9n" data-node="jgl10w7f3y9n">
-			<div className="fl-col fl-node-zynb08mhxfaq fl-col-bg-color fl-col-small fl-col-has-cols" data-node="zynb08mhxfaq">
+			<div className="fl-col fl-node-zynb08mhxfaq fl-col-bg-color fl-col-has-cols" data-node="zynb08mhxfaq">
 	<div className="fl-col-content fl-node-content">
 <div className="fl-col-group fl-node-2b6nhr9qwxkf fl-col-group-nested fl-col-group-equal-height fl-col-group-align-center" data-node="2b6nhr9qwxkf">
-			<div className="fl-col fl-node-0na245qlfwyi fl-col-bg-color fl-col-small" data-node="0na245qlfwyi">
+			<div className="fl-col fl-node-0na245qlfwyi fl-col-bg-color" data-node="0na245qlfwyi">
 	<div className="fl-col-content fl-node-content"><div className="fl-module fl-module-rich-text fl-node-7b98m1hqelfx" data-node="7b98m1hqelfx">
 	<div className="fl-module-content fl-node-content">
 		<div className="fl-rich-text">
@@ -67,7 +67,7 @@ Theresienstraße 2<br />
 </div>
 </div>
 </div>
-			<div className="fl-col fl-node-081twour4p2x fl-col-bg-color fl-col-small" data-node="081twour4p2x">
+			<div className="fl-col fl-node-081twour4p2x fl-col-bg-color" data-node="081twour4p2x">
 	<div className="fl-col-content fl-node-content"><div className="fl-module fl-module-photo fl-node-i28rw0aex3dv" data-node="i28rw0aex3dv">
 	<div className="fl-module-content fl-node-content">
 		<div className="fl-photo fl-photo-align-center" itemScope="" itemType="https://schema.org/ImageObject">
@@ -89,7 +89,7 @@ Theresienstraße 2<br />
 </div>
 </div>
 </div>
-			<div className="fl-col fl-node-17r0zoau59ek fl-col-bg-color fl-col-small fl-col-has-cols" data-node="17r0zoau59ek">
+			<div className="fl-col fl-node-17r0zoau59ek fl-col-bg-color fl-col-has-cols" data-node="17r0zoau59ek">
 	<div className="fl-col-content fl-node-content"><div className="fl-module fl-module-heading fl-node-1eajngrbtfop fl-visible-mobile" data-node="1eajngrbtfop">
 	<div className="fl-module-content fl-node-content">
 		<h3 className="fl-heading">
@@ -99,7 +99,7 @@ Theresienstraße 2<br />
 </div>
 
 <div className="fl-col-group fl-node-uy1aqko2xpci fl-col-group-nested fl-col-group-equal-height fl-col-group-align-center" data-node="uy1aqko2xpci">
-			<div className="fl-col fl-node-lqxyzw87vkgr fl-col-bg-color fl-col-small" data-node="lqxyzw87vkgr">
+			<div className="fl-col fl-node-lqxyzw87vkgr fl-col-bg-color" data-node="lqxyzw87vkgr">
 	<div className="fl-col-content fl-node-content"><div className="fl-module fl-module-rich-text fl-node-pvf5wqzxcjyn" data-node="pvf5wqzxcjyn">
 	<div className="fl-module-content fl-node-content">
 		<div className="fl-rich-text">
@@ -114,7 +114,7 @@ Am Westpark 6<br />
 </div>
 </div>
 </div>
-			<div className="fl-col fl-node-1w7hzos9lc52 fl-col-bg-color fl-col-small" data-node="1w7hzos9lc52">
+			<div className="fl-col fl-node-1w7hzos9lc52 fl-col-bg-color" data-node="1w7hzos9lc52">
 	<div className="fl-col-content fl-node-content"><div className="fl-module fl-module-photo fl-node-wi3a1pm7dehv" data-node="wi3a1pm7dehv">
 	<div className="fl-module-content fl-node-content">
 		<div className="fl-photo fl-photo-align-center" itemScope="" itemType="https://schema.org/ImageObject">

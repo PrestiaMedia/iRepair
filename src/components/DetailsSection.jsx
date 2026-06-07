@@ -19,7 +19,7 @@ const DetailsSection = () => {
 	</div>
 
 <div className="fl-col-group fl-node-hvlu8ym4bpsx fl-col-group-equal-height fl-col-group-align-center" data-node="hvlu8ym4bpsx">
-			<div className="fl-col fl-node-z73xf6dsogev fl-col-bg-color fl-col-small" data-node="z73xf6dsogev">
+			<div className="fl-col fl-node-z73xf6dsogev fl-col-bg-color" data-node="z73xf6dsogev">
 	<div className="fl-col-content fl-node-content"><div className="fl-module fl-module-video fl-node-laueb7v34wj8" data-node="laueb7v34wj8">
 	<div className="fl-module-content fl-node-content">
 		
@@ -36,7 +36,7 @@ const DetailsSection = () => {
 </div>
 </div>
 </div>
-			<div className="fl-col fl-node-7jn9sxwvt8c1 fl-col-bg-color fl-col-small fl-col-has-cols" data-node="7jn9sxwvt8c1">
+			<div className="fl-col fl-node-7jn9sxwvt8c1 fl-col-bg-color fl-col-has-cols" data-node="7jn9sxwvt8c1">
 	<div className="fl-col-content fl-node-content"><div className="fl-module fl-module-info-list fl-node-n9q7gmhysv1p" data-node="n9q7gmhysv1p">
 	<div className="fl-module-content fl-node-content">
 		
@@ -84,7 +84,7 @@ const DetailsSection = () => {
 </div>
 
 <div className="fl-col-group fl-node-iexuc0y2owa7 fl-col-group-nested" data-node="iexuc0y2owa7">
-			<div className="fl-col fl-node-iqj4tu2l5pha fl-col-bg-color fl-col-small" data-node="iqj4tu2l5pha">
+			<div className="fl-col fl-node-iqj4tu2l5pha fl-col-bg-color" data-node="iqj4tu2l5pha">
 	<div className="fl-col-content fl-node-content"><div className="fl-module fl-module-uabb-button fl-node-x9qvdhy0lt82 erstkontakt" data-node="x9qvdhy0lt82">
 	<div className="fl-module-content fl-node-content">
 		

@@ -38,7 +38,7 @@ const ServicesSection = () => {
 </div>
 
 <div className="fl-col-group fl-node-opkrflauw3mx fl-col-group-nested" data-node="opkrflauw3mx">
-			<div className="fl-col fl-node-mpgc1ydn4xkw fl-col-bg-photo fl-col-small" data-node="mpgc1ydn4xkw">
+			<div className="fl-col fl-node-mpgc1ydn4xkw fl-col-bg-photo" data-node="mpgc1ydn4xkw">
 	<div className="fl-col-content fl-node-content"><div className="fl-module fl-module-spacer-gap fl-node-3674trj8wg2z" data-node="3674trj8wg2z">
 	<div className="fl-module-content fl-node-content">
 		<div className="uabb-module-content uabb-spacer-gap-preview uabb-spacer-gap">
@@ -63,7 +63,7 @@ const ServicesSection = () => {
 </div>
 </div>
 </div>
-			<div className="fl-col fl-node-7xdlv4gw5bzn fl-col-bg-photo fl-col-small" data-node="7xdlv4gw5bzn">
+			<div className="fl-col fl-node-7xdlv4gw5bzn fl-col-bg-photo" data-node="7xdlv4gw5bzn">
 	<div className="fl-col-content fl-node-content"><div className="fl-module fl-module-spacer-gap fl-node-75ukz6codxf8" data-node="75ukz6codxf8">
 	<div className="fl-module-content fl-node-content">
 		<div className="uabb-module-content uabb-spacer-gap-preview uabb-spacer-gap">
@@ -88,7 +88,7 @@ const ServicesSection = () => {
 </div>
 </div>
 </div>
-			<div className="fl-col fl-node-mw8ox6fquavp fl-col-bg-photo fl-col-small" data-node="mw8ox6fquavp">
+			<div className="fl-col fl-node-mw8ox6fquavp fl-col-bg-photo" data-node="mw8ox6fquavp">
 	<div className="fl-col-content fl-node-content"><div className="fl-module fl-module-spacer-gap fl-node-g0kwv6h5iebo" data-node="g0kwv6h5iebo">
 	<div className="fl-module-content fl-node-content">
 		<div className="uabb-module-content uabb-spacer-gap-preview uabb-spacer-gap">
@@ -113,7 +113,7 @@ const ServicesSection = () => {
 </div>
 </div>
 </div>
-			<div className="fl-col fl-node-l0hgu5ojnbwa fl-col-bg-photo fl-col-small" data-node="l0hgu5ojnbwa">
+			<div className="fl-col fl-node-l0hgu5ojnbwa fl-col-bg-photo" data-node="l0hgu5ojnbwa">
 	<div className="fl-col-content fl-node-content"><div className="fl-module fl-module-spacer-gap fl-node-o2ubvd4ienkf" data-node="o2ubvd4ienkf">
 	<div className="fl-module-content fl-node-content">
 		<div className="uabb-module-content uabb-spacer-gap-preview uabb-spacer-gap">
@@ -154,7 +154,7 @@ const ServicesSection = () => {
 </div>
 </div>
 </div>
-			<div className="fl-col fl-node-dxsalnov3cqm fl-col-bg-color fl-col-small" data-node="dxsalnov3cqm">
+			<div className="fl-col fl-node-dxsalnov3cqm fl-col-bg-color" data-node="dxsalnov3cqm">
 	<div className="fl-col-content fl-node-content"><div className="fl-module fl-module-uabb-button fl-node-gtl6b0zqupc1" data-node="gtl6b0zqupc1">
 	<div className="fl-module-content fl-node-content">
 		

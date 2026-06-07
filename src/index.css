@@ -33662,16 +33662,13 @@ content:"768";
         width: 100vw;
         position: relative;
     }
-    .fl-col-group:not(.fl-col-small), .fl-col-group-nested:not(.fl-col-small), .fl-row-content:not(.fl-col-small) {
-        display: flex !important;
-        flex-direction: column !important;
-        flex-wrap: nowrap !important;
+    .fl-col-group, .fl-col-group-nested, .fl-row-content {
+        display: block !important;
     }
     .fl-col:not(.fl-col-small) {
         width: 100% !important;
         max-width: 100% !important;
-        flex: 0 0 100% !important;
-        margin-bottom: 20px !important;
+        display: block !important;
     }
     /* Global Button fixes for mobile */
     .fl-button, .uabb-button, .ast-button, button, .menu-link {
@@ -33703,15 +33700,19 @@ content:"768";
     .main-navigation {
         display: none;
     }
-    .main-header-bar-navigation {
+    .main-header-bar {
         position: relative;
+    }
+    .main-header-bar-navigation {
+        position: static;
     }
     .main-navigation.toggled {
         display: block !important;
         position: absolute;
         top: 100%;
-        left: -20px; /* Offset to hit screen edge if container has padding */
-        width: 100vw;
+        left: 0;
+        right: 0;
+        width: 100%;
         background: #fff;
         z-index: 9999;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -33723,11 +33724,15 @@ content:"768";
         width: 100%;
         margin: 0;
         padding: 0;
+        background-color: #ffffff !important;
+        z-index: 100000;
+        position: relative;
     }
     .main-navigation.toggled ul.main-header-menu .menu-item {
         width: 100%;
         text-align: left;
         border-bottom: 1px solid #eee;
+        background-color: #ffffff !important;
     }
     .main-navigation.toggled ul.main-header-menu .menu-link {
         padding: 15px 20px !important;

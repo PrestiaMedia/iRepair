@@ -18,11 +18,19 @@ const ServicesSection = () => {
     .custom-cta-banner {
       flex-direction: column !important;
       text-align: center !important;
-      padding: 20px !important;
+      padding: 30px 20px !important;
+      width: calc(100% - 40px) !important;
+      margin: 40px auto !important;
     }
     .custom-cta-banner h3 {
       text-align: center !important;
       margin-bottom: 20px !important;
+    }
+    .custom-cta-banner > div {
+      padding-left: 0 !important;
+      display: flex !important;
+      justify-content: center !important;
+      width: 100% !important;
     }
   }
 `}
@@ -160,8 +168,10 @@ const ServicesSection = () => {
   backgroundColor: '#0056b3',
   padding: '40px',
   borderRadius: '8px',
+  width: 'calc(100% - 40px)',
   maxWidth: '1000px',
   margin: '40px auto',
+  boxSizing: 'border-box',
   boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
 }}>
   <h3 style={{

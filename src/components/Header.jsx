@@ -44,35 +44,44 @@ const Header = () => {
               <div className="ast-main-header-bar-alignment">
                 <div className="main-header-bar-navigation">
                   <nav className="site-navigation ast-flex-grow-1 navigation-accessibility" id="primary-site-navigation" aria-label="Seiten-Navigation" itemType="https://schema.org/SiteNavigationElement" itemScope>
-                    <div 
-                      className={`main-navigation ${isMobileMenuOpen ? 'toggled' : ''}`}
-                      style={isMobileMenuOpen ? {
-                        display: 'block',
-                        position: 'fixed',
-                        top: '90px', /* Ensure it sits below header */
-                        left: '0',
-                        width: '100vw',
-                        height: 'calc(100vh - 90px)',
-                        overflowY: 'auto',
-                        overflowX: 'hidden',
-                        backgroundColor: '#ffffff',
-                        zIndex: 100000,
-                        padding: '0',
-                        margin: '0',
-                        borderTop: '1px solid #eee'
-                      } : {}}
-                    >
+                    <style>{`
+                      @media (max-width: 921px) {
+                        .main-navigation:not(.toggled) {
+                          display: none !important;
+                        }
+                        .main-navigation.toggled {
+                          display: block !important;
+                          position: fixed !important;
+                          top: 80px !important;
+                          left: 0 !important;
+                          width: 100vw !important;
+                          height: calc(100vh - 80px) !important;
+                          background-color: #ffffff !important;
+                          z-index: 100000 !important;
+                          overflow-y: auto !important;
+                          overflow-x: hidden !important;
+                          padding: 20px !important;
+                          box-sizing: border-box !important;
+                          border-top: 1px solid #eaeaea !important;
+                        }
+                        .main-navigation.toggled ul.main-header-menu {
+                          display: flex !important;
+                          flex-direction: column !important;
+                          width: 100% !important;
+                          margin: 0 !important;
+                          padding: 0 !important;
+                          background-color: transparent !important;
+                        }
+                        .main-navigation.toggled ul.main-header-menu > li {
+                          width: 100% !important;
+                          margin-bottom: 15px !important;
+                        }
+                      }
+                    `}</style>
+                    <div className={`main-navigation ${isMobileMenuOpen ? 'toggled' : ''}`}>
                       <ul 
                         id="primary-menu" 
                         className="main-header-menu ast-menu-shadow ast-nav-menu ast-flex ast-justify-content-flex-end submenu-with-border ast-mega-menu-enabled"
-                        style={isMobileMenuOpen ? {
-                          display: 'flex',
-                          flexDirection: 'column',
-                          width: '100%',
-                          margin: 0,
-                          padding: '10px 20px',
-                          backgroundColor: '#ffffff'
-                        } : {}}
                       >
                         
                         <li id="menu-item-9691" className="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home current-menu-ancestor current-menu-parent menu-item-has-children menu-item-9691">

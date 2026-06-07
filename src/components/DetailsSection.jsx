@@ -37,7 +37,7 @@ const DetailsSection = () => {
 </div>
 </div>
 			<div className="fl-col fl-node-7jn9sxwvt8c1 fl-col-bg-color fl-col-has-cols" data-node="7jn9sxwvt8c1">
-	<div className="fl-col-content fl-node-content"><div className="fl-module fl-module-info-list fl-node-n9q7gmhysv1p" data-node="n9q7gmhysv1p">
+	<div className="fl-col-content fl-node-content"><div className="fl-module fl-module-custom-html fl-node-n9q7gmhysv1p" data-node="n9q7gmhysv1p" style={{ position: 'relative', zIndex: 10 }}>
 	<div className="fl-module-content fl-node-content">
 		
 <div className="custom-details-list" style={{ padding: '20px 0' }}>

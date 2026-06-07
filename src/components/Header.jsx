@@ -52,17 +52,16 @@ const Header = () => {
                         .main-navigation.toggled {
                           display: block !important;
                           position: fixed !important;
-                          top: 80px !important;
+                          top: 0 !important;
                           left: 0 !important;
                           width: 100vw !important;
-                          height: calc(100vh - 80px) !important;
+                          height: 100vh !important;
                           background-color: #ffffff !important;
-                          z-index: 100000 !important;
+                          z-index: 999999 !important;
                           overflow-y: auto !important;
                           overflow-x: hidden !important;
-                          padding: 20px !important;
+                          padding: 80px 20px 20px 20px !important;
                           box-sizing: border-box !important;
-                          border-top: 1px solid #eaeaea !important;
                         }
                         .main-navigation.toggled ul.main-header-menu {
                           display: flex !important;
@@ -79,6 +78,18 @@ const Header = () => {
                       }
                     `}</style>
                     <div className={`main-navigation ${isMobileMenuOpen ? 'toggled' : ''}`}>
+                      {isMobileMenuOpen && (
+                        <button 
+                          onClick={() => setIsMobileMenuOpen(false)} 
+                          style={{ position: 'absolute', top: '20px', right: '20px', background: 'transparent', border: 'none', cursor: 'pointer', zIndex: 1000000, padding: '10px' }}
+                          aria-label="Menü schließen"
+                        >
+                          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1d3a8f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                          </svg>
+                        </button>
+                      )}
                       <ul 
                         id="primary-menu" 
                         className="main-header-menu ast-menu-shadow ast-nav-menu ast-flex ast-justify-content-flex-end submenu-with-border ast-mega-menu-enabled"

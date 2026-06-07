@@ -38,6 +38,12 @@ const ContactFooterInfo = () => {
           .footer-card .text-content {
             text-align: center !important;
           }
+          .mobile-contact-line {
+            justify-content: center !important;
+          }
+          .mobile-contact-text {
+            font-size: 14px !important;
+          }
         }
       `}</style>
       <div style={{ backgroundColor: '#ffffff', width: '100%', padding: '60px 20px', boxSizing: 'border-box' }}>
@@ -58,10 +64,16 @@ const ContactFooterInfo = () => {
                     Theresienstraße 2<br />
                     85049 Ingolstadt
                   </p>
-                  <p style={{ margin: 0, color: '#4a4a4a' }}>
-                    Tel: <a href="tel:004984199351750" style={{ color: '#0056b3', textDecoration: 'none', whiteSpace: 'nowrap' }}>0841 993517-50</a><br />
-                    E-Mail: <a href="mailto:info@irepairstore24.de" style={{ color: '#0056b3', textDecoration: 'none', whiteSpace: 'nowrap' }}>info@irepairstore24.de</a>
-                  </p>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <div className="mobile-contact-line" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      <i className="fas fa-phone" style={{ color: '#0056b3', width: '16px', textAlign: 'center' }}></i>
+                      <a href="tel:004984199351750" className="mobile-contact-text" style={{ color: '#0056b3', textDecoration: 'none', whiteSpace: 'nowrap', fontWeight: 'bold' }}>0841 993517-50</a>
+                    </div>
+                    <div className="mobile-contact-line" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      <i className="fas fa-envelope" style={{ color: '#0056b3', width: '16px', textAlign: 'center' }}></i>
+                      <a href="mailto:info@irepairstore24.de" className="mobile-contact-text" style={{ color: '#0056b3', textDecoration: 'none', whiteSpace: 'nowrap', fontWeight: 'bold' }}>info@irepairstore24.de</a>
+                    </div>
+                  </div>
                 </div>
               </div>
               <img decoding="async" src="/images/handy-reparatur-stadtmitte.png" alt="Handy Reparatur Stadtmitte" />
@@ -80,10 +92,16 @@ const ContactFooterInfo = () => {
                     Am Westpark 6<br />
                     85057 Ingolstadt
                   </p>
-                  <p style={{ margin: 0, color: '#4a4a4a' }}>
-                    Tel: <a href="tel:004984190042129" style={{ color: '#0056b3', textDecoration: 'none', whiteSpace: 'nowrap' }}>0841 900421-29</a><br />
-                    E-Mail: <a href="mailto:westpark@irepairstore24.de" style={{ color: '#0056b3', textDecoration: 'none', whiteSpace: 'nowrap' }}>westpark@irepairstore24.de</a>
-                  </p>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <div className="mobile-contact-line" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      <i className="fas fa-phone" style={{ color: '#0056b3', width: '16px', textAlign: 'center' }}></i>
+                      <a href="tel:004984190042129" className="mobile-contact-text" style={{ color: '#0056b3', textDecoration: 'none', whiteSpace: 'nowrap', fontWeight: 'bold' }}>0841 900421-29</a>
+                    </div>
+                    <div className="mobile-contact-line" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      <i className="fas fa-envelope" style={{ color: '#0056b3', width: '16px', textAlign: 'center' }}></i>
+                      <a href="mailto:westpark@irepairstore24.de" className="mobile-contact-text" style={{ color: '#0056b3', textDecoration: 'none', whiteSpace: 'nowrap', fontWeight: 'bold' }}>westpark@irepairstore24.de</a>
+                    </div>
+                  </div>
                 </div>
               </div>
               <img decoding="async" src="/images/westpark-ingolstadt-eingang-d.png" alt="Westpark Ingolstadt Eingang D" />

@@ -159,52 +159,54 @@ const GoogleReviews = () => {
                     ‹
                   </button>
 
-                  <div className="reviews-carousel-viewport" style={{ overflow: 'hidden', width: '100%' }}>
-                    <div 
-                      className="reviews-carousel-track"
-                      style={{
-                        display: 'flex',
-                        transition: 'transform 0.5s ease',
-                        transform: `translateX(-${currentSlide * slideWidth}%)`
-                      }}
-                    >
-                      {reviews.map((review) => (
-                        <div key={review.id} className="review-item" style={{ flex: `0 0 ${slideWidth}%`, maxWidth: `${slideWidth}%`, boxSizing: 'border-box' }}>
-                          <div className="review-header-section">
-                            <div className="review-author-info">
-                              <div 
-                                className="author-avatar"
-                                style={{ backgroundColor: review.color }}
-                              >
-                                {review.initial}
+                    <div className="reviews-carousel-viewport" style={{ overflow: 'hidden', width: '100%' }}>
+                      <div 
+                        className="reviews-carousel-track"
+                        style={{
+                          display: 'flex',
+                          transition: 'transform 0.5s ease',
+                          transform: `translateX(-${currentSlide * slideWidth}%)`
+                        }}
+                      >
+                        {reviews.map((review) => (
+                          <div key={review.id} className="review-item" style={{ flex: `0 0 ${slideWidth}%`, maxWidth: `${slideWidth}%`, boxSizing: 'border-box', padding: '0 9px' }}>
+                            <div className="review-card-inner">
+                              <div className="review-header-section">
+                                <div className="review-author-info">
+                                  <div 
+                                    className="author-avatar"
+                                    style={{ backgroundColor: review.color }}
+                                  >
+                                    {review.initial}
+                                  </div>
+                                  <div className="author-details">
+                                    <div className="author-name">{review.name}</div>
+                                    <div className="review-date">{review.date}</div>
+                                  </div>
+                                </div>
+                                <div className="google-icon-badge">
+                                  <svg width="20" height="20" viewBox="0 0 20 20">
+                                    <circle cx="10" cy="10" r="10" fill="#4285F4"/>
+                                    <text x="10" y="14" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">G</text>
+                                  </svg>
+                                </div>
                               </div>
-                              <div className="author-details">
-                                <div className="author-name">{review.name}</div>
-                                <div className="review-date">{review.date}</div>
+                              
+                              <div className="review-rating-stars">
+                                {[...Array(review.rating)].map((_, i) => (
+                                  <span key={i} className="star-icon-small">★</span>
+                                ))}
+                                <span className="verified-icon">✓</span>
+                              </div>
+                              
+                              <div className="review-content-text">
+                                {review.text}
                               </div>
                             </div>
-                            <div className="google-icon-badge">
-                              <svg width="20" height="20" viewBox="0 0 20 20">
-                                <circle cx="10" cy="10" r="10" fill="#4285F4"/>
-                                <text x="10" y="14" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">G</text>
-                              </svg>
-                            </div>
                           </div>
-                          
-                          <div className="review-rating-stars">
-                            {[...Array(review.rating)].map((_, i) => (
-                              <span key={i} className="star-icon-small">★</span>
-                            ))}
-                            <span className="verified-icon">✓</span>
-                          </div>
-                          
-                          <div className="review-content-text">
-                            {review.text}
-                          </div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
-                  </div>
 
                   <button 
                     className="carousel-nav-btn next" 

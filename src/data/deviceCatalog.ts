@@ -140,7 +140,7 @@ export const deviceCatalog: DeviceCategory[] = [
       {
         name: "Apple",
         models: [
-          "iPad Pro 13\" M4", "iPad Pro 11\" M4", "iPad Air 13\" M3", "iPad Air 11\" M3", "iPad Air 13\" M2",
+          "iPad Pro 13\" M5", "iPad Pro 11\" M5", "iPad Pro 13\" M4", "iPad Pro 11\" M4", "iPad Air 13\" M3", "iPad Air 11\" M3", "iPad Air 13\" M2",
           "iPad Air 11\" M2", "iPad 11. Generation", "iPad 10. Generation", "iPad mini 7. Generation", "iPad mini 6. Generation"
         ]
       },
@@ -180,10 +180,10 @@ export const deviceCatalog: DeviceCategory[] = [
       {
         name: "Apple",
         models: [
-          "MacBook Air 13\" M4", "MacBook Air 15\" M4", "MacBook Pro 14\" M4", "MacBook Pro 14\" M4 Pro",
-          "MacBook Pro 14\" M4 Max", "MacBook Pro 16\" M4 Pro", "MacBook Pro 16\" M4 Max", "MacBook Air 13\" M3",
-          "MacBook Air 15\" M3", "MacBook Pro 14\" M3", "MacBook Pro 16\" M3", "MacBook Air M2", "MacBook Pro M2",
-          "MacBook Air M1", "MacBook Pro M1"
+          "MacBook Air 13\" M5", "MacBook Air 15\" M5", "MacBook Pro 14\" M5", "MacBook Pro 14\" M5 Pro",
+          "MacBook Pro 14\" M5 Max", "MacBook Pro 16\" M5 Pro", "MacBook Pro 16\" M5 Max", "MacBook Air 13\" M4",
+          "MacBook Air 15\" M4", "MacBook Pro 14\" M4", "MacBook Pro 16\" M4", "MacBook Air M3", "MacBook Pro M3",
+          "MacBook Air M2", "MacBook Pro M2"
         ]
       },
       {

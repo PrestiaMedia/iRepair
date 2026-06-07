@@ -1,5 +1,8 @@
+import React, { useState } from 'react';
 
 const Header = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <header className="site-header header-main-layout-1 ast-primary-menu-enabled ast-menu-toggle-icon ast-mobile-header-stack ast-above-header-mobile-stack ast-below-header-mobile-stack" id="masthead" itemType="https://schema.org/WPHeader" itemScope itemID="#masthead">
       <div className="main-header-bar-wrap">
@@ -18,7 +21,7 @@ const Header = () => {
 
               <div className="ast-mobile-menu-buttons">
                 <div className="ast-button-wrap">
-                  <button type="button" className="menu-toggle main-header-menu-toggle ast-mobile-menu-buttons-minimal" aria-controls="primary-menu" aria-expanded="false">
+                  <button type="button" className="menu-toggle main-header-menu-toggle ast-mobile-menu-buttons-minimal" aria-controls="primary-menu" aria-expanded={isMobileMenuOpen} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
                     <span className="screen-reader-text">Hauptmenü</span>
                     <span className="ast-icon icon-menu-bars"><span className="menu-toggle-icon"></span></span>
                   </button>
@@ -28,7 +31,7 @@ const Header = () => {
               <div className="ast-main-header-bar-alignment">
                 <div className="main-header-bar-navigation">
                   <nav className="site-navigation ast-flex-grow-1 navigation-accessibility" id="primary-site-navigation" aria-label="Seiten-Navigation" itemType="https://schema.org/SiteNavigationElement" itemScope>
-                    <div className="main-navigation">
+                    <div className={`main-navigation ${isMobileMenuOpen ? 'toggled' : ''}`}>
                       <ul id="primary-menu" className="main-header-menu ast-menu-shadow ast-nav-menu ast-flex ast-justify-content-flex-end submenu-with-border ast-mega-menu-enabled">
                         
                         <li id="menu-item-9691" className="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home current-menu-ancestor current-menu-parent menu-item-has-children menu-item-9691">

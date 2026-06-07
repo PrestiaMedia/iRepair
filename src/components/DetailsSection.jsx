@@ -40,94 +40,63 @@ const DetailsSection = () => {
 	<div className="fl-col-content fl-node-content"><div className="fl-module fl-module-info-list fl-node-n9q7gmhysv1p" data-node="n9q7gmhysv1p">
 	<div className="fl-module-content fl-node-content">
 		
-<div className="uabb-module-content uabb-info-list">
-	<ul className="uabb-info-list-wrapper uabb-info-list-left">
-		<li className="uabb-info-list-item info-list-item-dynamic0"><div className="uabb-info-list-content-wrapper fl-clearfix uabb-info-list-left"><div className="uabb-info-list-icon info-list-icon-dynamic0"><div className="uabb-module-content uabb-imgicon-wrap">				<span className="uabb-icon-wrap">
-			<span className="uabb-icon">
-			<i className="fas fa-check-circle" aria-hidden="true"></i>
-			</span>
-		</span>
-	
-		</div></div><div className="uabb-info-list-content uabb-info-list-left info-list-content-dynamic0"><h3 className="uabb-info-list-title"></h3><div className="uabb-info-list-description uabb-text-editor info-list-description-dynamic0"><p>Hochwertige Handy- und iPhone-Reparatur durch erfahrene Experten</p></div></div></div><div className="uabb-info-list-connector uabb-info-list-left"></div></li><li className="uabb-info-list-item info-list-item-dynamic1"><div className="uabb-info-list-content-wrapper fl-clearfix uabb-info-list-left"><div className="uabb-info-list-icon info-list-icon-dynamic1"><div className="uabb-module-content uabb-imgicon-wrap">				<span className="uabb-icon-wrap">
-			<span className="uabb-icon">
-			<i className="fas fa-check-circle" aria-hidden="true"></i>
-			</span>
-		</span>
-	
-		</div></div><div className="uabb-info-list-content uabb-info-list-left info-list-content-dynamic1"><h3 className="uabb-info-list-title"></h3><div className="uabb-info-list-description uabb-text-editor info-list-description-dynamic1"><p>Schnelle Expressreparatur jedes Handy-Modells</p></div></div></div><div className="uabb-info-list-connector uabb-info-list-left"></div></li><li className="uabb-info-list-item info-list-item-dynamic2"><div className="uabb-info-list-content-wrapper fl-clearfix uabb-info-list-left"><div className="uabb-info-list-icon info-list-icon-dynamic2"><div className="uabb-module-content uabb-imgicon-wrap">				<span className="uabb-icon-wrap">
-			<span className="uabb-icon">
-			<i className="fas fa-check-circle" aria-hidden="true"></i>
-			</span>
-		</span>
-	
-		</div></div><div className="uabb-info-list-content uabb-info-list-left info-list-content-dynamic2"><h3 className="uabb-info-list-title"></h3><div className="uabb-info-list-description uabb-text-editor info-list-description-dynamic2"><p>Handyreparatur aller Handy-Schäden</p></div></div></div><div className="uabb-info-list-connector uabb-info-list-left"></div></li><li className="uabb-info-list-item info-list-item-dynamic3"><div className="uabb-info-list-content-wrapper fl-clearfix uabb-info-list-left"><div className="uabb-info-list-icon info-list-icon-dynamic3"><div className="uabb-module-content uabb-imgicon-wrap">				<span className="uabb-icon-wrap">
-			<span className="uabb-icon">
-			<i className="fas fa-check-circle" aria-hidden="true"></i>
-			</span>
-		</span>
-	
-		</div></div><div className="uabb-info-list-content uabb-info-list-left info-list-content-dynamic3"><h3 className="uabb-info-list-title"></h3><div className="uabb-info-list-description uabb-text-editor info-list-description-dynamic3"><p>Intensive Fehlerdiagnose, auch bei schwierigen Handy-Defekten</p></div></div></div><div className="uabb-info-list-connector uabb-info-list-left"></div></li><li className="uabb-info-list-item info-list-item-dynamic4"><div className="uabb-info-list-content-wrapper fl-clearfix uabb-info-list-left"><div className="uabb-info-list-icon info-list-icon-dynamic4"><div className="uabb-module-content uabb-imgicon-wrap">				<span className="uabb-icon-wrap">
-			<span className="uabb-icon">
-			<i className="fas fa-check-circle" aria-hidden="true"></i>
-			</span>
-		</span>
-	
-		</div></div><div className="uabb-info-list-content uabb-info-list-left info-list-content-dynamic4"><h3 className="uabb-info-list-title"></h3><div className="uabb-info-list-description uabb-text-editor info-list-description-dynamic4"><p>12 Monate Garantie auf alle iRepair-Leistungen</p></div></div></div><div className="uabb-info-list-connector uabb-info-list-left"></div></li><li className="uabb-info-list-item info-list-item-dynamic5"><div className="uabb-info-list-content-wrapper fl-clearfix uabb-info-list-left"><div className="uabb-info-list-icon info-list-icon-dynamic5"><div className="uabb-module-content uabb-imgicon-wrap">				<span className="uabb-icon-wrap">
-			<span className="uabb-icon">
-			<i className="fas fa-check-circle" aria-hidden="true"></i>
-			</span>
-		</span>
-	
-		</div></div><div className="uabb-info-list-content uabb-info-list-left info-list-content-dynamic5"><h3 className="uabb-info-list-title"></h3><div className="uabb-info-list-description uabb-text-editor info-list-description-dynamic5"><p>Transparenter Kostenüberblick und enger Kundenkontakt</p></div></div></div><div className="uabb-info-list-connector uabb-info-list-left"></div></li>	</ul>
-</div>
-	</div>
+<div className="custom-details-list" style={{ padding: '20px 0' }}>
+  <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+    {[
+      "Hochwertige Handy- und iPhone-Reparatur durch erfahrene Experten",
+      "Schnelle Expressreparatur jedes Handy-Modells",
+      "Handyreparatur aller Handy-Schäden",
+      "Intensive Fehlerdiagnose, auch bei schwierigen Handy-Defekten",
+      "12 Monate Garantie auf alle iRepair-Leistungen",
+      "Transparenter Kostenüberblick und enger Kundenkontakt"
+    ].map((text, i) => (
+      <li key={i} style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '15px', gap: '15px' }}>
+        <i className="fas fa-check-circle" aria-hidden="true" style={{ color: '#0056b3', fontSize: '20px', marginTop: '2px', flexShrink: 0 }}></i>
+        <span style={{ fontSize: '16px', lineHeight: '1.5', color: '#4a4a4a' }}>{text}</span>
+      </li>
+    ))}
+  </ul>
 </div>
 
-<div className="fl-col-group fl-node-iexuc0y2owa7 fl-col-group-nested" data-node="iexuc0y2owa7">
-			<div className="fl-col fl-node-iqj4tu2l5pha fl-col-bg-color" data-node="iqj4tu2l5pha">
-	<div className="fl-col-content fl-node-content"><div className="fl-module fl-module-uabb-button fl-node-x9qvdhy0lt82 erstkontakt" data-node="x9qvdhy0lt82">
-	<div className="fl-module-content fl-node-content">
-		
-<div className="uabb-module-content uabb-button-wrap uabb-creative-button-wrap uabb-button-width-auto uabb-creative-button-width-auto uabb-button-left uabb-creative-button-left uabb-button-tablet-left uabb-creative-button-tablet-left uabb-button-reponsive-center uabb-creative-button-reponsive-center">
-			<a href="#preisanfrage" title="Hier klicken" target="_self" className="uabb-button ast-button uabb-creative-button uabb-creative-default-btn   " role="button" aria-label="Preis anfragen">
-							<span className="uabb-button-text uabb-creative-button-text">Preis anfragen</span>
-							
-						
-		</a>
-	</div>
-
-
-
-
-	</div>
+<div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', marginTop: '30px' }}>
+  <a href="#preisanfrage" style={{
+    display: 'inline-block',
+    backgroundColor: '#0056b3',
+    color: '#ffffff',
+    padding: '15px 30px',
+    borderRadius: '6px',
+    fontSize: '18px',
+    fontWeight: 'bold',
+    textDecoration: 'none',
+    boxShadow: '0 4px 10px rgba(0,86,179,0.3)',
+    textAlign: 'center',
+    flex: '1 1 200px'
+  }}>
+    Preis anfragen
+  </a>
+  <a href="/kontakt" style={{
+    display: 'inline-block',
+    backgroundColor: '#ffffff',
+    color: '#0056b3',
+    border: '2px solid #0056b3',
+    padding: '13px 30px',
+    borderRadius: '6px',
+    fontSize: '18px',
+    fontWeight: 'bold',
+    textDecoration: 'none',
+    textAlign: 'center',
+    flex: '1 1 200px'
+  }}>
+    Kontakt aufnehmen
+  </a>
 </div>
 </div>
 </div>
-			<div className="fl-col fl-node-7w9q8nypras2 fl-col-bg-color" data-node="7w9q8nypras2">
-	<div className="fl-col-content fl-node-content"><div className="fl-module fl-module-uabb-button fl-node-1c859gs0xv62 erstkontakt" data-node="1c859gs0xv62">
-	<div className="fl-module-content fl-node-content">
-		
-<div className="uabb-module-content uabb-button-wrap uabb-creative-button-wrap uabb-button-width-auto uabb-creative-button-width-auto uabb-button-left uabb-creative-button-left uabb-button-tablet-left uabb-creative-button-tablet-left uabb-button-reponsive-center uabb-creative-button-reponsive-center">
-			<a href="/kontakt" title="Hier klicken" target="_self" className="uabb-button ast-button uabb-creative-button uabb-creative-default-btn   " role="button" aria-label="Kontakt aufnehmen">
-							<span className="uabb-button-text uabb-creative-button-text">Kontakt aufnehmen</span>
-							
-						
-		</a>
-	</div>
-
-
-
-
-	</div>
 </div>
 </div>
 </div>
-	</div>
 </div>
 </div>
-	</div>
-		</div>
-	</div>
 </div>
   );
 };

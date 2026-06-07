@@ -15,6 +15,15 @@ const ServicesSection = () => {
       width: 100% !important;
       max-width: 100% !important;
     }
+    .custom-cta-banner {
+      flex-direction: column !important;
+      text-align: center !important;
+      padding: 20px !important;
+    }
+    .custom-cta-banner h3 {
+      text-align: center !important;
+      margin-bottom: 20px !important;
+    }
   }
 `}
 </style>
@@ -143,37 +152,45 @@ const ServicesSection = () => {
 </div>
 	</div>
 
-<div className="fl-col-group fl-node-zue856s4f7ow fl-col-group-equal-height fl-col-group-align-center" data-node="zue856s4f7ow">
-			<div className="fl-col fl-node-cpyk5278uni6 fl-col-bg-color" data-node="cpyk5278uni6">
-	<div className="fl-col-content fl-node-content"><div className="fl-module fl-module-heading fl-node-9e7uxdckom0s" data-node="9e7uxdckom0s">
-	<div className="fl-module-content fl-node-content">
-		<h3 className="fl-heading">
-		<span className="fl-heading-text">Sichern Sie sich noch heute 10% auf die Reparatur Ihres Smartphones!</span>
-	</h3>
-	</div>
+<div className="custom-cta-banner" style={{
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  backgroundColor: '#0056b3',
+  padding: '40px',
+  borderRadius: '8px',
+  maxWidth: '1000px',
+  margin: '40px auto',
+  boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
+}}>
+  <h3 style={{
+    color: '#ffffff',
+    margin: '0',
+    fontSize: '24px',
+    fontWeight: 'bold',
+    flex: '1',
+    textAlign: 'left'
+  }}>
+    Sichern Sie sich noch heute 10% auf die Reparatur Ihres Smartphones!
+  </h3>
+  <div style={{ flex: '0 0 auto', paddingLeft: '20px' }}>
+    <a href="#preisanfrage" style={{
+      display: 'inline-block',
+      backgroundColor: '#ffffff',
+      color: '#0056b3',
+      padding: '15px 30px',
+      borderRadius: '6px',
+      fontSize: '18px',
+      fontWeight: 'bold',
+      textDecoration: 'none',
+      boxShadow: '0 4px 10px rgba(255,255,255,0.2)',
+      transition: 'transform 0.2s'
+    }}>
+      Preis anfragen
+    </a>
+  </div>
 </div>
-</div>
-</div>
-			<div className="fl-col fl-node-dxsalnov3cqm fl-col-bg-color" data-node="dxsalnov3cqm">
-	<div className="fl-col-content fl-node-content"><div className="fl-module fl-module-uabb-button fl-node-gtl6b0zqupc1" data-node="gtl6b0zqupc1">
-	<div className="fl-module-content fl-node-content">
-		
-<div className="uabb-module-content uabb-button-wrap uabb-creative-button-wrap uabb-button-width-auto uabb-creative-button-width-auto uabb-button-center uabb-creative-button-center">
-			<a href="#preisanfrage" title="Hier klicken" target="_self" className="uabb-button ast-button uabb-creative-button uabb-creative-default-btn   " role="button" aria-label="Preis anfragen">
-							<span className="uabb-button-text uabb-creative-button-text">Preis anfragen</span>
-							
-						
-		</a>
-	</div>
-
-
-
-
-	</div>
-</div>
-</div>
-</div>
-	</div>
 
 <div className="custom-services-grid" style={{ maxWidth: '1000px', margin: '40px auto 30px auto', padding: '0 20px', fontFamily: 'sans-serif' }}>
   <div style={{ textAlign: 'center', marginBottom: '40px' }}>

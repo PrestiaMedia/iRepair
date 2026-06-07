@@ -87,71 +87,29 @@ const AboutUs = () => {
 </div>
 	</div>
 </div>
-<div className="fl-module fl-module-box fl-node-zu76an3o94d8" data-node="zu76an3o94d8">
-	<div className="fl-module fl-module-box fl-node-kex360l7ntfb" data-node="kex360l7ntfb">
-	<div className="fl-module fl-module-uabb-numbers fl-node-onvm80zjb1yw" data-node="onvm80zjb1yw">
-	<div className="fl-module-content fl-node-content">
-		<div className="uabb-module-content uabb-number uabb-number-none-above-title uabb-number-default" role="group" tabIndex="0" aria-label="Counter module showing numbers">
-		{/* Comment to fix spacing issue
-	*/}<div className="uabb-number-text">
-		<h2 className="uabb-number-string"><span className="uabb-number-int">{counters.techniker}</span></h2><span className="uabb-number-after-text">freundliche Techniker</span>
-	</div>{/* Comment to fix spacing issue
-	*/}	</div>
-	</div>
-</div>
-</div>
-<div className="fl-module fl-module-box fl-node-0fa617b5yngk" data-node="0fa617b5yngk">
-	<div className="fl-module fl-module-uabb-numbers fl-node-qdmwj1ahzcsu" data-node="qdmwj1ahzcsu">
-	<div className="fl-module-content fl-node-content">
-		<div className="uabb-module-content uabb-number uabb-number-none-above-title uabb-number-default" role="group" tabIndex="0" aria-label="Counter module showing numbers">
-		{/* Comment to fix spacing issue
-	*/}<div className="uabb-number-text">
-		<h2 className="uabb-number-string"><span className="uabb-number-int">{counters.erfolgsquote}</span>%</h2><span className="uabb-number-after-text">Erfolgsquote</span>
-	</div>{/* Comment to fix spacing issue
-	*/}	</div>
-	</div>
-</div>
-<div className="fl-module fl-module-uabb-numbers fl-node-twaqzjyrgh4f" data-node="twaqzjyrgh4f">
-	<div className="fl-module-content fl-node-content">
-		<div className="uabb-module-content uabb-number uabb-number-none-above-title uabb-number-default" role="group" tabIndex="0" aria-label="Counter module showing numbers">
-		{/* Comment to fix spacing issue
-	*/}<div className="uabb-number-text">
-		<h2 className="uabb-number-string"><span className="uabb-number-int">{counters.bewertungen}</span>+</h2><span className="uabb-number-after-text">5-Sterne-Bewertungen</span>
-	</div>{/* Comment to fix spacing issue
-	*/}	</div>
-	</div>
-</div>
-</div>
-<div className="fl-module fl-module-box fl-node-z2vsc4p83uq7" data-node="z2vsc4p83uq7">
-	<div className="fl-module fl-module-uabb-numbers fl-node-eh0y4afd7c3w" data-node="eh0y4afd7c3w">
-	<div className="fl-module-content fl-node-content">
-		<div className="uabb-module-content uabb-number uabb-number-none-above-title uabb-number-default" role="group" tabIndex="0" aria-label="Counter module showing numbers">
-		{/* Comment to fix spacing issue
-	*/}<div className="uabb-number-text">
-		<h2 className="uabb-number-string"><span className="uabb-number-int">{counters.reparaturen.toLocaleString('de-DE')}</span>+</h2><span className="uabb-number-after-text">erfolgreiche Reparaturen</span>
-	</div>{/* Comment to fix spacing issue
-	*/}	</div>
-	</div>
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '20px', marginTop: '40px', width: '100%' }}>
+  <div style={{ backgroundColor: '#ffffff', borderRadius: '12px', padding: '30px 15px', textAlign: 'center', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
+    <h2 style={{ color: '#0056b3', fontSize: '36px', fontWeight: 'bold', margin: '0 0 10px 0' }}>{counters.techniker}</h2>
+    <span style={{ fontSize: '16px', color: '#4a4a4a', fontWeight: 'bold' }}>freundliche Techniker</span>
+  </div>
+  <div style={{ backgroundColor: '#ffffff', borderRadius: '12px', padding: '30px 15px', textAlign: 'center', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
+    <h2 style={{ color: '#0056b3', fontSize: '36px', fontWeight: 'bold', margin: '0 0 10px 0' }}>{counters.erfolgsquote}%</h2>
+    <span style={{ fontSize: '16px', color: '#4a4a4a', fontWeight: 'bold' }}>Erfolgsquote</span>
+  </div>
+  <div style={{ backgroundColor: '#ffffff', borderRadius: '12px', padding: '30px 15px', textAlign: 'center', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
+    <h2 style={{ color: '#0056b3', fontSize: '36px', fontWeight: 'bold', margin: '0 0 10px 0' }}>{counters.bewertungen}+</h2>
+    <span style={{ fontSize: '16px', color: '#4a4a4a', fontWeight: 'bold' }}>5-Sterne-Bewertungen</span>
+  </div>
+  <div style={{ backgroundColor: '#ffffff', borderRadius: '12px', padding: '30px 15px', textAlign: 'center', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
+    <h2 style={{ color: '#0056b3', fontSize: '36px', fontWeight: 'bold', margin: '0 0 10px 0' }}>{counters.reparaturen.toLocaleString('de-DE')}+</h2>
+    <span style={{ fontSize: '16px', color: '#4a4a4a', fontWeight: 'bold' }}>erfolgreiche Reparaturen</span>
+  </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-	</div>
-
-<div className="fl-col-group fl-node-a6102ykzjspv" data-node="a6102ykzjspv">
-			<div className="fl-col fl-node-ogable76d10c fl-col-bg-color" data-node="ogable76d10c">
-	<div className="fl-col-content fl-node-content"><div className="fl-module fl-module-spacer-gap fl-node-duyw9h6a78bv" data-node="duyw9h6a78bv">
-	<div className="fl-module-content fl-node-content">
-		<div className="uabb-module-content uabb-spacer-gap-preview uabb-spacer-gap">
 </div>
-	</div>
-</div>
-</div>
-</div>
-	</div>
-		</div>
-	</div>
 </div>
   );
 };

@@ -1184,62 +1184,6 @@
     "vw": 390
   },
   {
-    "tag": "DIV",
-    "className": "fl-module fl-module-box fl-node-z2vsc4p83uq7",
-    "id": "",
-    "width": 92.5625,
-    "right": 427.953125,
-    "vw": 390
-  },
-  {
-    "tag": "DIV",
-    "className": "fl-module fl-module-uabb-numbers fl-node-eh0y4afd7c3w",
-    "id": "",
-    "width": 92.5625,
-    "right": 427.953125,
-    "vw": 390
-  },
-  {
-    "tag": "DIV",
-    "className": "fl-module-content fl-node-content",
-    "id": "",
-    "width": 92.5625,
-    "right": 427.953125,
-    "vw": 390
-  },
-  {
-    "tag": "DIV",
-    "className": "uabb-module-content uabb-number uabb-number-none-above-title uabb-number-default",
-    "id": "",
-    "width": 92.5625,
-    "right": 427.953125,
-    "vw": 390
-  },
-  {
-    "tag": "DIV",
-    "className": "uabb-number-text",
-    "id": "",
-    "width": 92.5625,
-    "right": 427.953125,
-    "vw": 390
-  },
-  {
-    "tag": "H2",
-    "className": "uabb-number-string",
-    "id": "",
-    "width": 92.5625,
-    "right": 427.953125,
-    "vw": 390
-  },
-  {
-    "tag": "SPAN",
-    "className": "uabb-number-after-text",
-    "id": "",
-    "width": 92.5625,
-    "right": 427.953125,
-    "vw": 390
-  },
-  {
     "tag": "path",
     "className": {},
     "id": "",

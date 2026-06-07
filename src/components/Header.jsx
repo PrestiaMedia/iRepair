@@ -44,8 +44,36 @@ const Header = () => {
               <div className="ast-main-header-bar-alignment">
                 <div className="main-header-bar-navigation">
                   <nav className="site-navigation ast-flex-grow-1 navigation-accessibility" id="primary-site-navigation" aria-label="Seiten-Navigation" itemType="https://schema.org/SiteNavigationElement" itemScope>
-                    <div className={`main-navigation ${isMobileMenuOpen ? 'toggled' : ''}`}>
-                      <ul id="primary-menu" className="main-header-menu ast-menu-shadow ast-nav-menu ast-flex ast-justify-content-flex-end submenu-with-border ast-mega-menu-enabled">
+                    <div 
+                      className={`main-navigation ${isMobileMenuOpen ? 'toggled' : ''}`}
+                      style={isMobileMenuOpen ? {
+                        display: 'block',
+                        position: 'fixed',
+                        top: '90px', /* Ensure it sits below header */
+                        left: '0',
+                        width: '100vw',
+                        height: 'calc(100vh - 90px)',
+                        overflowY: 'auto',
+                        overflowX: 'hidden',
+                        backgroundColor: '#ffffff',
+                        zIndex: 100000,
+                        padding: '0',
+                        margin: '0',
+                        borderTop: '1px solid #eee'
+                      } : {}}
+                    >
+                      <ul 
+                        id="primary-menu" 
+                        className="main-header-menu ast-menu-shadow ast-nav-menu ast-flex ast-justify-content-flex-end submenu-with-border ast-mega-menu-enabled"
+                        style={isMobileMenuOpen ? {
+                          display: 'flex',
+                          flexDirection: 'column',
+                          width: '100%',
+                          margin: 0,
+                          padding: '10px 20px',
+                          backgroundColor: '#ffffff'
+                        } : {}}
+                      >
                         
                         <li id="menu-item-9691" className="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home current-menu-ancestor current-menu-parent menu-item-has-children menu-item-9691">
                           <a aria-expanded="false" href="/" className="menu-link" style={{display: 'flex', alignItems: 'center'}}>

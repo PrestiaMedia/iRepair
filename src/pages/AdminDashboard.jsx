@@ -7,40 +7,7 @@ import AdminPhoneForm from '../components/AdminPhoneForm';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, LineChart, Line } from 'recharts';
 import { Package, CheckCircle, Clock, Trash2, Edit, AlertTriangle, RefreshCcw, Smartphone, Euro, TrendingUp, BarChart2, CornerUpLeft } from 'lucide-react';
 
-// Robust Responsive Wrapper for Recharts to avoid 0x0 hidden-tab bugs
-const ChartWrapper = ({ children }) => {
-  const containerRef = useRef(null);
-  const [width, setWidth] = useState(0);
 
-  useEffect(() => {
-    let timer;
-    const observer = new ResizeObserver((entries) => {
-      if (entries[0] && entries[0].contentRect.width > 0) {
-        clearTimeout(timer);
-        timer = setTimeout(() => {
-          setWidth(entries[0].contentRect.width);
-        }, 50); // slight debounce for safety
-      }
-    });
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-      // Fallback manual read
-      if (containerRef.current.offsetWidth > 0) {
-        setWidth(containerRef.current.offsetWidth);
-      }
-    }
-    return () => {
-      observer.disconnect();
-      clearTimeout(timer);
-    };
-  }, []);
-
-  return (
-    <div ref={containerRef} style={{ width: '100%', height: '100%', minHeight: '280px' }}>
-      {width > 100 && children(width)}
-    </div>
-  );
-};
 
 const FIVE_GB_BYTES = 5 * 1024 * 1024 * 1024;
 
@@ -51,6 +18,21 @@ export default function AdminDashboard() {
   
   const [editingPhone, setEditingPhone] = useState(null);
   const [showForm, setShowForm] = useState(false);
+  const getChartWidth = () => {
+    if (typeof window === 'undefined') return 400;
+    const w = window.innerWidth;
+    if (w > 1240) return 550;
+    if (w > 900) return w / 2 - 80;
+    return w - 60;
+  };
+  const [chartWidth, setChartWidth] = useState(getChartWidth());
+
+  useEffect(() => {
+    const handleResize = () => setChartWidth(getChartWidth());
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const [activeTab, setActiveTab] = useState('inventory'); // 'inventory' | 'sales'
   const [cleaning, setCleaning] = useState(false);
   
@@ -390,36 +372,28 @@ export default function AdminDashboard() {
                     {/* Revenue Line Chart */}
                     <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #e2e8f0', minWidth: 0 }}>
                       <h4 style={{ margin: '0 0 16px 0', color: '#1e293b', fontSize: '1rem', fontWeight: 600 }}>Monatlicher Umsatz</h4>
-                      <div style={{ height: '280px', width: '100%', minWidth: '300px' }}>
-                        <ChartWrapper>
-                          {(width) => (
-                            <BarChart width={width} height={280} data={analytics.monthlyChartData} margin={{ left: 0, right: 20 }}>
-                              <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-                              <XAxis dataKey="month" axisLine={false} tickLine={false} tick={{fill: '#64748b', fontSize: 12, fontFamily: "'Inter', sans-serif"}} dy={10} />
-                              <YAxis axisLine={false} tickLine={false} tick={{fill: '#64748b', fontSize: 12, fontFamily: "'Inter', sans-serif"}} tickFormatter={(val) => `${val}€`} dx={-10} />
-                              <Tooltip formatter={(value) => [`${value} €`, 'Umsatz']} cursor={{ fill: '#f8fafc' }} contentStyle={{borderRadius: '4px', border: '1px solid #cbd5e1', boxShadow: '0 2px 4px rgba(0,0,0,0.05)', fontFamily: "'Inter', sans-serif", fontSize: '0.85rem'}} />
-                              <Bar dataKey="revenue" fill="#1d3a8f" radius={[2, 2, 0, 0]} maxBarSize={40} />
-                            </BarChart>
-                          )}
-                        </ChartWrapper>
+                      <div style={{ height: '280px', width: '100%', minWidth: '300px', overflowX: 'auto', overflowY: 'hidden' }}>
+                        <BarChart width={Math.max(300, chartWidth)} height={280} data={analytics.monthlyChartData} margin={{ left: 0, right: 20 }}>
+                          <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
+                          <XAxis dataKey="month" axisLine={false} tickLine={false} tick={{fill: '#64748b', fontSize: 12, fontFamily: "'Inter', sans-serif"}} dy={10} />
+                          <YAxis axisLine={false} tickLine={false} tick={{fill: '#64748b', fontSize: 12, fontFamily: "'Inter', sans-serif"}} tickFormatter={(val) => `${val}€`} dx={-10} />
+                          <Tooltip formatter={(value) => [`${value} €`, 'Umsatz']} cursor={{ fill: '#f8fafc' }} contentStyle={{borderRadius: '4px', border: '1px solid #cbd5e1', boxShadow: '0 2px 4px rgba(0,0,0,0.05)', fontFamily: "'Inter', sans-serif", fontSize: '0.85rem'}} />
+                          <Bar dataKey="revenue" fill="#1d3a8f" radius={[2, 2, 0, 0]} maxBarSize={40} />
+                        </BarChart>
                       </div>
                     </div>
 
                     {/* Brand Bar Chart */}
                     <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #e2e8f0', minWidth: 0 }}>
                       <h4 style={{ margin: '0 0 16px 0', color: '#1e293b', fontSize: '1rem', fontWeight: 600 }}>Verkäufe nach Marke</h4>
-                      <div style={{ height: '280px', width: '100%', minWidth: '300px' }}>
-                        <ChartWrapper>
-                          {(width) => (
-                            <BarChart width={width} height={280} data={analytics.brandChartData} layout="vertical" margin={{ left: 30, right: 20 }}>
-                              <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="#f1f5f9" />
-                              <XAxis type="number" axisLine={false} tickLine={false} tick={{fill: '#64748b', fontSize: 12, fontFamily: "'Inter', sans-serif"}} />
-                              <YAxis dataKey="brand" type="category" axisLine={false} tickLine={false} tick={{fill: '#0f172a', fontSize: 12, fontWeight: 500, fontFamily: "'Inter', sans-serif"}} dx={-10} />
-                              <Tooltip formatter={(value) => [value, 'Geräte']} cursor={{fill: '#f8fafc'}} contentStyle={{borderRadius: '4px', border: '1px solid #cbd5e1', boxShadow: '0 2px 4px rgba(0,0,0,0.05)', fontFamily: "'Inter', sans-serif", fontSize: '0.85rem'}} />
-                              <Bar dataKey="count" fill="#1d3a8f" radius={[0, 2, 2, 0]} barSize={16} />
-                            </BarChart>
-                          )}
-                        </ChartWrapper>
+                      <div style={{ height: '280px', width: '100%', minWidth: '300px', overflowX: 'auto', overflowY: 'hidden' }}>
+                        <BarChart width={Math.max(300, chartWidth)} height={280} data={analytics.brandChartData} layout="vertical" margin={{ left: 30, right: 20 }}>
+                          <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="#f1f5f9" />
+                          <XAxis type="number" axisLine={false} tickLine={false} tick={{fill: '#64748b', fontSize: 12, fontFamily: "'Inter', sans-serif"}} />
+                          <YAxis dataKey="brand" type="category" axisLine={false} tickLine={false} tick={{fill: '#0f172a', fontSize: 12, fontWeight: 500, fontFamily: "'Inter', sans-serif"}} dx={-10} />
+                          <Tooltip formatter={(value) => [value, 'Geräte']} cursor={{fill: '#f8fafc'}} contentStyle={{borderRadius: '4px', border: '1px solid #cbd5e1', boxShadow: '0 2px 4px rgba(0,0,0,0.05)', fontFamily: "'Inter', sans-serif", fontSize: '0.85rem'}} />
+                          <Bar dataKey="count" fill="#1d3a8f" radius={[0, 2, 2, 0]} barSize={16} />
+                        </BarChart>
                       </div>
                     </div>
 

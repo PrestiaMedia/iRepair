@@ -6,6 +6,9 @@ import CookieBanner from './components/CookieBanner';
 import Home from './pages/Home';
 import Impressum from './pages/Impressum';
 import Datenschutz from './pages/Datenschutz';
+import AdminLogin from './pages/AdminLogin';
+import AdminDashboard from './pages/AdminDashboard';
+import UsedPhones from './pages/UsedPhones';
 
 function App() {
   return (
@@ -23,6 +26,9 @@ function App() {
                         <Route path="/" element={<Home />} />
                         <Route path="/impressum" element={<Impressum />} />
                         <Route path="/datenschutz" element={<Datenschutz />} />
+                        <Route path="/admin/login" element={<AdminLogin />} />
+                        <Route path="/admin" element={<AdminDashboard />} />
+                        <Route path="/gebrauchte-handys" element={<UsedPhones />} />
                       </Routes>
                       <ContactFooterInfo />
                     </div>

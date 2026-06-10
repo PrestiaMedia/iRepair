@@ -116,6 +116,9 @@ const ContactFooterInfo = () => {
               {' | '}
               <Link to="/datenschutz" style={{ color: '#4a4a4a', textDecoration: 'none' }}>DATENSCHUTZ</Link>
             </p>
+            <p style={{ margin: '0 0 10px 0', fontSize: '12px', opacity: 0.7 }}>
+              <Link to="/admin/login" style={{ color: '#4a4a4a', textDecoration: 'none' }}>Admin Login</Link>
+            </p>
             <p style={{ margin: '0' }}>
               Copyright © 2026 iRepairStore GmbH
             </p>

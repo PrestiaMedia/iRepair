@@ -33,42 +33,50 @@
   },
   {
     "tag": "DIV",
+    "className": "review-card-inner",
+    "id": "",
+    "width": 1032,
+    "right": 1061,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
     "className": "review-header-section",
     "id": "",
-    "width": 1016,
-    "right": 1053,
+    "width": 998,
+    "right": 1044,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-author-info",
     "id": "",
-    "width": 996,
-    "right": 1033,
+    "width": 978,
+    "right": 1024,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "author-details",
     "id": "",
-    "width": 946,
-    "right": 1033,
+    "width": 928,
+    "right": 1024,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "author-name",
     "id": "",
-    "width": 946,
-    "right": 1033,
+    "width": 928,
+    "right": 1024,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-date",
     "id": "",
-    "width": 946,
-    "right": 1033,
+    "width": 928,
+    "right": 1024,
     "vw": 390
   },
   {
@@ -76,7 +84,7 @@
     "className": "google-icon-badge",
     "id": "",
     "width": 20,
-    "right": 1053,
+    "right": 1044,
     "vw": 390
   },
   {
@@ -84,7 +92,7 @@
     "className": {},
     "id": "",
     "width": 20,
-    "right": 1053,
+    "right": 1044,
     "vw": 390
   },
   {
@@ -92,7 +100,7 @@
     "className": {},
     "id": "",
     "width": 20,
-    "right": 1053,
+    "right": 1044,
     "vw": 390
   },
   {
@@ -100,23 +108,23 @@
     "className": {},
     "id": "",
     "width": 9.015625,
-    "right": 1047.5078125,
+    "right": 1038.5078125,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-rating-stars",
     "id": "",
-    "width": 1016,
-    "right": 1053,
+    "width": 998,
+    "right": 1044,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-content-text",
     "id": "",
-    "width": 1016,
-    "right": 1053,
+    "width": 998,
+    "right": 1044,
     "vw": 390
   },
   {
@@ -124,23 +132,31 @@
     "className": "review-item",
     "id": "",
     "width": 1050,
-    "right": 2138,
+    "right": 2120,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-card-inner",
+    "id": "",
+    "width": 1032,
+    "right": 2111,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-header-section",
     "id": "",
-    "width": 1016,
-    "right": 2121,
+    "width": 998,
+    "right": 2094,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-author-info",
     "id": "",
-    "width": 996,
-    "right": 2101,
+    "width": 978,
+    "right": 2074,
     "vw": 390
   },
   {
@@ -148,31 +164,31 @@
     "className": "author-avatar",
     "id": "",
     "width": 40,
-    "right": 1145,
+    "right": 1136,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "author-details",
     "id": "",
-    "width": 946,
-    "right": 2101,
+    "width": 928,
+    "right": 2074,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "author-name",
     "id": "",
-    "width": 946,
-    "right": 2101,
+    "width": 928,
+    "right": 2074,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-date",
     "id": "",
-    "width": 946,
-    "right": 2101,
+    "width": 928,
+    "right": 2074,
     "vw": 390
   },
   {
@@ -180,7 +196,7 @@
     "className": "google-icon-badge",
     "id": "",
     "width": 20,
-    "right": 2121,
+    "right": 2094,
     "vw": 390
   },
   {
@@ -188,7 +204,7 @@
     "className": {},
     "id": "",
     "width": 20,
-    "right": 2121,
+    "right": 2094,
     "vw": 390
   },
   {
@@ -196,7 +212,7 @@
     "className": {},
     "id": "",
     "width": 20,
-    "right": 2121,
+    "right": 2094,
     "vw": 390
   },
   {
@@ -204,15 +220,15 @@
     "className": {},
     "id": "",
     "width": 9.015625,
-    "right": 2115.5078125,
+    "right": 2088.5078125,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-rating-stars",
     "id": "",
-    "width": 1016,
-    "right": 2121,
+    "width": 998,
+    "right": 2094,
     "vw": 390
   },
   {
@@ -220,7 +236,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 1118.328125,
+    "right": 1109.328125,
     "vw": 390
   },
   {
@@ -228,7 +244,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 1133.65625,
+    "right": 1124.65625,
     "vw": 390
   },
   {
@@ -236,7 +252,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 1148.984375,
+    "right": 1139.984375,
     "vw": 390
   },
   {
@@ -244,7 +260,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 1164.3125,
+    "right": 1155.3125,
     "vw": 390
   },
   {
@@ -252,7 +268,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 1179.640625,
+    "right": 1170.640625,
     "vw": 390
   },
   {
@@ -260,15 +276,15 @@
     "className": "verified-icon",
     "id": "",
     "width": 10.5,
-    "right": 1198.140625,
+    "right": 1189.140625,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-content-text",
     "id": "",
-    "width": 1016,
-    "right": 2121,
+    "width": 998,
+    "right": 2094,
     "vw": 390
   },
   {
@@ -276,23 +292,31 @@
     "className": "review-item",
     "id": "",
     "width": 1050,
-    "right": 3206,
+    "right": 3170,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-card-inner",
+    "id": "",
+    "width": 1032,
+    "right": 3161,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-header-section",
     "id": "",
-    "width": 1016,
-    "right": 3189,
+    "width": 998,
+    "right": 3144,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-author-info",
     "id": "",
-    "width": 996,
-    "right": 3169,
+    "width": 978,
+    "right": 3124,
     "vw": 390
   },
   {
@@ -300,31 +324,31 @@
     "className": "author-avatar",
     "id": "",
     "width": 40,
-    "right": 2213,
+    "right": 2186,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "author-details",
     "id": "",
-    "width": 946,
-    "right": 3169,
+    "width": 928,
+    "right": 3124,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "author-name",
     "id": "",
-    "width": 946,
-    "right": 3169,
+    "width": 928,
+    "right": 3124,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-date",
     "id": "",
-    "width": 946,
-    "right": 3169,
+    "width": 928,
+    "right": 3124,
     "vw": 390
   },
   {
@@ -332,7 +356,7 @@
     "className": "google-icon-badge",
     "id": "",
     "width": 20,
-    "right": 3189,
+    "right": 3144,
     "vw": 390
   },
   {
@@ -340,7 +364,7 @@
     "className": {},
     "id": "",
     "width": 20,
-    "right": 3189,
+    "right": 3144,
     "vw": 390
   },
   {
@@ -348,7 +372,7 @@
     "className": {},
     "id": "",
     "width": 20,
-    "right": 3189,
+    "right": 3144,
     "vw": 390
   },
   {
@@ -356,15 +380,15 @@
     "className": {},
     "id": "",
     "width": 9.015625,
-    "right": 3183.5078125,
+    "right": 3138.5078125,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-rating-stars",
     "id": "",
-    "width": 1016,
-    "right": 3189,
+    "width": 998,
+    "right": 3144,
     "vw": 390
   },
   {
@@ -372,7 +396,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 2186.328125,
+    "right": 2159.328125,
     "vw": 390
   },
   {
@@ -380,7 +404,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 2201.65625,
+    "right": 2174.65625,
     "vw": 390
   },
   {
@@ -388,7 +412,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 2216.984375,
+    "right": 2189.984375,
     "vw": 390
   },
   {
@@ -396,7 +420,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 2232.3125,
+    "right": 2205.3125,
     "vw": 390
   },
   {
@@ -404,7 +428,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 2247.640625,
+    "right": 2220.640625,
     "vw": 390
   },
   {
@@ -412,15 +436,15 @@
     "className": "verified-icon",
     "id": "",
     "width": 10.5,
-    "right": 2266.140625,
+    "right": 2239.140625,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-content-text",
     "id": "",
-    "width": 1016,
-    "right": 3189,
+    "width": 998,
+    "right": 3144,
     "vw": 390
   },
   {
@@ -428,23 +452,31 @@
     "className": "review-item",
     "id": "",
     "width": 1050,
-    "right": 4274,
+    "right": 4220,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-card-inner",
+    "id": "",
+    "width": 1032,
+    "right": 4211,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-header-section",
     "id": "",
-    "width": 1016,
-    "right": 4257,
+    "width": 998,
+    "right": 4194,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-author-info",
     "id": "",
-    "width": 996,
-    "right": 4237,
+    "width": 978,
+    "right": 4174,
     "vw": 390
   },
   {
@@ -452,31 +484,31 @@
     "className": "author-avatar",
     "id": "",
     "width": 40,
-    "right": 3281,
+    "right": 3236,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "author-details",
     "id": "",
-    "width": 946,
-    "right": 4237,
+    "width": 928,
+    "right": 4174,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "author-name",
     "id": "",
-    "width": 946,
-    "right": 4237,
+    "width": 928,
+    "right": 4174,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-date",
     "id": "",
-    "width": 946,
-    "right": 4237,
+    "width": 928,
+    "right": 4174,
     "vw": 390
   },
   {
@@ -484,7 +516,7 @@
     "className": "google-icon-badge",
     "id": "",
     "width": 20,
-    "right": 4257,
+    "right": 4194,
     "vw": 390
   },
   {
@@ -492,7 +524,7 @@
     "className": {},
     "id": "",
     "width": 20,
-    "right": 4257,
+    "right": 4194,
     "vw": 390
   },
   {
@@ -500,7 +532,7 @@
     "className": {},
     "id": "",
     "width": 20,
-    "right": 4257,
+    "right": 4194,
     "vw": 390
   },
   {
@@ -508,15 +540,15 @@
     "className": {},
     "id": "",
     "width": 9.015625,
-    "right": 4251.5078125,
+    "right": 4188.5078125,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-rating-stars",
     "id": "",
-    "width": 1016,
-    "right": 4257,
+    "width": 998,
+    "right": 4194,
     "vw": 390
   },
   {
@@ -524,7 +556,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 3254.328125,
+    "right": 3209.328125,
     "vw": 390
   },
   {
@@ -532,7 +564,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 3269.65625,
+    "right": 3224.65625,
     "vw": 390
   },
   {
@@ -540,7 +572,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 3284.984375,
+    "right": 3239.984375,
     "vw": 390
   },
   {
@@ -548,7 +580,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 3300.3125,
+    "right": 3255.3125,
     "vw": 390
   },
   {
@@ -556,7 +588,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 3315.640625,
+    "right": 3270.640625,
     "vw": 390
   },
   {
@@ -564,15 +596,15 @@
     "className": "verified-icon",
     "id": "",
     "width": 10.5,
-    "right": 3334.140625,
+    "right": 3289.140625,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-content-text",
     "id": "",
-    "width": 1016,
-    "right": 4257,
+    "width": 998,
+    "right": 4194,
     "vw": 390
   },
   {
@@ -580,23 +612,31 @@
     "className": "review-item",
     "id": "",
     "width": 1050,
-    "right": 5342,
+    "right": 5270,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-card-inner",
+    "id": "",
+    "width": 1032,
+    "right": 5261,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-header-section",
     "id": "",
-    "width": 1016,
-    "right": 5325,
+    "width": 998,
+    "right": 5244,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-author-info",
     "id": "",
-    "width": 996,
-    "right": 5305,
+    "width": 978,
+    "right": 5224,
     "vw": 390
   },
   {
@@ -604,31 +644,31 @@
     "className": "author-avatar",
     "id": "",
     "width": 40,
-    "right": 4349,
+    "right": 4286,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "author-details",
     "id": "",
-    "width": 946,
-    "right": 5305,
+    "width": 928,
+    "right": 5224,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "author-name",
     "id": "",
-    "width": 946,
-    "right": 5305,
+    "width": 928,
+    "right": 5224,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-date",
     "id": "",
-    "width": 946,
-    "right": 5305,
+    "width": 928,
+    "right": 5224,
     "vw": 390
   },
   {
@@ -636,7 +676,7 @@
     "className": "google-icon-badge",
     "id": "",
     "width": 20,
-    "right": 5325,
+    "right": 5244,
     "vw": 390
   },
   {
@@ -644,7 +684,7 @@
     "className": {},
     "id": "",
     "width": 20,
-    "right": 5325,
+    "right": 5244,
     "vw": 390
   },
   {
@@ -652,7 +692,7 @@
     "className": {},
     "id": "",
     "width": 20,
-    "right": 5325,
+    "right": 5244,
     "vw": 390
   },
   {
@@ -660,15 +700,15 @@
     "className": {},
     "id": "",
     "width": 9.015625,
-    "right": 5319.5078125,
+    "right": 5238.5078125,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-rating-stars",
     "id": "",
-    "width": 1016,
-    "right": 5325,
+    "width": 998,
+    "right": 5244,
     "vw": 390
   },
   {
@@ -676,7 +716,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 4322.328125,
+    "right": 4259.328125,
     "vw": 390
   },
   {
@@ -684,7 +724,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 4337.65625,
+    "right": 4274.65625,
     "vw": 390
   },
   {
@@ -692,7 +732,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 4352.984375,
+    "right": 4289.984375,
     "vw": 390
   },
   {
@@ -700,7 +740,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 4368.3125,
+    "right": 4305.3125,
     "vw": 390
   },
   {
@@ -708,7 +748,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 4383.640625,
+    "right": 4320.640625,
     "vw": 390
   },
   {
@@ -716,15 +756,15 @@
     "className": "verified-icon",
     "id": "",
     "width": 10.5,
-    "right": 4402.140625,
+    "right": 4339.140625,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-content-text",
     "id": "",
-    "width": 1016,
-    "right": 5325,
+    "width": 998,
+    "right": 5244,
     "vw": 390
   },
   {
@@ -732,23 +772,31 @@
     "className": "review-item",
     "id": "",
     "width": 1050,
-    "right": 6410,
+    "right": 6320,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-card-inner",
+    "id": "",
+    "width": 1032,
+    "right": 6311,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-header-section",
     "id": "",
-    "width": 1016,
-    "right": 6393,
+    "width": 998,
+    "right": 6294,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-author-info",
     "id": "",
-    "width": 996,
-    "right": 6373,
+    "width": 978,
+    "right": 6274,
     "vw": 390
   },
   {
@@ -756,31 +804,31 @@
     "className": "author-avatar",
     "id": "",
     "width": 40,
-    "right": 5417,
+    "right": 5336,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "author-details",
     "id": "",
-    "width": 946,
-    "right": 6373,
+    "width": 928,
+    "right": 6274,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "author-name",
     "id": "",
-    "width": 946,
-    "right": 6373,
+    "width": 928,
+    "right": 6274,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-date",
     "id": "",
-    "width": 946,
-    "right": 6373,
+    "width": 928,
+    "right": 6274,
     "vw": 390
   },
   {
@@ -788,7 +836,7 @@
     "className": "google-icon-badge",
     "id": "",
     "width": 20,
-    "right": 6393,
+    "right": 6294,
     "vw": 390
   },
   {
@@ -796,7 +844,7 @@
     "className": {},
     "id": "",
     "width": 20,
-    "right": 6393,
+    "right": 6294,
     "vw": 390
   },
   {
@@ -804,7 +852,7 @@
     "className": {},
     "id": "",
     "width": 20,
-    "right": 6393,
+    "right": 6294,
     "vw": 390
   },
   {
@@ -812,15 +860,15 @@
     "className": {},
     "id": "",
     "width": 9.015625,
-    "right": 6387.5078125,
+    "right": 6288.5078125,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-rating-stars",
     "id": "",
-    "width": 1016,
-    "right": 6393,
+    "width": 998,
+    "right": 6294,
     "vw": 390
   },
   {
@@ -828,7 +876,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 5390.328125,
+    "right": 5309.328125,
     "vw": 390
   },
   {
@@ -836,7 +884,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 5405.65625,
+    "right": 5324.65625,
     "vw": 390
   },
   {
@@ -844,7 +892,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 5420.984375,
+    "right": 5339.984375,
     "vw": 390
   },
   {
@@ -852,7 +900,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 5436.3125,
+    "right": 5355.3125,
     "vw": 390
   },
   {
@@ -860,7 +908,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 5451.640625,
+    "right": 5370.640625,
     "vw": 390
   },
   {
@@ -868,15 +916,15 @@
     "className": "verified-icon",
     "id": "",
     "width": 10.5,
-    "right": 5470.140625,
+    "right": 5389.140625,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-content-text",
     "id": "",
-    "width": 1016,
-    "right": 6393,
+    "width": 998,
+    "right": 6294,
     "vw": 390
   },
   {
@@ -884,23 +932,31 @@
     "className": "review-item",
     "id": "",
     "width": 1050,
-    "right": 7478,
+    "right": 7370,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-card-inner",
+    "id": "",
+    "width": 1032,
+    "right": 7361,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-header-section",
     "id": "",
-    "width": 1016,
-    "right": 7461,
+    "width": 998,
+    "right": 7344,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-author-info",
     "id": "",
-    "width": 996,
-    "right": 7441,
+    "width": 978,
+    "right": 7324,
     "vw": 390
   },
   {
@@ -908,31 +964,31 @@
     "className": "author-avatar",
     "id": "",
     "width": 40,
-    "right": 6485,
+    "right": 6386,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "author-details",
     "id": "",
-    "width": 946,
-    "right": 7441,
+    "width": 928,
+    "right": 7324,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "author-name",
     "id": "",
-    "width": 946,
-    "right": 7441,
+    "width": 928,
+    "right": 7324,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-date",
     "id": "",
-    "width": 946,
-    "right": 7441,
+    "width": 928,
+    "right": 7324,
     "vw": 390
   },
   {
@@ -940,7 +996,7 @@
     "className": "google-icon-badge",
     "id": "",
     "width": 20,
-    "right": 7461,
+    "right": 7344,
     "vw": 390
   },
   {
@@ -948,7 +1004,7 @@
     "className": {},
     "id": "",
     "width": 20,
-    "right": 7461,
+    "right": 7344,
     "vw": 390
   },
   {
@@ -956,7 +1012,7 @@
     "className": {},
     "id": "",
     "width": 20,
-    "right": 7461,
+    "right": 7344,
     "vw": 390
   },
   {
@@ -964,15 +1020,15 @@
     "className": {},
     "id": "",
     "width": 9.015625,
-    "right": 7455.5078125,
+    "right": 7338.5078125,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-rating-stars",
     "id": "",
-    "width": 1016,
-    "right": 7461,
+    "width": 998,
+    "right": 7344,
     "vw": 390
   },
   {
@@ -980,7 +1036,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 6458.328125,
+    "right": 6359.328125,
     "vw": 390
   },
   {
@@ -988,7 +1044,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 6473.65625,
+    "right": 6374.65625,
     "vw": 390
   },
   {
@@ -996,7 +1052,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 6488.984375,
+    "right": 6389.984375,
     "vw": 390
   },
   {
@@ -1004,7 +1060,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 6504.3125,
+    "right": 6405.3125,
     "vw": 390
   },
   {
@@ -1012,7 +1068,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 6519.640625,
+    "right": 6420.640625,
     "vw": 390
   },
   {
@@ -1020,15 +1076,15 @@
     "className": "verified-icon",
     "id": "",
     "width": 10.5,
-    "right": 6538.140625,
+    "right": 6439.140625,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-content-text",
     "id": "",
-    "width": 1016,
-    "right": 7461,
+    "width": 998,
+    "right": 7344,
     "vw": 390
   },
   {
@@ -1036,23 +1092,31 @@
     "className": "review-item",
     "id": "",
     "width": 1050,
-    "right": 8546,
+    "right": 8420,
+    "vw": 390
+  },
+  {
+    "tag": "DIV",
+    "className": "review-card-inner",
+    "id": "",
+    "width": 1032,
+    "right": 8411,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-header-section",
     "id": "",
-    "width": 1016,
-    "right": 8529,
+    "width": 998,
+    "right": 8394,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-author-info",
     "id": "",
-    "width": 996,
-    "right": 8509,
+    "width": 978,
+    "right": 8374,
     "vw": 390
   },
   {
@@ -1060,31 +1124,31 @@
     "className": "author-avatar",
     "id": "",
     "width": 40,
-    "right": 7553,
+    "right": 7436,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "author-details",
     "id": "",
-    "width": 946,
-    "right": 8509,
+    "width": 928,
+    "right": 8374,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "author-name",
     "id": "",
-    "width": 946,
-    "right": 8509,
+    "width": 928,
+    "right": 8374,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-date",
     "id": "",
-    "width": 946,
-    "right": 8509,
+    "width": 928,
+    "right": 8374,
     "vw": 390
   },
   {
@@ -1092,7 +1156,7 @@
     "className": "google-icon-badge",
     "id": "",
     "width": 20,
-    "right": 8529,
+    "right": 8394,
     "vw": 390
   },
   {
@@ -1100,7 +1164,7 @@
     "className": {},
     "id": "",
     "width": 20,
-    "right": 8529,
+    "right": 8394,
     "vw": 390
   },
   {
@@ -1108,7 +1172,7 @@
     "className": {},
     "id": "",
     "width": 20,
-    "right": 8529,
+    "right": 8394,
     "vw": 390
   },
   {
@@ -1116,15 +1180,15 @@
     "className": {},
     "id": "",
     "width": 9.015625,
-    "right": 8523.5078125,
+    "right": 8388.5078125,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-rating-stars",
     "id": "",
-    "width": 1016,
-    "right": 8529,
+    "width": 998,
+    "right": 8394,
     "vw": 390
   },
   {
@@ -1132,7 +1196,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 7526.328125,
+    "right": 7409.328125,
     "vw": 390
   },
   {
@@ -1140,7 +1204,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 7541.65625,
+    "right": 7424.65625,
     "vw": 390
   },
   {
@@ -1148,7 +1212,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 7556.984375,
+    "right": 7439.984375,
     "vw": 390
   },
   {
@@ -1156,7 +1220,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 7572.3125,
+    "right": 7455.3125,
     "vw": 390
   },
   {
@@ -1164,7 +1228,7 @@
     "className": "star-icon-small",
     "id": "",
     "width": 13.328125,
-    "right": 7587.640625,
+    "right": 7470.640625,
     "vw": 390
   },
   {
@@ -1172,15 +1236,15 @@
     "className": "verified-icon",
     "id": "",
     "width": 10.5,
-    "right": 7606.140625,
+    "right": 7489.140625,
     "vw": 390
   },
   {
     "tag": "DIV",
     "className": "review-content-text",
     "id": "",
-    "width": 1016,
-    "right": 8529,
+    "width": 998,
+    "right": 8394,
     "vw": 390
   },
   {

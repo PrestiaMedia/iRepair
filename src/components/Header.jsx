@@ -76,6 +76,18 @@ const Header = () => {
                           margin-bottom: 15px !important;
                         }
                       }
+                      @media (min-width: 922px) {
+                        .main-navigation:not(.toggled) ul.main-header-menu {
+                          display: flex !important;
+                          align-items: center !important;
+                          gap: 20px !important;
+                          margin: 0 !important;
+                          padding: 0 !important;
+                        }
+                        .main-navigation:not(.toggled) ul.main-header-menu > li {
+                          white-space: nowrap !important;
+                        }
+                      }
                     `}</style>
                     <div className={`main-navigation ${isMobileMenuOpen ? 'toggled' : ''}`}>
                       {isMobileMenuOpen && (
@@ -144,6 +156,10 @@ const Header = () => {
                               <a href="/#stores" className="menu-link"><span className="ast-icon icon-arrow"></span><span className="menu-text">iRepairStore – Westpark</span></a>
                             </li>
                           </ul>
+                        </li>
+
+                        <li id="menu-item-gebraucht" className="menu-item menu-item-type-post_type menu-item-object-page">
+                          <a href="/gebrauchte-handys" className="menu-link" style={{display: 'flex', alignItems: 'center'}}><span className="menu-text">Gebrauchte Handys</span></a>
                         </li>
 
                         <li id="menu-item-9690" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-9690">

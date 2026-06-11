@@ -25,9 +25,13 @@ export default function AdminDashboard() {
     return w - 60;
   };
   const [chartWidth, setChartWidth] = useState(getChartWidth());
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
-    const handleResize = () => setChartWidth(getChartWidth());
+    const handleResize = () => {
+      setChartWidth(getChartWidth());
+      setIsMobile(window.innerWidth <= 768);
+    };
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -269,9 +273,60 @@ export default function AdminDashboard() {
                     <p style={{ color: '#64748b', textAlign: 'center', padding: '40px' }}>Lade Daten...</p>
                   ) : inventoryPhones.length === 0 ? (
                     <div style={{ padding: '40px', textAlign: 'center', color: '#64748b', fontSize: '0.9rem' }}>Keine aktiven Geräte vorhanden.</div>
+                  ) : isMobile ? (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', padding: '16px', background: '#f8fafc' }}>
+                      {inventoryPhones.map(p => (
+                        <div key={p.id} style={{ background: '#fff', borderRadius: '8px', border: '1px solid #e2e8f0', overflow: 'hidden', boxShadow: '0 2px 4px rgba(0,0,0,0.02)' }}>
+                          <div style={{ display: 'flex', gap: '16px', padding: '16px', borderBottom: '1px solid #f1f5f9' }}>
+                            <div style={{ width: '80px', height: '80px', borderRadius: '6px', background: '#f1f5f9', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', flexShrink: 0 }}>
+                              {p.imageUrls && p.imageUrls[0] ? <img src={p.imageUrls[0]} style={{ width: '100%', height: '100%', objectFit: 'cover' }} /> : <Smartphone size={24} color="#94a3b8" />}
+                            </div>
+                            <div style={{ flex: 1 }}>
+                              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                                <div style={{ fontWeight: 600, color: '#0f172a', fontSize: '1.05rem', lineHeight: 1.2 }}>{p.brand} <br/>{p.model}</div>
+                                <div style={{ fontWeight: 700, color: '#1d3a8f', fontSize: '1.1rem' }}>{formatEUR(p.price)}</div>
+                              </div>
+                              <div style={{ fontSize: '0.85rem', color: '#64748b', marginTop: '6px' }}>{p.storage} | {p.condition}</div>
+                            </div>
+                          </div>
+                          <div style={{ padding: '12px 16px', background: '#f8fafc', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                              <span style={{ fontSize: '0.85rem', color: '#475569', fontWeight: 500 }}>Status ändern:</span>
+                              <select value={p.status} onChange={async (e) => {
+                                  const s = e.target.value;
+                                  if (s === 'active') await markPhoneActive(p.id);
+                                  if (s === 'reserved') await markPhoneReserved(p.id);
+                                  if (s === 'sold') await markPhoneSold(p.id);
+                                  loadPhones();
+                                }} style={{ padding: '6px', borderRadius: '4px', border: '1px solid #cbd5e1', fontSize: '0.85rem', background: '#fff' }}>
+                                <option value="active">Verfügbar</option>
+                                <option value="reserved">Reserviert</option>
+                                <option value="sold">Verkauft</option>
+                              </select>
+                            </div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                              <span style={{ fontSize: '0.85rem', color: '#475569', fontWeight: 500 }}>Sichtbar:</span>
+                              <label><input type="checkbox" checked={p.published} onChange={async (e) => {
+                                  if (e.target.checked) await publishPhone(p.id);
+                                  else await unpublishPhone(p.id);
+                                  loadPhones();
+                                }} style={{ width: '18px', height: '18px' }}/></label>
+                            </div>
+                            <div style={{ display: 'flex', gap: '8px', paddingTop: '8px', borderTop: '1px solid #e2e8f0' }}>
+                              <button onClick={() => { setEditingPhone(p); setShowForm(true); }} style={{ flex: 1, padding: '8px', background: '#fff', border: '1px solid #cbd5e1', borderRadius: '4px', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '6px', fontSize: '0.85rem', color: '#0f172a' }}>
+                                <Edit size={16} /> Bearbeiten
+                              </button>
+                              <button onClick={() => handleDelete(p.id)} style={{ flex: 1, padding: '8px', background: '#fef2f2', border: '1px solid #fecaca', borderRadius: '4px', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '6px', fontSize: '0.85rem', color: '#dc2626' }}>
+                                <Trash2 size={16} /> Löschen
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   ) : (
                     <div style={{ overflowX: 'auto' }}>
-                      <table className="admin-table" style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', minWidth: '800px', fontSize: '0.9rem' }}>
+                      <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', minWidth: '800px', fontSize: '0.9rem' }}>
                         <thead>
                           <tr style={{ borderBottom: '1px solid #e2e8f0', color: '#64748b', textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '0.02em', fontWeight: 600, background: '#f8fafc' }}>
                             <th style={{ padding: '12px 20px' }}>Bild</th>
@@ -285,14 +340,14 @@ export default function AdminDashboard() {
                         <tbody>
                           {inventoryPhones.map(p => (
                             <tr key={p.id} style={{ borderBottom: '1px solid #f1f5f9' }} onMouseOver={e => e.currentTarget.style.background = '#f8fafc'} onMouseOut={e => e.currentTarget.style.background = 'transparent'}>
-                              <td data-label="Bild" style={{ padding: '12px 20px' }}>
+                              <td style={{ padding: '12px 20px' }}>
                                 {p.imageUrls && p.imageUrls[0] ? (
                                   <img src={p.imageUrls[0]} alt="thumb" style={{ width: '40px', height: '40px', objectFit: 'cover', borderRadius: '4px', border: '1px solid #e2e8f0' }} />
                                 ) : (
                                   <div style={{ width: '40px', height: '40px', background: '#f1f5f9', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', fontSize: '0.7rem' }}>N/A</div>
                                 )}
                               </td>
-                              <td data-label="Gerät" style={{ padding: '12px 20px' }}>
+                              <td style={{ padding: '12px 20px' }}>
                                 <div style={{ fontWeight: 600, color: '#0f172a' }}>{p.brand} {p.model}</div>
                                 <div style={{ fontSize: '0.8rem', color: '#64748b', marginTop: '2px' }}>{p.storage} | {p.condition}</div>
                               </td>
@@ -456,9 +511,53 @@ export default function AdminDashboard() {
                     <p style={{ color: '#64748b', padding: '20px' }}>Lade Daten...</p>
                   ) : soldPhones.length === 0 ? (
                     <div style={{ padding: '40px', textAlign: 'center', color: '#64748b', fontSize: '0.9rem' }}>Bisher keine Verkäufe.</div>
+                  ) : isMobile ? (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', padding: '16px', background: '#f8fafc' }}>
+                      {soldPhones.map(p => {
+                        let soldDate = 'Unbekannt';
+                        if (p.soldAt && p.soldAt.toDate) soldDate = p.soldAt.toDate().toLocaleDateString('de-DE');
+                        else if (p.updatedAt && p.updatedAt.toDate) soldDate = p.updatedAt.toDate().toLocaleDateString('de-DE');
+                        
+                        return (
+                        <div key={p.id} style={{ background: '#fff', borderRadius: '8px', border: '1px solid #e2e8f0', overflow: 'hidden', boxShadow: '0 2px 4px rgba(0,0,0,0.02)' }}>
+                          <div style={{ display: 'flex', gap: '16px', padding: '16px', borderBottom: '1px solid #f1f5f9' }}>
+                            <div style={{ width: '80px', height: '80px', borderRadius: '6px', background: '#f1f5f9', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', flexShrink: 0 }}>
+                                {p.imageUrls && p.imageUrls[0] ? <img src={p.imageUrls[0]} style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.7 }} /> : <Smartphone size={24} color="#94a3b8" />}
+                            </div>
+                            <div style={{ flex: 1 }}>
+                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                                  <div style={{ fontWeight: 600, color: '#0f172a', fontSize: '1.05rem', lineHeight: 1.2 }}>{p.brand} <br/>{p.model}</div>
+                                  <div style={{ fontWeight: 700, color: '#1d3a8f', fontSize: '1.1rem' }}>{formatEUR(p.price)}</div>
+                                </div>
+                                <div style={{ fontSize: '0.85rem', color: '#64748b', marginTop: '6px' }}>{p.storage} | {p.condition}</div>
+                                <div style={{ fontSize: '0.85rem', color: '#64748b', marginTop: '6px' }}>Verkauft: {soldDate}</div>
+                            </div>
+                          </div>
+                          <div style={{ padding: '12px 16px', background: '#f8fafc', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                              <span style={{ fontSize: '0.85rem', color: '#475569', fontWeight: 500 }}>Bilder:</span>
+                              {p.imagesCleaned ? (
+                                <span style={{ color: '#dc2626', fontSize: '0.75rem', fontWeight: 500, display: 'inline-flex', alignItems: 'center', background: '#fef2f2', border: '1px solid #fee2e2', padding: '2px 6px', borderRadius: '4px' }}>Gelöscht</span>
+                              ) : (
+                                <span style={{ color: '#16a34a', fontSize: '0.75rem', fontWeight: 500, display: 'inline-flex', alignItems: 'center', background: '#f0fdf4', border: '1px solid #dcfce3', padding: '2px 6px', borderRadius: '4px' }}>Gespeichert</span>
+                              )}
+                            </div>
+                            <div style={{ display: 'flex', gap: '8px', paddingTop: '8px', borderTop: '1px solid #e2e8f0' }}>
+                              <button onClick={() => handleReactivate(p.id)} style={{ flex: 1, padding: '8px', background: '#fff', border: '1px solid #cbd5e1', borderRadius: '4px', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '6px', fontSize: '0.85rem', color: '#0f172a' }}>
+                                <CornerUpLeft size={16} /> Reaktivieren
+                              </button>
+                              <button onClick={() => handleDeleteSold(p.id)} style={{ flex: 1, padding: '8px', background: '#fef2f2', border: '1px solid #fecaca', borderRadius: '4px', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '6px', fontSize: '0.85rem', color: '#dc2626' }}>
+                                <Trash2 size={16} /> Löschen
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                        );
+                      })}
+                    </div>
                   ) : (
                     <div style={{ overflowX: 'auto' }}>
-                      <table className="admin-table" style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', minWidth: '800px', fontSize: '0.9rem' }}>
+                      <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', minWidth: '800px', fontSize: '0.9rem' }}>
                         <thead>
                           <tr style={{ borderBottom: '1px solid #e2e8f0', color: '#64748b', textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '0.02em', fontWeight: 600, background: '#f8fafc' }}>
                             <th style={{ padding: '12px 20px' }}>Bild</th>
@@ -477,20 +576,20 @@ export default function AdminDashboard() {
 
                             return (
                               <tr key={p.id} style={{ borderBottom: '1px solid #f1f5f9' }} onMouseOver={e => e.currentTarget.style.background = '#f8fafc'} onMouseOut={e => e.currentTarget.style.background = 'transparent'}>
-                                <td data-label="Bild" style={{ padding: '12px 20px' }}>
+                                <td style={{ padding: '12px 20px' }}>
                                   {p.imageUrls && p.imageUrls[0] ? (
                                     <img src={p.imageUrls[0]} alt="thumb" style={{ width: '36px', height: '36px', objectFit: 'cover', borderRadius: '4px', opacity: 0.7 }} />
                                   ) : (
                                     <div style={{ width: '36px', height: '36px', background: '#f1f5f9', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', fontSize: '0.65rem' }}>N/A</div>
                                   )}
                                 </td>
-                                <td data-label="Gerät" style={{ padding: '12px 20px' }}>
+                                <td style={{ padding: '12px 20px' }}>
                                   <div style={{ fontWeight: 500, color: '#334155' }}>{p.brand} {p.model}</div>
                                   <div style={{ fontSize: '0.8rem', color: '#64748b', marginTop: '2px' }}>{p.storage} | {p.condition}</div>
                                 </td>
-                                <td data-label="Preis" style={{ padding: '12px 20px', fontWeight: 600, color: '#0f172a' }}>{formatEUR(p.price)}</td>
-                                <td data-label="Datum" style={{ padding: '12px 20px', color: '#64748b', fontSize: '0.85rem' }}>{soldDate}</td>
-                                <td data-label="Bild-Status" style={{ padding: '12px 20px' }}>
+                                <td style={{ padding: '12px 20px', fontWeight: 600, color: '#0f172a' }}>{formatEUR(p.price)}</td>
+                                <td style={{ padding: '12px 20px', color: '#64748b', fontSize: '0.85rem' }}>{soldDate}</td>
+                                <td style={{ padding: '12px 20px' }}>
                                   {p.imagesCleaned ? (
                                     <span style={{ color: '#dc2626', fontSize: '0.75rem', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', background: '#fef2f2', border: '1px solid #fee2e2', padding: '2px 6px', borderRadius: '4px' }}>Gelöscht</span>
                                   ) : (

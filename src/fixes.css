@@ -1,56 +1,5 @@
 /* Visual fixes to match original website exactly */
 
-/* Responsive Table for Admin Dashboard */
-@media (max-width: 768px) {
-  .admin-table {
-    display: block;
-    width: 100%;
-  }
-  .admin-table thead {
-    display: none;
-  }
-  .admin-table tbody, .admin-table tr, .admin-table td {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  .admin-table tr {
-    margin-bottom: 16px;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 12px;
-    background: #fff;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  }
-  .admin-table td {
-    border: none !important;
-    padding: 8px 0 !important;
-    text-align: right;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .admin-table td::before {
-    content: attr(data-label);
-    font-weight: 600;
-    color: #64748b;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    padding-right: 16px;
-    text-align: left;
-  }
-  .admin-table td:last-child {
-    justify-content: flex-end;
-    margin-top: 8px;
-    padding-top: 12px !important;
-    border-top: 1px dashed #e2e8f0 !important;
-  }
-  .admin-table td:last-child::before {
-    display: none;
-  }
-}
-
 /* Hero Heading (H1) - Match original exactly with 4rem */
 .fl-node-hy285rz7itlo.fl-module-heading .fl-heading {
   font-size: 4rem !important;

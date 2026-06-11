@@ -38,10 +38,25 @@ function UsedPhonesContent() {
   // Modal state
   const [selectedPhone, setSelectedPhone] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isZoomed, setIsZoomed] = useState(false);
 
   useEffect(() => {
     loadPhones();
   }, []);
+
+  // Preload images silently in background
+  useEffect(() => {
+    if (phones.length > 0) {
+      phones.forEach(p => {
+        if (p.imageUrls) {
+          p.imageUrls.forEach(url => {
+            const img = new Image();
+            img.src = url;
+          });
+        }
+      });
+    }
+  }, [phones]);
 
   const loadPhones = async () => {
     try {
@@ -58,11 +73,13 @@ function UsedPhonesContent() {
   const openModal = (phone) => {
     setSelectedPhone(phone);
     setCurrentImageIndex(0);
+    setIsZoomed(false);
     document.body.style.overflow = 'hidden';
   };
 
   const closeModal = () => {
     setSelectedPhone(null);
+    setIsZoomed(false);
     document.body.style.overflow = 'auto';
   };
 
@@ -83,13 +100,16 @@ function UsedPhonesContent() {
   // Close modal on Escape
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === 'Escape') closeModal();
+      if (e.key === 'Escape') {
+        if (isZoomed) setIsZoomed(false);
+        else closeModal();
+      }
       if (e.key === 'ArrowRight' && selectedPhone) nextImage(e);
       if (e.key === 'ArrowLeft' && selectedPhone) prevImage(e);
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [selectedPhone]);
+  }, [selectedPhone, isZoomed]);
 
   return (
     <div style={{ backgroundColor: '#fdfdfd', minHeight: '100vh', fontFamily: "'Inter', sans-serif", paddingBottom: '80px' }}>
@@ -269,7 +289,13 @@ function UsedPhonesContent() {
                 
                 {selectedPhone.imageUrls && Array.isArray(selectedPhone.imageUrls) && selectedPhone.imageUrls.length > 0 ? (
                   <>
-                    <img key={currentImageIndex} src={selectedPhone.imageUrls[currentImageIndex]} alt="Gerät" style={{ maxWidth: '100%', maxHeight: '60vh', objectFit: 'contain', animation: 'modalFadeIn 0.2s ease-out' }} />
+                    <img 
+                      key={currentImageIndex} 
+                      src={selectedPhone.imageUrls[currentImageIndex]} 
+                      alt="Gerät" 
+                      onClick={() => setIsZoomed(true)}
+                      style={{ maxWidth: '100%', maxHeight: '60vh', objectFit: 'contain', animation: 'modalFadeIn 0.2s ease-out', cursor: 'zoom-in' }} 
+                    />
                     
                     {selectedPhone.imageUrls.length > 1 && (
                       <>
@@ -286,6 +312,28 @@ function UsedPhonesContent() {
                           ))}
                         </div>
                       </>
+                    )}
+
+                    {/* FULLSCREEN ZOOM OVERLAY */}
+                    {isZoomed && (
+                      <div 
+                        onClick={(e) => { e.stopPropagation(); setIsZoomed(false); }}
+                        style={{
+                          position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh',
+                          background: 'rgba(0,0,0,0.95)', zIndex: 9999999, display: 'flex',
+                          alignItems: 'center', justifyContent: 'center', cursor: 'zoom-out'
+                        }}
+                      >
+                        <button style={{ position: 'absolute', top: '20px', right: '20px', background: 'transparent', border: 'none', color: '#fff', cursor: 'pointer', padding: '10px' }}>
+                           <X size={32} />
+                        </button>
+                        <img 
+                          src={selectedPhone.imageUrls[currentImageIndex]} 
+                          style={{ maxWidth: '95vw', maxHeight: '95vh', objectFit: 'contain' }}
+                          onClick={(e) => e.stopPropagation()} 
+                          alt="Zoomed"
+                        />
+                      </div>
                     )}
                   </>
                 ) : (

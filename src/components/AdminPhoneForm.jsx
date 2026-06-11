@@ -411,11 +411,12 @@ export default function AdminPhoneForm({ phone, onSuccess, onCancel }) {
       {/* STICKY BOTTOM ACTION BAR */}
       <div style={{
         position: 'absolute', bottom: 0, left: 0, right: 0, background: '#fff', borderTop: '1px solid #edf2f7', 
-        padding: '16px 30px', display: 'flex', justifyContent: 'flex-end', gap: '16px', borderRadius: '0 0 20px 20px',
-        boxShadow: '0 -4px 15px rgba(0,0,0,0.03)'
+        padding: '16px 20px', display: 'flex', justifyContent: 'flex-end', gap: '12px', borderRadius: '0 0 8px 8px',
+        boxShadow: '0 -4px 15px rgba(0,0,0,0.03)', flexWrap: 'wrap'
       }}>
         <button type="button" onClick={onCancel} style={{
-          background: '#edf2f7', color: '#45505f', padding: '14px 28px', borderRadius: '10px', border: 'none', 
+          flex: '1 1 auto', minWidth: '120px', textAlign: 'center',
+          background: '#edf2f7', color: '#45505f', padding: '14px 20px', borderRadius: '10px', border: 'none', 
           fontWeight: 600, fontSize: '1rem', cursor: 'pointer', transition: 'background 0.2s', fontFamily: "'Inter', sans-serif"
         }}
         onMouseOver={e => e.currentTarget.style.background = '#e2e8f0'}
@@ -423,7 +424,8 @@ export default function AdminPhoneForm({ phone, onSuccess, onCancel }) {
           Abbrechen
         </button>
         <button type="submit" form="phone-form" disabled={loading} style={{
-          background: '#1d3a8f', color: '#fff', padding: '14px 32px', borderRadius: '10px', border: 'none', 
+          flex: '2 1 auto', minWidth: '160px', justifyContent: 'center',
+          background: '#1d3a8f', color: '#fff', padding: '14px 20px', borderRadius: '10px', border: 'none', 
           fontWeight: 600, fontSize: '1rem', cursor: loading ? 'not-allowed' : 'pointer', transition: 'background 0.2s',
           display: 'flex', alignItems: 'center', gap: '8px', fontFamily: "'Inter', sans-serif"
         }}

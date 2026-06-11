@@ -183,7 +183,7 @@ function UsedPhonesContent() {
               </div>
 
               {/* IMAGE AREA */}
-              <div style={{ height: '260px', background: '#f9fafb', padding: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderBottom: '1px solid #f3f4f6' }}>
+              <div style={{ height: '280px', background: '#f9fafb', padding: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderBottom: '1px solid #f3f4f6' }}>
                 {phone.imageUrls && Array.isArray(phone.imageUrls) && phone.imageUrls.length > 0 ? (
                   <img src={phone.imageUrls[0]} alt={`${phone.brand} ${phone.model}`} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', filter: phone.status === 'reserved' ? 'grayscale(20%)' : 'none' }} />
                 ) : (
@@ -253,11 +253,23 @@ function UsedPhonesContent() {
             <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', height: '100%', overflowY: 'auto' }}>
               
               {/* Left: Image Gallery */}
-              <div style={{ flex: '1 1 50%', minWidth: '300px', background: '#f9fafb', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px', minHeight: '350px' }}>
+              <div 
+                onTouchStart={(e) => {
+                  window.modalTouchStartX = e.touches[0].clientX;
+                }}
+                onTouchEnd={(e) => {
+                  if (!window.modalTouchStartX) return;
+                  const distance = window.modalTouchStartX - e.changedTouches[0].clientX;
+                  if (distance > 50) nextImage(e);
+                  if (distance < -50) prevImage(e);
+                  window.modalTouchStartX = null;
+                }}
+                style={{ flex: '1 1 50%', minWidth: '300px', background: '#f9fafb', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px', minHeight: '350px' }}
+              >
                 
                 {selectedPhone.imageUrls && Array.isArray(selectedPhone.imageUrls) && selectedPhone.imageUrls.length > 0 ? (
                   <>
-                    <img src={selectedPhone.imageUrls[currentImageIndex]} alt="Gerät" style={{ maxWidth: '100%', maxHeight: '60vh', objectFit: 'contain' }} />
+                    <img key={currentImageIndex} src={selectedPhone.imageUrls[currentImageIndex]} alt="Gerät" style={{ maxWidth: '100%', maxHeight: '60vh', objectFit: 'contain', animation: 'modalFadeIn 0.2s ease-out' }} />
                     
                     {selectedPhone.imageUrls.length > 1 && (
                       <>
@@ -270,7 +282,7 @@ function UsedPhonesContent() {
                         
                         <div style={{ position: 'absolute', bottom: '20px', display: 'flex', gap: '6px' }}>
                           {selectedPhone.imageUrls.map((_, idx) => (
-                            <div key={idx} style={{ width: '8px', height: '8px', borderRadius: '50%', background: idx === currentImageIndex ? '#111827' : '#d1d5db' }} />
+                            <div key={idx} style={{ width: '8px', height: '8px', borderRadius: '50%', background: idx === currentImageIndex ? '#111827' : '#d1d5db', transition: 'background 0.3s' }} />
                           ))}
                         </div>
                       </>

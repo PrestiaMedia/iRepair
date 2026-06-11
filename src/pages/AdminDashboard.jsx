@@ -271,7 +271,7 @@ export default function AdminDashboard() {
                     <div style={{ padding: '40px', textAlign: 'center', color: '#64748b', fontSize: '0.9rem' }}>Keine aktiven Geräte vorhanden.</div>
                   ) : (
                     <div style={{ overflowX: 'auto' }}>
-                      <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', minWidth: '800px', fontSize: '0.9rem' }}>
+                      <table className="admin-table" style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', minWidth: '800px', fontSize: '0.9rem' }}>
                         <thead>
                           <tr style={{ borderBottom: '1px solid #e2e8f0', color: '#64748b', textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '0.02em', fontWeight: 600, background: '#f8fafc' }}>
                             <th style={{ padding: '12px 20px' }}>Bild</th>
@@ -285,18 +285,17 @@ export default function AdminDashboard() {
                         <tbody>
                           {inventoryPhones.map(p => (
                             <tr key={p.id} style={{ borderBottom: '1px solid #f1f5f9' }} onMouseOver={e => e.currentTarget.style.background = '#f8fafc'} onMouseOut={e => e.currentTarget.style.background = 'transparent'}>
-                              <td style={{ padding: '12px 20px' }}>
+                              <td data-label="Bild" style={{ padding: '12px 20px' }}>
                                 {p.imageUrls && p.imageUrls[0] ? (
                                   <img src={p.imageUrls[0]} alt="thumb" style={{ width: '40px', height: '40px', objectFit: 'cover', borderRadius: '4px', border: '1px solid #e2e8f0' }} />
                                 ) : (
                                   <div style={{ width: '40px', height: '40px', background: '#f1f5f9', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', fontSize: '0.7rem' }}>N/A</div>
                                 )}
                               </td>
-                              <td style={{ padding: '12px 20px' }}>
+                              <td data-label="Gerät" style={{ padding: '12px 20px' }}>
                                 <div style={{ fontWeight: 600, color: '#0f172a' }}>{p.brand} {p.model}</div>
                                 <div style={{ fontSize: '0.8rem', color: '#64748b', marginTop: '2px' }}>{p.storage} | {p.condition}</div>
                               </td>
-                              <td style={{ padding: '12px 20px', fontWeight: 600, color: '#0f172a' }}>{formatEUR(p.price)}</td>
                               <td style={{ padding: '12px 20px' }}>
                                 <select 
                                   value={p.status} 
@@ -366,7 +365,7 @@ export default function AdminDashboard() {
 
                 {/* CHARTS */}
                 {soldPhones.length > 0 ? (
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '16px', marginBottom: '24px' }} key={`charts-${activeTab}`}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px', marginBottom: '24px' }} key={`charts-${activeTab}`}>
                     
                     {/* Revenue Line/Bar Chart (Custom CSS) */}
                     <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #e2e8f0', minWidth: 0 }}>
@@ -459,7 +458,7 @@ export default function AdminDashboard() {
                     <div style={{ padding: '40px', textAlign: 'center', color: '#64748b', fontSize: '0.9rem' }}>Bisher keine Verkäufe.</div>
                   ) : (
                     <div style={{ overflowX: 'auto' }}>
-                      <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', minWidth: '800px', fontSize: '0.9rem' }}>
+                      <table className="admin-table" style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', minWidth: '800px', fontSize: '0.9rem' }}>
                         <thead>
                           <tr style={{ borderBottom: '1px solid #e2e8f0', color: '#64748b', textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '0.02em', fontWeight: 600, background: '#f8fafc' }}>
                             <th style={{ padding: '12px 20px' }}>Bild</th>
@@ -478,20 +477,20 @@ export default function AdminDashboard() {
 
                             return (
                               <tr key={p.id} style={{ borderBottom: '1px solid #f1f5f9' }} onMouseOver={e => e.currentTarget.style.background = '#f8fafc'} onMouseOut={e => e.currentTarget.style.background = 'transparent'}>
-                                <td style={{ padding: '12px 20px' }}>
+                                <td data-label="Bild" style={{ padding: '12px 20px' }}>
                                   {p.imageUrls && p.imageUrls[0] ? (
                                     <img src={p.imageUrls[0]} alt="thumb" style={{ width: '36px', height: '36px', objectFit: 'cover', borderRadius: '4px', opacity: 0.7 }} />
                                   ) : (
                                     <div style={{ width: '36px', height: '36px', background: '#f1f5f9', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', fontSize: '0.65rem' }}>N/A</div>
                                   )}
                                 </td>
-                                <td style={{ padding: '12px 20px' }}>
+                                <td data-label="Gerät" style={{ padding: '12px 20px' }}>
                                   <div style={{ fontWeight: 500, color: '#334155' }}>{p.brand} {p.model}</div>
                                   <div style={{ fontSize: '0.8rem', color: '#64748b', marginTop: '2px' }}>{p.storage} | {p.condition}</div>
                                 </td>
-                                <td style={{ padding: '12px 20px', fontWeight: 600, color: '#0f172a' }}>{formatEUR(p.price)}</td>
-                                <td style={{ padding: '12px 20px', color: '#64748b', fontSize: '0.85rem' }}>{soldDate}</td>
-                                <td style={{ padding: '12px 20px' }}>
+                                <td data-label="Preis" style={{ padding: '12px 20px', fontWeight: 600, color: '#0f172a' }}>{formatEUR(p.price)}</td>
+                                <td data-label="Datum" style={{ padding: '12px 20px', color: '#64748b', fontSize: '0.85rem' }}>{soldDate}</td>
+                                <td data-label="Bild-Status" style={{ padding: '12px 20px' }}>
                                   {p.imagesCleaned ? (
                                     <span style={{ color: '#dc2626', fontSize: '0.75rem', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', background: '#fef2f2', border: '1px solid #fee2e2', padding: '2px 6px', borderRadius: '4px' }}>Gelöscht</span>
                                   ) : (

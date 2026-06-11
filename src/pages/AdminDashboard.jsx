@@ -351,6 +351,9 @@ export default function AdminDashboard() {
                                 <div style={{ fontWeight: 600, color: '#0f172a' }}>{p.brand} {p.model}</div>
                                 <div style={{ fontSize: '0.8rem', color: '#64748b', marginTop: '2px' }}>{p.storage} | {p.condition}</div>
                               </td>
+                              <td style={{ padding: '12px 20px', fontWeight: 600, color: '#1d3a8f' }}>
+                                {formatEUR(p.price)}
+                              </td>
                               <td style={{ padding: '12px 20px' }}>
                                 <select 
                                   value={p.status} 

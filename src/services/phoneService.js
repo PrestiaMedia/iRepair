@@ -101,7 +101,7 @@ export async function cleanupOldSoldImages() {
   const snapshot = await getDocs(q);
   
   const now = new Date();
-  const FOURTEEN_DAYS_MS = 14 * 24 * 60 * 60 * 1000;
+  const FOURTEEN_DAYS_MS = 0; // Temporarily 0 for testing!
   
   let deletedCount = 0;
 

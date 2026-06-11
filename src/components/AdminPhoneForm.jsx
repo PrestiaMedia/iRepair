@@ -102,8 +102,12 @@ export default function AdminPhoneForm({ phone, onSuccess, onCancel }) {
       newMeta.splice(index, 1);
 
       if (metaToRemove?.path) {
-        const imageRef = ref(storage, metaToRemove.path);
-        await deleteObject(imageRef);
+        try {
+          const imageRef = ref(storage, metaToRemove.path);
+          await deleteObject(imageRef);
+        } catch (storageErr) {
+          console.warn("Konnte Bild nicht aus Storage löschen (vielleicht schon weg oder fehlende Rechte), entferne es trotzdem aus der Datenbank.", storageErr);
+        }
       }
 
       if (phone?.id) {
@@ -113,7 +117,7 @@ export default function AdminPhoneForm({ phone, onSuccess, onCancel }) {
       setFormData(prev => ({ ...prev, imageUrls: newUrls, imageMeta: newMeta }));
     } catch (err) {
       console.error(err);
-      setError('Fehler beim Löschen des Bildes.');
+      setError('Fehler beim Aktualisieren der Datenbank.');
     } finally {
       setLoading(false);
     }

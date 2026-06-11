@@ -4,7 +4,6 @@ import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth } from '../lib/firebase';
 import { getAllPhonesForAdmin, deletePhone, markPhoneActive, markPhoneSold, markPhoneReserved, publishPhone, unpublishPhone, cleanupOldSoldImages, reactivatePhone } from '../services/phoneService';
 import AdminPhoneForm from '../components/AdminPhoneForm';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, LineChart, Line } from 'recharts';
 import { Package, CheckCircle, Clock, Trash2, Edit, AlertTriangle, RefreshCcw, Smartphone, Euro, TrendingUp, BarChart2, CornerUpLeft } from 'lucide-react';
 
 
@@ -369,31 +368,53 @@ export default function AdminDashboard() {
                 {soldPhones.length > 0 ? (
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '16px', marginBottom: '24px' }} key={`charts-${activeTab}`}>
                     
-                    {/* Revenue Line Chart */}
+                    {/* Revenue Line/Bar Chart (Custom CSS) */}
                     <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #e2e8f0', minWidth: 0 }}>
                       <h4 style={{ margin: '0 0 16px 0', color: '#1e293b', fontSize: '1rem', fontWeight: 600 }}>Monatlicher Umsatz</h4>
-                      <div style={{ height: '280px', width: '100%', minWidth: '300px', overflowX: 'auto', overflowY: 'hidden' }}>
-                        <BarChart width={Math.max(300, chartWidth)} height={280} data={analytics.monthlyChartData} margin={{ left: 0, right: 20 }}>
-                          <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-                          <XAxis dataKey="month" axisLine={false} tickLine={false} tick={{fill: '#64748b', fontSize: 12, fontFamily: "'Inter', sans-serif"}} dy={10} />
-                          <YAxis axisLine={false} tickLine={false} tick={{fill: '#64748b', fontSize: 12, fontFamily: "'Inter', sans-serif"}} tickFormatter={(val) => `${val}€`} dx={-10} />
-                          <Tooltip formatter={(value) => [`${value} €`, 'Umsatz']} cursor={{ fill: '#f8fafc' }} contentStyle={{borderRadius: '4px', border: '1px solid #cbd5e1', boxShadow: '0 2px 4px rgba(0,0,0,0.05)', fontFamily: "'Inter', sans-serif", fontSize: '0.85rem'}} />
-                          <Bar dataKey="revenue" fill="#1d3a8f" radius={[2, 2, 0, 0]} maxBarSize={40} />
-                        </BarChart>
+                      <div style={{ height: '280px', width: '100%', position: 'relative', display: 'flex', alignItems: 'flex-end', gap: '12px', paddingBottom: '30px', paddingTop: '20px', overflowX: 'auto' }}>
+                        {/* Y-Axis labels approx */}
+                        <div style={{ position: 'absolute', left: 0, top: 0, bottom: '30px', width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderBottom: '1px solid #cbd5e1', zIndex: 0 }}>
+                           <div style={{ borderTop: '1px dashed #e2e8f0', flex: 1 }}></div>
+                           <div style={{ borderTop: '1px dashed #e2e8f0', flex: 1 }}></div>
+                           <div style={{ borderTop: '1px dashed #e2e8f0', flex: 1 }}></div>
+                           <div style={{ borderTop: '1px dashed #e2e8f0', flex: 1 }}></div>
+                        </div>
+                        
+                        {analytics.monthlyChartData.map((data, i) => {
+                          const maxRev = Math.max(...analytics.monthlyChartData.map(d => d.revenue), 1);
+                          const heightPct = (data.revenue / maxRev) * 100;
+                          return (
+                            <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1, minWidth: '40px', zIndex: 1 }}>
+                              <div style={{ color: '#0f172a', fontSize: '0.75rem', fontWeight: 600, marginBottom: '6px' }}>{formatEUR(data.revenue)}</div>
+                              <div style={{ width: '100%', maxWidth: '40px', height: `${heightPct}%`, minHeight: '4px', background: '#1d3a8f', borderRadius: '4px 4px 0 0', transition: 'height 0.3s ease' }}></div>
+                              <div style={{ position: 'absolute', bottom: '5px', fontSize: '0.75rem', color: '#64748b' }}>{data.month.substring(5)}/{data.month.substring(2,4)}</div>
+                            </div>
+                          );
+                        })}
                       </div>
                     </div>
 
-                    {/* Brand Bar Chart */}
+                    {/* Brand Bar Chart (Custom CSS) */}
                     <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #e2e8f0', minWidth: 0 }}>
                       <h4 style={{ margin: '0 0 16px 0', color: '#1e293b', fontSize: '1rem', fontWeight: 600 }}>Verkäufe nach Marke</h4>
-                      <div style={{ height: '280px', width: '100%', minWidth: '300px', overflowX: 'auto', overflowY: 'hidden' }}>
-                        <BarChart width={Math.max(300, chartWidth)} height={280} data={analytics.brandChartData} layout="vertical" margin={{ left: 30, right: 20 }}>
-                          <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="#f1f5f9" />
-                          <XAxis type="number" axisLine={false} tickLine={false} tick={{fill: '#64748b', fontSize: 12, fontFamily: "'Inter', sans-serif"}} />
-                          <YAxis dataKey="brand" type="category" axisLine={false} tickLine={false} tick={{fill: '#0f172a', fontSize: 12, fontWeight: 500, fontFamily: "'Inter', sans-serif"}} dx={-10} />
-                          <Tooltip formatter={(value) => [value, 'Geräte']} cursor={{fill: '#f8fafc'}} contentStyle={{borderRadius: '4px', border: '1px solid #cbd5e1', boxShadow: '0 2px 4px rgba(0,0,0,0.05)', fontFamily: "'Inter', sans-serif", fontSize: '0.85rem'}} />
-                          <Bar dataKey="count" fill="#1d3a8f" radius={[0, 2, 2, 0]} barSize={16} />
-                        </BarChart>
+                      <div style={{ height: '280px', width: '100%', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '16px', paddingRight: '10px' }}>
+                        {analytics.brandChartData.map((data, i) => {
+                          const maxCount = Math.max(...analytics.brandChartData.map(d => d.count), 1);
+                          const widthPct = (data.count / maxCount) * 100;
+                          return (
+                            <div key={i} style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
+                              <div style={{ width: '80px', fontSize: '0.85rem', fontWeight: 500, color: '#0f172a', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                                {data.brand}
+                              </div>
+                              <div style={{ flex: 1, height: '24px', background: '#f1f5f9', borderRadius: '4px', position: 'relative', overflow: 'hidden' }}>
+                                <div style={{ width: `${widthPct}%`, height: '100%', background: '#1d3a8f', borderRadius: '4px', transition: 'width 0.3s ease' }}></div>
+                                <div style={{ position: 'absolute', right: '8px', top: '50%', transform: 'translateY(-50%)', fontSize: '0.75rem', fontWeight: 600, color: widthPct > 15 ? '#fff' : '#0f172a', zIndex: 1 }}>
+                                  {data.count}
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })}
                       </div>
                     </div>
 

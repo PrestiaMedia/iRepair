@@ -1,23 +1,33 @@
 import puppeteer from 'puppeteer';
 
 (async () => {
-  console.log("Starting puppeteer...");
-  const browser = await puppeteer.launch({ headless: 'new' });
+  console.log('Starting puppeteer...');
+  const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
-  
-  page.on('console', msg => console.log('BROWSER CONSOLE:', msg.text()));
-  page.on('pageerror', err => console.log('BROWSER ERROR:', err.message));
 
-  console.log("Navigating to localhost:4173/gebrauchte-handys ...");
+  page.on('pageerror', error => {
+    console.log('BROWSER ERROR:', error.message);
+    console.log('STACK:', error.stack);
+  });
+
+  page.on('console', msg => {
+    if (msg.type() === 'error' || msg.type() === 'warning' || msg.text().includes('Analytics')) {
+      console.log('BROWSER CONSOLE:', msg.text());
+    }
+  });
+
   try {
-    await page.goto('http://localhost:4173/gebrauchte-handys', { waitUntil: 'networkidle0', timeout: 10000 });
-    // Wait a bit
-    await new Promise(r => setTimeout(r, 2000));
-    console.log("Done checking public page.");
-  } catch (e) {
-    console.log("Navigation timeout or error:", e.message);
+    console.log('Navigating to http://localhost:4173/ ...');
+    await page.goto('http://localhost:4173/', { waitUntil: 'networkidle0', timeout: 15000 });
+    console.log('Done checking public page.');
+
+    console.log('Navigating to http://localhost:4173/admin ...');
+    await page.goto('http://localhost:4173/admin', { waitUntil: 'networkidle0', timeout: 15000 });
+    console.log('Done checking admin page.');
+  } catch (err) {
+    console.error('Navigation timeout or error:', err.message);
   }
-  
-  console.log("Closing...");
+
+  console.log('Closing...');
   await browser.close();
 })();

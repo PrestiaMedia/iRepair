@@ -1,39 +1,41 @@
 import puppeteer from 'puppeteer';
-import { spawn } from 'child_process';
+import fs from 'fs';
 
-const URL = 'http://localhost:4173';
-const OUTPUT_FILE = 'mobile_view.png';
-
-async function takeScreenshot() {
-  console.log('Starting preview server...');
-  const server = spawn('npm', ['run', 'preview'], { shell: true });
-
-  server.stdout.on('data', (data) => console.log(`Server: ${data}`));
-  server.stderr.on('data', (data) => console.error(`Server Error: ${data}`));
-
-  // Wait a bit for server to start
-  await new Promise(resolve => setTimeout(resolve, 3000));
-
-  console.log('Launching Puppeteer...');
+(async () => {
+  console.log("Starting puppeteer...");
   const browser = await puppeteer.launch({ headless: 'new' });
   const page = await browser.newPage();
+  await page.setViewport({ width: 1280, height: 800 });
+
+  page.on('console', msg => console.log('BROWSER CONSOLE:', msg.text()));
+  page.on('pageerror', err => console.log('BROWSER ERROR:', err.message));
+
+  console.log("Navigating to https://irepair-a2x.pages.dev/ ...");
+  try {
+    await page.goto('https://irepair-a2x.pages.dev/', { waitUntil: 'networkidle2', timeout: 15000 });
+    await page.screenshot({ path: 'screenshot_home.png' });
+    console.log("Screenshot saved as screenshot_home.png");
+  } catch (e) {
+    console.log("Navigation timeout or error:", e.message);
+  }
   
-  // Emulate mobile
-  const iPhone = puppeteer.KnownDevices['iPhone 13'];
-  await page.emulate(iPhone);
+  console.log("Navigating to https://irepair-a2x.pages.dev/admin ...");
+  try {
+    await page.goto('https://irepair-a2x.pages.dev/admin', { waitUntil: 'networkidle2', timeout: 15000 });
+    await page.screenshot({ path: 'screenshot_admin.png' });
+    console.log("Screenshot saved as screenshot_admin.png");
+  } catch (e) {
+    console.log("Navigation timeout or error:", e.message);
+  }
 
-  console.log(`Navigating to ${URL}...`);
-  await page.goto(URL, { waitUntil: 'networkidle2' });
-
-  console.log('Taking full page screenshot...');
-  await page.screenshot({ path: OUTPUT_FILE, fullPage: true });
-
-  console.log('Screenshot saved to ' + OUTPUT_FILE);
+  console.log("Navigating to https://irepair-a2x.pages.dev/gebrauchte-handys ...");
+  try {
+    await page.goto('https://irepair-a2x.pages.dev/gebrauchte-handys', { waitUntil: 'networkidle2', timeout: 15000 });
+    await page.screenshot({ path: 'screenshot_used.png' });
+    console.log("Screenshot saved as screenshot_used.png");
+  } catch (e) {
+    console.log("Navigation timeout or error:", e.message);
+  }
+  
   await browser.close();
-
-  // Kill server
-  server.kill();
-  process.exit(0);
-}
-
-takeScreenshot().catch(console.error);
+})();

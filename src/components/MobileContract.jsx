@@ -21,13 +21,51 @@ const MobileContract = () => {
 </div>
 	</div>
 </div>
-<div className="fl-module fl-module-photo fl-node-gliu61cq5f2h" data-node="gliu61cq5f2h">
+<div className="fl-module fl-node-gliu61cq5f2h" data-node="gliu61cq5f2h">
 	<div className="fl-module-content fl-node-content">
-		<div className="fl-photo fl-photo-align-center" itemScope="" itemType="https://schema.org/ImageObject">
-	<div className="fl-photo-content fl-photo-img-png">
-				<img decoding="async" className="fl-photo-img wp-image-9775 size-full" src="/images/handyvertrag-abschliessen.png" alt="handyvertrag-abschließen" itemProp="image" height="219" width="740" title="handyvertrag-abschließen" srcSet="/images/handyvertrag-abschliessen.png 740w, /images/handyvertrag-abschliessen-300x89.png 300w" sizes="(max-width: 740px) 100vw, 740px" />
-					</div>
-	</div>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '80px', margin: '40px 0', flexWrap: 'wrap' }}>
+      
+      {/* 1&1 Logo */}
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#0c2283',
+        color: 'white',
+        fontWeight: '900',
+        fontFamily: 'Arial, Helvetica, sans-serif',
+        fontSize: '64px',
+        width: '140px',
+        height: '140px',
+        letterSpacing: '-4px'
+      }}>
+        1&amp;1
+      </div>
+
+      {/* Lyca Mobile Logo */}
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', fontFamily: "'Trebuchet MS', Arial, sans-serif" }}>
+        <div style={{ display: 'flex', alignItems: 'flex-end', gap: '8px' }}>
+          <span style={{ 
+            color: '#26225e', 
+            fontWeight: '800', 
+            fontSize: '75px',
+            lineHeight: '0.8',
+            letterSpacing: '-2px'
+          }}>Lyca</span>
+          <svg width="45" height="45" viewBox="0 0 24 24" fill="#7fcb88" style={{ marginBottom: '10px' }}>
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        </div>
+        <span style={{ 
+          color: '#26225e', 
+          fontWeight: '600', 
+          fontSize: '28px',
+          letterSpacing: '0px',
+          marginTop: '6px'
+        }}>Mobile</span>
+      </div>
+
+    </div>
 	</div>
 </div>
 </div>

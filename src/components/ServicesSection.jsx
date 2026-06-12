@@ -169,7 +169,7 @@ const ServicesSection = () => {
   padding: '40px',
   borderRadius: '8px',
   width: 'calc(100% - 40px)',
-  maxWidth: '1000px',
+  maxWidth: '1200px',
   margin: '40px auto',
   boxSizing: 'border-box',
   boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
@@ -202,7 +202,7 @@ const ServicesSection = () => {
   </div>
 </div>
 
-<div className="custom-services-grid" style={{ maxWidth: '1000px', margin: '40px auto 30px auto', padding: '0 20px', fontFamily: 'sans-serif' }}>
+<div className="custom-services-grid" style={{ maxWidth: '1200px', margin: '40px auto 30px auto', padding: '0 20px', fontFamily: 'sans-serif' }}>
   <div style={{ textAlign: 'center', marginBottom: '40px' }}>
     <h3 style={{ fontSize: '28px', color: '#1a1a1a', marginBottom: '15px', fontWeight: 'bold' }}>
       Reparatur für fast jedes Gerät

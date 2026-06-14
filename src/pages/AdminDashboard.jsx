@@ -38,6 +38,7 @@ export default function AdminDashboard() {
 
   const [activeTab, setActiveTab] = useState('inventory'); // 'inventory' | 'sales'
   const [cleaning, setCleaning] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
   
   const navigate = useNavigate();
 
@@ -108,8 +109,18 @@ export default function AdminDashboard() {
   };
 
   // --- DERIVED DATA ---
-  const inventoryPhones = phones.filter(p => p.status !== 'sold');
+  let inventoryPhones = phones.filter(p => p.status !== 'sold');
   const soldPhones = phones.filter(p => p.status === 'sold');
+
+  if (searchTerm.trim() !== '') {
+    const lowerTerm = searchTerm.toLowerCase();
+    inventoryPhones = inventoryPhones.filter(p => {
+       const idStr = p.id ? p.id.substring(0,6).toLowerCase() : '';
+       const brandStr = p.brand ? p.brand.toLowerCase() : '';
+       const modelStr = p.model ? p.model.toLowerCase() : '';
+       return idStr.includes(lowerTerm) || brandStr.includes(lowerTerm) || modelStr.includes(lowerTerm) || `id-${idStr}`.includes(lowerTerm);
+    });
+  }
 
   const totalPhones = inventoryPhones.length;
   const availablePhones = inventoryPhones.filter(p => p.status === 'active').length;
@@ -260,13 +271,22 @@ export default function AdminDashboard() {
 
                 {/* DEVICE LISTING */}
                 <div style={{ background: '#fff', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', borderBottom: '1px solid #e2e8f0' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', borderBottom: '1px solid #e2e8f0', flexWrap: 'wrap', gap: '16px' }}>
                     <h3 style={{ margin: 0, color: '#1e293b', fontSize: '1.1rem', fontWeight: 600 }}>Inventar-Liste</h3>
-                    <button onClick={() => { setEditingPhone(null); setShowForm(true); }} style={{ padding: '8px 16px', background: '#1d3a8f', color: '#fff', border: 'none', borderRadius: '6px', fontWeight: 500, fontSize: '0.9rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px', transition: 'background 0.15s' }}
-                      onMouseOver={e => e.currentTarget.style.background = '#152b6b'}
-                      onMouseOut={e => e.currentTarget.style.background = '#1d3a8f'}>
-                      + Neues Gerät
-                    </button>
+                    <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
+                      <input 
+                        type="text"
+                        placeholder="Suchen (ID, Marke...)"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        style={{ padding: '8px 12px', border: '1px solid #cbd5e1', borderRadius: '6px', fontSize: '0.9rem', width: '200px' }}
+                      />
+                      <button onClick={() => { setEditingPhone(null); setShowForm(true); }} style={{ padding: '8px 16px', background: '#1d3a8f', color: '#fff', border: 'none', borderRadius: '6px', fontWeight: 500, fontSize: '0.9rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px', transition: 'background 0.15s' }}
+                        onMouseOver={e => e.currentTarget.style.background = '#152b6b'}
+                        onMouseOut={e => e.currentTarget.style.background = '#1d3a8f'}>
+                        + Neues Gerät
+                      </button>
+                    </div>
                   </div>
 
                   {loadingPhones ? (
@@ -286,7 +306,7 @@ export default function AdminDashboard() {
                                 <div style={{ fontWeight: 600, color: '#0f172a', fontSize: '1.05rem', lineHeight: 1.2 }}>{p.brand} <br/>{p.model}</div>
                                 <div style={{ fontWeight: 700, color: '#1d3a8f', fontSize: '1.1rem' }}>{formatEUR(p.price)}</div>
                               </div>
-                              <div style={{ fontSize: '0.85rem', color: '#64748b', marginTop: '6px' }}>{p.storage} | {p.condition}</div>
+                              <div style={{ fontSize: '0.85rem', color: '#64748b', marginTop: '6px' }}>ID-{p.id.substring(0,6).toUpperCase()} | {p.storage} | {p.condition}</div>
                             </div>
                           </div>
                           <div style={{ padding: '12px 16px', background: '#f8fafc', display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -349,7 +369,7 @@ export default function AdminDashboard() {
                               </td>
                               <td style={{ padding: '12px 20px' }}>
                                 <div style={{ fontWeight: 600, color: '#0f172a' }}>{p.brand} {p.model}</div>
-                                <div style={{ fontSize: '0.8rem', color: '#64748b', marginTop: '2px' }}>{p.storage} | {p.condition}</div>
+                                <div style={{ fontSize: '0.8rem', color: '#64748b', marginTop: '2px' }}>ID-{p.id.substring(0,6).toUpperCase()} | {p.storage} | {p.condition}</div>
                               </td>
                               <td style={{ padding: '12px 20px', fontWeight: 600, color: '#1d3a8f' }}>
                                 {formatEUR(p.price)}

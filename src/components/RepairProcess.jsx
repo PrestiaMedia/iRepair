@@ -176,7 +176,7 @@ const RepairProcess = () => {
 	<div className="fl-module-content fl-node-content">
 		
 <div className="uabb-module-content uabb-button-wrap uabb-creative-button-wrap uabb-button-width-auto uabb-creative-button-width-auto uabb-button-center uabb-creative-button-center uabb-button-reponsive-center uabb-creative-button-reponsive-center">
-			<a href="/kontakt" title="Hier klicken" target="_self" className="uabb-button ast-button uabb-creative-button uabb-creative-default-btn   " role="button" aria-label="Jetzt Kontakt aufnehmen">
+			<a href="#preisanfrage" title="Hier klicken" target="_self" className="uabb-button ast-button uabb-creative-button uabb-creative-default-btn   " role="button" aria-label="Jetzt Kontakt aufnehmen">
 							<span className="uabb-button-text uabb-creative-button-text">Jetzt Kontakt aufnehmen</span>
 							
 						

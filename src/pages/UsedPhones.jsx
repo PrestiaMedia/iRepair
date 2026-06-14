@@ -39,6 +39,10 @@ function UsedPhonesContent() {
   const [selectedPhone, setSelectedPhone] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isZoomed, setIsZoomed] = useState(false);
+  const [isContactFormVisible, setIsContactFormVisible] = useState(false);
+  const [contactForm, setContactForm] = useState({ name: '', email: '', phone: '', message: '' });
+  const [contactStatus, setContactStatus] = useState('idle');
+  const [contactError, setContactError] = useState('');
 
   useEffect(() => {
     loadPhones();
@@ -74,13 +78,57 @@ function UsedPhonesContent() {
     setSelectedPhone(phone);
     setCurrentImageIndex(0);
     setIsZoomed(false);
+    setIsContactFormVisible(false);
+    setContactStatus('idle');
+    setContactForm({ name: '', email: '', phone: '', message: '' });
     document.body.style.overflow = 'hidden';
   };
 
   const closeModal = () => {
     setSelectedPhone(null);
     setIsZoomed(false);
+    setIsContactFormVisible(false);
     document.body.style.overflow = 'auto';
+  };
+
+  const handleContactSubmit = async (e) => {
+    e.preventDefault();
+    if (!contactForm.name || !contactForm.email || !contactForm.phone) {
+      setContactError('Bitte fülle alle markierten Pflichtfelder aus.');
+      return;
+    }
+    setContactStatus('loading');
+    setContactError('');
+
+    const shortId = selectedPhone.id.substring(0, 6).toUpperCase();
+    const payload = {
+      source: 'Gebrauchtes Handy Anfrage',
+      deviceId: `ID-${shortId}`,
+      brand: selectedPhone.brand,
+      model: selectedPhone.model,
+      price: selectedPhone.price,
+      condition: selectedPhone.condition,
+      storage: selectedPhone.storage,
+      name: contactForm.name,
+      email: contactForm.email,
+      phone: contactForm.phone,
+      message: contactForm.message,
+      timestamp: new Date().toISOString()
+    };
+
+    try {
+      const response = await fetch('https://n8n.srv1155101.hstgr.cloud/webhook/kontakt', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (!response.ok) throw new Error('Network error');
+      setContactStatus('success');
+    } catch (err) {
+      console.error(err);
+      setContactStatus('error');
+      setContactError('Es gab ein Problem beim Senden. Bitte versuche es später noch einmal.');
+    }
   };
 
   const nextImage = (e) => {
@@ -180,8 +228,15 @@ function UsedPhonesContent() {
               onMouseLeave={e => { e.currentTarget.style.borderColor = '#e5e7eb'; }}
             >
               
-              {/* STATUS BADGE - RESTRAINED, NO GLOW */}
+              {/* DEVICE ID - TOP LEFT */}
               <div style={{ position: 'absolute', top: '16px', left: '16px', zIndex: 10 }}>
+                 <span style={{ background: '#f3f4f6', color: '#6b7280', padding: '4px 8px', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 600, border: '1px solid #e5e7eb' }}>
+                   ID-{phone.id.substring(0, 6).toUpperCase()}
+                 </span>
+              </div>
+
+              {/* STATUS BADGE - RESTRAINED, NO GLOW */}
+              <div style={{ position: 'absolute', top: '16px', right: '16px', zIndex: 10 }}>
                 {phone.status === 'active' && (
                   <span style={{ 
                     background: '#fff', color: '#15803d', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 600, 
@@ -344,65 +399,164 @@ function UsedPhonesContent() {
                 )}
               </div>
 
-              {/* Right: Details */}
+              {/* Right: Details / Form */}
               <div style={{ flex: '1 1 50%', minWidth: '300px', padding: '40px', display: 'flex', flexDirection: 'column', background: '#fff' }}>
-                <div style={{ marginBottom: '24px' }}>
-                  {selectedPhone.status === 'active' && (
-                    <span style={{ background: '#fff', color: '#15803d', padding: '4px 10px', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '6px', marginBottom: '16px', border: '1px solid #16a34a' }}>
-                      <span style={{ width: '6px', height: '6px', background: '#16a34a', borderRadius: '50%' }}></span>
-                      Verfügbar
-                    </span>
-                  )}
-                  {selectedPhone.status === 'reserved' && (
-                    <span style={{ background: '#fff', color: '#b45309', padding: '4px 10px', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '6px', marginBottom: '16px', border: '1px solid #d97706' }}>
-                      <span style={{ width: '6px', height: '6px', background: '#d97706', borderRadius: '50%' }}></span>
-                      Reserviert
-                    </span>
-                  )}
-                  
-                  <p style={{ margin: '0 0 4px 0', color: '#6b7280', fontSize: '0.95rem' }}>{selectedPhone.brand}</p>
-                  <h2 style={{ margin: 0, fontSize: '1.8rem', color: '#111827', fontWeight: 700, lineHeight: 1.2 }}>{selectedPhone.model}</h2>
-                  
-                  <div style={{ fontSize: '2rem', fontWeight: 700, color: '#111827', margin: '20px 0 0 0' }}>
-                    {new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(selectedPhone.price)}
-                  </div>
-                </div>
+                {!isContactFormVisible ? (
+                  <>
+                    <div style={{ marginBottom: '24px' }}>
+                      {selectedPhone.status === 'active' && (
+                        <span style={{ background: '#fff', color: '#15803d', padding: '4px 10px', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '6px', marginBottom: '16px', border: '1px solid #16a34a' }}>
+                          <span style={{ width: '6px', height: '6px', background: '#16a34a', borderRadius: '50%' }}></span>
+                          Verfügbar
+                        </span>
+                      )}
+                      {selectedPhone.status === 'reserved' && (
+                        <span style={{ background: '#fff', color: '#b45309', padding: '4px 10px', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '6px', marginBottom: '16px', border: '1px solid #d97706' }}>
+                          <span style={{ width: '6px', height: '6px', background: '#d97706', borderRadius: '50%' }}></span>
+                          Reserviert
+                        </span>
+                      )}
+                      
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                        <div>
+                          <p style={{ margin: '0 0 4px 0', color: '#6b7280', fontSize: '0.95rem' }}>{selectedPhone.brand}</p>
+                          <h2 style={{ margin: 0, fontSize: '1.8rem', color: '#111827', fontWeight: 700, lineHeight: 1.2 }}>{selectedPhone.model}</h2>
+                        </div>
+                        <span style={{ background: '#f3f4f6', color: '#6b7280', padding: '4px 8px', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 600, border: '1px solid #e5e7eb', whiteSpace: 'nowrap' }}>
+                          ID-{selectedPhone.id.substring(0, 6).toUpperCase()}
+                        </span>
+                      </div>
+                      
+                      <div style={{ fontSize: '2rem', fontWeight: 700, color: '#111827', margin: '20px 0 0 0' }}>
+                        {new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(selectedPhone.price)}
+                      </div>
+                    </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '32px' }}>
-                  <div style={{ background: '#f9fafb', padding: '16px', borderRadius: '4px', border: '1px solid #f3f4f6' }}>
-                    <span style={{ color: '#6b7280', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.02em' }}>Speicher</span>
-                    <p style={{ margin: '4px 0 0 0', fontWeight: 600, color: '#111827', fontSize: '1.05rem' }}>{selectedPhone.storage}</p>
-                  </div>
-                  <div style={{ background: '#f9fafb', padding: '16px', borderRadius: '4px', border: '1px solid #f3f4f6' }}>
-                    <span style={{ color: '#6b7280', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.02em' }}>Zustand</span>
-                    <p style={{ margin: '4px 0 0 0', fontWeight: 600, color: '#111827', fontSize: '1.05rem' }}>{selectedPhone.condition}</p>
-                  </div>
-                </div>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '32px' }}>
+                      <div style={{ background: '#f9fafb', padding: '16px', borderRadius: '4px', border: '1px solid #f3f4f6' }}>
+                        <span style={{ color: '#6b7280', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.02em' }}>Speicher</span>
+                        <p style={{ margin: '4px 0 0 0', fontWeight: 600, color: '#111827', fontSize: '1.05rem' }}>{selectedPhone.storage}</p>
+                      </div>
+                      <div style={{ background: '#f9fafb', padding: '16px', borderRadius: '4px', border: '1px solid #f3f4f6' }}>
+                        <span style={{ color: '#6b7280', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.02em' }}>Zustand</span>
+                        <p style={{ margin: '4px 0 0 0', fontWeight: 600, color: '#111827', fontSize: '1.05rem' }}>{selectedPhone.condition}</p>
+                      </div>
+                    </div>
 
-                <div style={{ flex: 1, marginBottom: '32px' }}>
-                  <span style={{ color: '#111827', fontSize: '0.95rem', fontWeight: 600, display: 'block', marginBottom: '8px' }}>Gerätedetails</span>
-                  <p style={{ margin: 0, color: '#4b5563', lineHeight: 1.6, whiteSpace: 'pre-line', fontSize: '0.95rem' }}>
-                    {selectedPhone.description || 'Keine weitere Beschreibung angegeben.'}
-                  </p>
-                </div>
+                    <div style={{ flex: 1, marginBottom: '32px' }}>
+                      <span style={{ color: '#111827', fontSize: '0.95rem', fontWeight: 600, display: 'block', marginBottom: '8px' }}>Gerätedetails</span>
+                      <p style={{ margin: 0, color: '#4b5563', lineHeight: 1.6, whiteSpace: 'pre-line', fontSize: '0.95rem' }}>
+                        {selectedPhone.description || 'Keine weitere Beschreibung angegeben.'}
+                      </p>
+                    </div>
 
-                <div style={{ marginTop: 'auto' }}>
-                  <a 
-                    href={`mailto:info@irepairstore24.de?subject=Anfrage zu ${encodeURIComponent(selectedPhone.brand + ' ' + selectedPhone.model)}`} 
-                    style={{ 
-                      display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px', width: '100%', background: '#1d3a8f', color: '#fff', 
-                      textDecoration: 'none', padding: '14px', borderRadius: '4px', fontWeight: 600, 
-                      fontSize: '1.05rem', textAlign: 'center', transition: 'background 0.2s'
-                    }}
-                    onMouseOver={e => e.currentTarget.style.background = '#152b6b'}
-                    onMouseOut={e => e.currentTarget.style.background = '#1d3a8f'}
-                  >
-                    Gerät anfragen
-                  </a>
-                  <p style={{ textAlign: 'center', margin: '16px 0 0 0', fontSize: '0.85rem', color: '#6b7280', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
-                    <Check size={14} color="#16a34a" /> Direkt vor Ort im Store ansehen
-                  </p>
-                </div>
+                    <div style={{ marginTop: 'auto' }}>
+                      <button 
+                        onClick={() => setIsContactFormVisible(true)}
+                        style={{ 
+                          display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px', width: '100%', background: '#1d3a8f', color: '#fff', 
+                          border: 'none', padding: '14px', borderRadius: '4px', fontWeight: 600, 
+                          fontSize: '1.05rem', textAlign: 'center', transition: 'background 0.2s', cursor: 'pointer'
+                        }}
+                        onMouseOver={e => e.currentTarget.style.background = '#152b6b'}
+                        onMouseOut={e => e.currentTarget.style.background = '#1d3a8f'}
+                      >
+                        Gerät anfragen
+                      </button>
+                      <p style={{ textAlign: 'center', margin: '16px 0 0 0', fontSize: '0.85rem', color: '#6b7280', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
+                        <Check size={14} color="#16a34a" /> Direkt vor Ort im Store ansehen
+                      </p>
+                    </div>
+                  </>
+                ) : (
+                  // CONTACT FORM VIEW
+                  <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+                    <div style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      <button 
+                        onClick={() => setIsContactFormVisible(false)}
+                        style={{ background: 'transparent', border: 'none', color: '#4b5563', cursor: 'pointer', display: 'flex', alignItems: 'center', padding: 0 }}
+                      >
+                        <ChevronLeft size={20} /> Zurück
+                      </button>
+                    </div>
+                    
+                    <h3 style={{ fontSize: '1.4rem', margin: '0 0 8px 0', color: '#111827' }}>Anfrage senden</h3>
+                    <p style={{ margin: '0 0 24px 0', color: '#4b5563', fontSize: '0.9rem' }}>
+                      Für: <strong>{selectedPhone.brand} {selectedPhone.model}</strong> (ID-{selectedPhone.id.substring(0, 6).toUpperCase()})
+                    </p>
+
+                    {contactStatus === 'success' ? (
+                      <div style={{ background: '#ecfdf5', border: '1px solid #10b981', padding: '24px', borderRadius: '6px', textAlign: 'center', color: '#047857', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                        <Check size={48} color="#10b981" style={{ margin: '0 auto 16px auto' }} />
+                        <h4 style={{ margin: '0 0 8px 0', fontSize: '1.2rem' }}>Anfrage erfolgreich gesendet!</h4>
+                        <p style={{ margin: 0, fontSize: '0.95rem' }}>Wir melden uns schnellstmöglich bei dir zurück.</p>
+                      </div>
+                    ) : (
+                      <form onSubmit={handleContactSubmit} style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
+                        <div style={{ marginBottom: '16px' }}>
+                          <label style={{ display: 'block', marginBottom: '6px', fontSize: '0.9rem', fontWeight: 600, color: '#374151' }}>Name *</label>
+                          <input 
+                            type="text" 
+                            value={contactForm.name}
+                            onChange={(e) => setContactForm({...contactForm, name: e.target.value})}
+                            required
+                            style={{ width: '100%', padding: '10px 12px', border: '1px solid #d1d5db', borderRadius: '4px', fontSize: '0.95rem', boxSizing: 'border-box' }}
+                          />
+                        </div>
+                        <div style={{ marginBottom: '16px' }}>
+                          <label style={{ display: 'block', marginBottom: '6px', fontSize: '0.9rem', fontWeight: 600, color: '#374151' }}>E-Mail *</label>
+                          <input 
+                            type="email" 
+                            value={contactForm.email}
+                            onChange={(e) => setContactForm({...contactForm, email: e.target.value})}
+                            required
+                            style={{ width: '100%', padding: '10px 12px', border: '1px solid #d1d5db', borderRadius: '4px', fontSize: '0.95rem', boxSizing: 'border-box' }}
+                          />
+                        </div>
+                        <div style={{ marginBottom: '16px' }}>
+                          <label style={{ display: 'block', marginBottom: '6px', fontSize: '0.9rem', fontWeight: 600, color: '#374151' }}>Telefonnummer *</label>
+                          <input 
+                            type="tel" 
+                            value={contactForm.phone}
+                            onChange={(e) => setContactForm({...contactForm, phone: e.target.value})}
+                            required
+                            style={{ width: '100%', padding: '10px 12px', border: '1px solid #d1d5db', borderRadius: '4px', fontSize: '0.95rem', boxSizing: 'border-box' }}
+                          />
+                        </div>
+                        <div style={{ marginBottom: '24px' }}>
+                          <label style={{ display: 'block', marginBottom: '6px', fontSize: '0.9rem', fontWeight: 600, color: '#374151' }}>Nachricht (optional)</label>
+                          <textarea 
+                            value={contactForm.message}
+                            onChange={(e) => setContactForm({...contactForm, message: e.target.value})}
+                            rows={3}
+                            style={{ width: '100%', padding: '10px 12px', border: '1px solid #d1d5db', borderRadius: '4px', fontSize: '0.95rem', boxSizing: 'border-box', resize: 'vertical' }}
+                          />
+                        </div>
+
+                        {contactError && (
+                          <div style={{ color: '#dc2626', fontSize: '0.9rem', marginBottom: '16px', padding: '8px', background: '#fef2f2', borderRadius: '4px', border: '1px solid #fecaca' }}>
+                            {contactError}
+                          </div>
+                        )}
+
+                        <div style={{ marginTop: 'auto' }}>
+                          <button 
+                            type="submit"
+                            disabled={contactStatus === 'loading'}
+                            style={{ 
+                              display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px', width: '100%', background: '#1d3a8f', color: '#fff', 
+                              border: 'none', padding: '14px', borderRadius: '4px', fontWeight: 600, 
+                              fontSize: '1.05rem', textAlign: 'center', transition: 'background 0.2s', cursor: contactStatus === 'loading' ? 'wait' : 'pointer',
+                              opacity: contactStatus === 'loading' ? 0.7 : 1
+                            }}
+                          >
+                            {contactStatus === 'loading' ? 'Wird gesendet...' : 'Kostenpflichtig anfragen'}
+                          </button>
+                        </div>
+                      </form>
+                    )}
+                  </div>
+                )}
               </div>
 
             </div>

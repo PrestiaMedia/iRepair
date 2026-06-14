@@ -137,22 +137,16 @@ const PreisanfrageForm = () => {
     };
 
     try {
-      // TODO: Replace with actual n8n webhook URL later
-      // const webhookUrl = 'https://hook.eu1.make.com/placeholder';
+      const webhookUrl = 'https://n8n.srv1155101.hstgr.cloud/webhook/kontakt';
       
       console.log('Sending payload to n8n:', payload);
       
-      /*
       const response = await fetch(webhookUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
       if (!response.ok) throw new Error('Network error');
-      */
-      
-      // Simulate network request
-      await new Promise(resolve => setTimeout(resolve, 800));
       
       setSubmitted(true);
     } catch (err) {

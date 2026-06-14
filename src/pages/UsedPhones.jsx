@@ -550,7 +550,7 @@ function UsedPhonesContent() {
                               opacity: contactStatus === 'loading' ? 0.7 : 1
                             }}
                           >
-                            {contactStatus === 'loading' ? 'Wird gesendet...' : 'Kostenpflichtig anfragen'}
+                            {contactStatus === 'loading' ? 'Wird gesendet...' : 'Kostenlos anfragen'}
                           </button>
                         </div>
                       </form>

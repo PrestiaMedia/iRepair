@@ -304,6 +304,7 @@ function UsedPhonesContent() {
 
       {/* LIGHTBOX MODAL - GROUNDED, PROFESSIONAL */}
       {selectedPhone && (
+        <>
         <div 
           onClick={closeModal}
           style={{
@@ -355,11 +356,11 @@ function UsedPhonesContent() {
                     
                     {selectedPhone.imageUrls.length > 1 && (
                       <>
-                        <button onClick={prevImage} style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', background: '#fff', border: '1px solid #e5e7eb', borderRadius: '4px', width: '40px', height: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', color: '#111827' }}>
-                          <ChevronLeft size={24} />
+                        <button onClick={prevImage} style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', background: '#fff', border: '1px solid #e5e7eb', borderRadius: '4px', width: '56px', height: '56px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', color: '#111827' }}>
+                          <ChevronLeft size={36} />
                         </button>
-                        <button onClick={nextImage} style={{ position: 'absolute', right: '16px', top: '50%', transform: 'translateY(-50%)', background: '#fff', border: '1px solid #e5e7eb', borderRadius: '4px', width: '40px', height: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', color: '#111827' }}>
-                          <ChevronRight size={24} />
+                        <button onClick={nextImage} style={{ position: 'absolute', right: '16px', top: '50%', transform: 'translateY(-50%)', background: '#fff', border: '1px solid #e5e7eb', borderRadius: '4px', width: '56px', height: '56px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', color: '#111827' }}>
+                          <ChevronRight size={36} />
                         </button>
                         
                         <div style={{ position: 'absolute', bottom: '20px', display: 'flex', gap: '6px' }}>
@@ -370,27 +371,7 @@ function UsedPhonesContent() {
                       </>
                     )}
 
-                    {/* FULLSCREEN ZOOM OVERLAY */}
-                    {isZoomed && (
-                      <div 
-                        onClick={(e) => { e.stopPropagation(); setIsZoomed(false); }}
-                        style={{
-                          position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh',
-                          background: 'rgba(0,0,0,0.95)', zIndex: 9999999, display: 'flex',
-                          alignItems: 'center', justifyContent: 'center', cursor: 'zoom-out'
-                        }}
-                      >
-                        <button style={{ position: 'absolute', top: '20px', right: '20px', background: 'transparent', border: 'none', color: '#fff', cursor: 'pointer', padding: '10px' }}>
-                           <X size={32} />
-                        </button>
-                        <img 
-                          src={selectedPhone.imageUrls[currentImageIndex]} 
-                          style={{ maxWidth: '95vw', maxHeight: '95vh', objectFit: 'contain' }}
-                          onClick={(e) => e.stopPropagation()} 
-                          alt="Zoomed"
-                        />
-                      </div>
-                    )}
+                    {/* Zoom overlay removed from here */}
                   </>
                 ) : (
                   <div style={{ color: '#9ca3af', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
@@ -563,6 +544,29 @@ function UsedPhonesContent() {
             </div>
           </div>
         </div>
+
+        {/* FULLSCREEN ZOOM OVERLAY */}
+        {isZoomed && (
+          <div 
+            onClick={(e) => { e.stopPropagation(); setIsZoomed(false); }}
+            style={{
+              position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh',
+              background: 'rgba(0,0,0,0.95)', zIndex: 9999999, display: 'flex',
+              alignItems: 'center', justifyContent: 'center', cursor: 'zoom-out'
+            }}
+          >
+            <button style={{ position: 'absolute', top: '20px', right: '20px', background: 'transparent', border: 'none', color: '#fff', cursor: 'pointer', padding: '10px' }}>
+               <X size={32} />
+            </button>
+            <img 
+              src={selectedPhone.imageUrls[currentImageIndex]} 
+              style={{ maxWidth: '95vw', maxHeight: '95vh', objectFit: 'contain' }}
+              onClick={(e) => e.stopPropagation()} 
+              alt="Zoomed"
+            />
+          </div>
+        )}
+        </>
       )}
 
     </div>

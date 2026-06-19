@@ -5,6 +5,22 @@ import DividerImage from '../components/DividerImage';
 import FAQs from '../components/FAQs';
 import Locations from '../components/Locations';
 
+const BrandCard = ({ brand }) => {
+  const [error, setError] = React.useState(false);
+  return (
+    <div style={{ backgroundColor: '#ffffff', borderRadius: '8px', padding: '20px', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', border: '1px solid #eaeaea', display: 'flex', alignItems: 'center', gap: '15px', transition: 'transform 0.2s', cursor: 'pointer' }} onMouseOver={e => e.currentTarget.style.transform = 'translateY(-3px)'} onMouseOut={e => e.currentTarget.style.transform = 'translateY(0)'}>
+      {!error ? (
+        <img src={`https://cdn.simpleicons.org/${brand.slug}/${brand.color}`} alt={brand.name} style={{ width: '32px', height: '32px', objectFit: 'contain' }} onError={() => setError(true)} />
+      ) : (
+        <div style={{ width: '32px', height: '32px', backgroundColor: `#${brand.color}`, color: '#fff', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '16px', fontWeight: 'bold' }}>
+          {brand.name.charAt(0)}
+        </div>
+      )}
+      <div style={{ fontSize: '16px', color: '#1a1a1a', fontWeight: 'bold' }}>{brand.name}</div>
+    </div>
+  );
+};
+
 const Handyvertrag = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -23,26 +39,26 @@ const Handyvertrag = () => {
   ];
 
   const brands = [
-    { name: "Apple", icon: "fab fa-apple", color: "#555555" },
-    { name: "Samsung", icon: null, color: "#1428A0" },
-    { name: "Huawei", icon: null, color: "#FF0000" },
-    { name: "Xiaomi", icon: null, color: "#FF6900" },
-    { name: "Sony", icon: null, color: "#000000" },
-    { name: "LG", icon: null, color: "#A50034" },
-    { name: "HTC", icon: null, color: "#8DC63F" },
-    { name: "Motorola", icon: null, color: "#001428" },
-    { name: "Nokia", icon: null, color: "#124191" },
-    { name: "Google", icon: "fab fa-google", color: "#4285F4" },
-    { name: "OnePlus", icon: null, color: "#F5010C" },
-    { name: "Oppo", icon: null, color: "#006633" },
-    { name: "Vivo", icon: null, color: "#415FFF" },
-    { name: "Realme", icon: null, color: "#FFC915" },
-    { name: "ZTE", icon: null, color: "#0055A5" },
-    { name: "Asus", icon: null, color: "#00539B" },
-    { name: "BlackBerry", icon: null, color: "#000000" },
-    { name: "Lenovo", icon: null, color: "#E2231A" },
-    { name: "Alcatel", icon: null, color: "#18B5E8" },
-    { name: "Microsoft", icon: "fab fa-microsoft", color: "#00A4EF" }
+    { name: "Apple", slug: "apple", color: "555555" },
+    { name: "Samsung", slug: "samsung", color: "1428A0" },
+    { name: "Huawei", slug: "huawei", color: "FF0000" },
+    { name: "Xiaomi", slug: "xiaomi", color: "FF6900" },
+    { name: "Sony", slug: "sony", color: "000000" },
+    { name: "LG", slug: "lg", color: "A50034" },
+    { name: "HTC", slug: "htc", color: "8DC63F" },
+    { name: "Motorola", slug: "motorola", color: "001428" },
+    { name: "Nokia", slug: "nokia", color: "124191" },
+    { name: "Google", slug: "google", color: "4285F4" },
+    { name: "OnePlus", slug: "oneplus", color: "F5010C" },
+    { name: "Oppo", slug: "oppo", color: "006633" },
+    { name: "Vivo", slug: "vivo", color: "415FFF" },
+    { name: "Realme", slug: "realme", color: "FFC915" },
+    { name: "ZTE", slug: "zte", color: "0055A5" },
+    { name: "Asus", slug: "asus", color: "00539B" },
+    { name: "BlackBerry", slug: "blackberry", color: "000000" },
+    { name: "Lenovo", slug: "lenovo", color: "E2231A" },
+    { name: "Alcatel", slug: "alcatel", color: "18B5E8" },
+    { name: "Microsoft", slug: "microsoft", color: "00A4EF" }
   ];
 
   const customFaqs = [
@@ -125,16 +141,7 @@ const Handyvertrag = () => {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '15px' }}>
             {brands.map((brand, idx) => (
-              <div key={idx} style={{ backgroundColor: '#ffffff', borderRadius: '8px', padding: '20px', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', border: '1px solid #eaeaea', display: 'flex', alignItems: 'center', gap: '15px', transition: 'transform 0.2s', cursor: 'pointer' }} onMouseOver={e => e.currentTarget.style.transform = 'translateY(-3px)'} onMouseOut={e => e.currentTarget.style.transform = 'translateY(0)'}>
-                {brand.icon ? (
-                  <i className={brand.icon} style={{ color: brand.color, fontSize: '28px', width: '32px', textAlign: 'center' }}></i>
-                ) : (
-                  <div style={{ width: '32px', height: '32px', backgroundColor: brand.color, color: '#fff', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '16px', fontWeight: 'bold' }}>
-                    {brand.name.charAt(0)}
-                  </div>
-                )}
-                <div style={{ fontSize: '16px', color: '#1a1a1a', fontWeight: 'bold' }}>{brand.name}</div>
-              </div>
+              <BrandCard key={idx} brand={brand} />
             ))}
           </div>
         </div>

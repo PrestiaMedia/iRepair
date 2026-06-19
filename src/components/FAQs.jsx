@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const FAQs = () => {
+const FAQs = ({ customFaqs }) => {
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleFAQ = (index) => {
@@ -8,7 +8,7 @@ const FAQs = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const faqs = [
+  const defaultFaqs = [
     {
       question: "Wie lange dauert die Reparatur von meinem Smartphone?",
       answer: "Im Regelfall schließen wir Reparaturen innerhalb von 60 – 120 Minuten vor Ort ab. Dies ist durch unser großes Ersatzteillager möglich. Da es mittlerweile eine nicht mehr überschaubare Zahl von verschiedenen Geräten verschiedener Hersteller auf dem Markt gibt, kann es unter Umständen immer vorkommen, dass wir ein Ersatzteil für Sie bestellen müssen. Hierbei kann es zu Lieferzeiten von 1 – 2 Werktagen kommen. Auf Anfrage ist eine Vorbestellung mit Anzahlung möglich, so dass Sie nur noch zur Reparatur vorbeikommen müssen."
@@ -30,6 +30,8 @@ const FAQs = () => {
       answer: "Im Regelfall bleiben alle Daten während einer Reparatur auf dem Gerät erhalten. Sollte das einmal nicht möglich sein, werden wir Sie in jedem Fall vor Abgabe zur Reparatur auf einen möglichen Datenverlust hinweisen. Dies geschieht in der Regel nur bei Software-Reparaturen oder dem Entfernen von vergessenen Account-Daten aus dem jeweiligen Gerät. iRepairStore übernimmt für den Datenverlust während der Reparatur eines Geräts keine Haftung!"
     }
   ];
+
+  const faqs = customFaqs || defaultFaqs;
 
   return (
     <div className="fl-row fl-row-full-width fl-row-bg-none fl-node-oi12exudzp6t fl-row-default-height fl-row-align-center" data-node="oi12exudzp6t">

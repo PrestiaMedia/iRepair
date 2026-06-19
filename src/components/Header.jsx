@@ -132,10 +132,10 @@ const Header = () => {
                           </button>
                           <ul className="sub-menu">
                             <li id="menu-item-9842" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-9842">
-                              <a href="/iphone-reparatur-ingolstadt" className="menu-link"><span className="ast-icon icon-arrow"></span><span className="menu-text">iPhone Reparatur</span></a>
+                              <a href="/leistungen/iphone-reparatur" className="menu-link"><span className="ast-icon icon-arrow"></span><span className="menu-text">iPhone Reparatur</span></a>
                             </li>
                             <li id="menu-item-9906" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-9906">
-                              <a href="/handyvertrag" className="menu-link"><span className="ast-icon icon-arrow"></span><span className="menu-text">Handyvertrag</span></a>
+                              <a href="/leistungen/handyvertrag" className="menu-link"><span className="ast-icon icon-arrow"></span><span className="menu-text">Handyvertrag</span></a>
                             </li>
                           </ul>
                         </li>
@@ -150,10 +150,10 @@ const Header = () => {
                           </button>
                           <ul className="sub-menu">
                             <li id="menu-item-10052" className="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-10052">
-                              <a href="/#stores" className="menu-link"><span className="ast-icon icon-arrow"></span><span className="menu-text">iRepairStore – Stadtmitte</span></a>
+                              <a href="/standorte/stadtmitte" className="menu-link"><span className="ast-icon icon-arrow"></span><span className="menu-text">iRepairStore – Stadtmitte</span></a>
                             </li>
                             <li id="menu-item-10054" className="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-10054">
-                              <a href="/#stores" className="menu-link"><span className="ast-icon icon-arrow"></span><span className="menu-text">iRepairStore – Westpark</span></a>
+                              <a href="/standorte/westpark" className="menu-link"><span className="ast-icon icon-arrow"></span><span className="menu-text">iRepairStore – Westpark</span></a>
                             </li>
                           </ul>
                         </li>

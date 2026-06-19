@@ -67,50 +67,31 @@ const AboutUs = () => {
   };
 
   return (
-    <div ref={sectionRef} id="ueberuns" className="fl-row fl-row-full-width fl-row-bg-color fl-node-42ygo53tkuhm fl-row-default-height fl-row-align-center" data-node="42ygo53tkuhm">
-	<div className="fl-row-content-wrap">
-								<div className="fl-row-content fl-row-fixed-width fl-node-content">
-		
-<div className="fl-col-group fl-node-9haj0xl1skmu" data-node="9haj0xl1skmu">
-			<div className="fl-col fl-node-crh0p9kls3gb fl-col-bg-color" data-node="crh0p9kls3gb">
-	<div className="fl-col-content fl-node-content"><div className="fl-module fl-module-heading fl-node-trjyes6hqali" data-node="trjyes6hqali">
-	<div className="fl-module-content fl-node-content">
-		<h2 className="fl-heading">
-		<span className="fl-heading-text">Über uns</span>
-	</h2>
-	</div>
-</div>
-<div className="fl-module fl-module-rich-text fl-node-yltf9d05qmuv" data-node="yltf9d05qmuv">
-	<div className="fl-module-content fl-node-content">
-		<div className="fl-rich-text">
-	<p className="info">Wir sind stolz auf unsere exzellenten Leistungen als Handy-Reparatur-Service:</p>
-</div>
-	</div>
-</div>
-<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '20px', marginTop: '40px', width: '100%' }}>
-  <div style={{ backgroundColor: '#ffffff', borderRadius: '12px', padding: '30px 15px', textAlign: 'center', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
-    <h2 style={{ color: '#0056b3', fontSize: '36px', fontWeight: 'bold', margin: '0 0 10px 0' }}>{counters.techniker}</h2>
-    <span style={{ fontSize: '16px', color: '#4a4a4a', fontWeight: 'bold' }}>freundliche Techniker</span>
-  </div>
-  <div style={{ backgroundColor: '#ffffff', borderRadius: '12px', padding: '30px 15px', textAlign: 'center', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
-    <h2 style={{ color: '#0056b3', fontSize: '36px', fontWeight: 'bold', margin: '0 0 10px 0' }}>{counters.erfolgsquote}%</h2>
-    <span style={{ fontSize: '16px', color: '#4a4a4a', fontWeight: 'bold' }}>Erfolgsquote</span>
-  </div>
-  <div style={{ backgroundColor: '#ffffff', borderRadius: '12px', padding: '30px 15px', textAlign: 'center', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
-    <h2 style={{ color: '#0056b3', fontSize: '36px', fontWeight: 'bold', margin: '0 0 10px 0' }}>{counters.bewertungen}+</h2>
-    <span style={{ fontSize: '16px', color: '#4a4a4a', fontWeight: 'bold' }}>5-Sterne-Bewertungen</span>
-  </div>
-  <div style={{ backgroundColor: '#ffffff', borderRadius: '12px', padding: '30px 15px', textAlign: 'center', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
-    <h2 style={{ color: '#0056b3', fontSize: '36px', fontWeight: 'bold', margin: '0 0 10px 0' }}>{counters.reparaturen.toLocaleString('de-DE')}+</h2>
-    <span style={{ fontSize: '16px', color: '#4a4a4a', fontWeight: 'bold' }}>erfolgreiche Reparaturen</span>
-  </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+    <div ref={sectionRef} id="ueberuns" style={{ backgroundColor: '#f8f9fa', padding: '80px 20px', fontFamily: 'sans-serif', width: '100%' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <h2 style={{ fontSize: '32px', color: '#1a1a1a', fontWeight: 'bold', marginBottom: '15px', textAlign: 'center' }}>Über uns</h2>
+        <p style={{ fontSize: '18px', color: '#4a4a4a', marginBottom: '40px', textAlign: 'center' }}>Wir sind stolz auf unsere exzellenten Leistungen als Handy-Reparatur-Service:</p>
+        
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '30px', width: '100%' }}>
+          <div style={{ backgroundColor: '#ffffff', borderRadius: '12px', padding: '40px 20px', textAlign: 'center', boxShadow: '0 4px 15px rgba(0,0,0,0.05)', border: '1px solid #eaeaea' }}>
+            <h2 style={{ color: '#0056b3', fontSize: '42px', fontWeight: 'bold', margin: '0 0 15px 0' }}>{counters.techniker}</h2>
+            <span style={{ fontSize: '16px', color: '#4a4a4a', fontWeight: 'bold' }}>freundliche Techniker</span>
+          </div>
+          <div style={{ backgroundColor: '#ffffff', borderRadius: '12px', padding: '40px 20px', textAlign: 'center', boxShadow: '0 4px 15px rgba(0,0,0,0.05)', border: '1px solid #eaeaea' }}>
+            <h2 style={{ color: '#0056b3', fontSize: '42px', fontWeight: 'bold', margin: '0 0 15px 0' }}>{counters.erfolgsquote}%</h2>
+            <span style={{ fontSize: '16px', color: '#4a4a4a', fontWeight: 'bold' }}>Erfolgsquote</span>
+          </div>
+          <div style={{ backgroundColor: '#ffffff', borderRadius: '12px', padding: '40px 20px', textAlign: 'center', boxShadow: '0 4px 15px rgba(0,0,0,0.05)', border: '1px solid #eaeaea' }}>
+            <h2 style={{ color: '#0056b3', fontSize: '42px', fontWeight: 'bold', margin: '0 0 15px 0' }}>{counters.bewertungen}+</h2>
+            <span style={{ fontSize: '16px', color: '#4a4a4a', fontWeight: 'bold' }}>5-Sterne-Bewertungen</span>
+          </div>
+          <div style={{ backgroundColor: '#ffffff', borderRadius: '12px', padding: '40px 20px', textAlign: 'center', boxShadow: '0 4px 15px rgba(0,0,0,0.05)', border: '1px solid #eaeaea' }}>
+            <h2 style={{ color: '#0056b3', fontSize: '42px', fontWeight: 'bold', margin: '0 0 15px 0' }}>{counters.reparaturen.toLocaleString('de-DE')}+</h2>
+            <span style={{ fontSize: '16px', color: '#4a4a4a', fontWeight: 'bold' }}>erfolgreiche Reparaturen</span>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

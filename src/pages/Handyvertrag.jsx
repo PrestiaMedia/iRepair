@@ -17,12 +17,19 @@ const Handyvertrag = () => {
   ];
 
   const providers = [
-    { name: "1&1", logo: "1&1" },
-    { name: "Lycamobile", logo: "Lyca" }
+    { name: "1&1", image: "/images/1und1.png" },
+    { name: "Lyca Mobile", image: "/images/lycamobile.png" }
   ];
 
   const brands = [
-    "Samsung", "OnePlus", "Apple", "Oppo", "Huawei", "Xiaomi", "Pixel", "Honor"
+    { name: "Samsung", icon: null, color: "#1428A0" },
+    { name: "OnePlus", icon: null, color: "#F5010C" },
+    { name: "Apple", icon: "fab fa-apple", color: "#555555" },
+    { name: "Oppo", icon: null, color: "#006633" },
+    { name: "Huawei", icon: null, color: "#FF0000" },
+    { name: "Xiaomi", icon: null, color: "#FF6900" },
+    { name: "Pixel", icon: "fab fa-google", color: "#4285F4" },
+    { name: "Honor", icon: null, color: "#000000" }
   ];
 
   const customFaqs = [
@@ -56,7 +63,7 @@ const Handyvertrag = () => {
             <p style={{ fontSize: '18px', color: '#4a4a4a', lineHeight: '1.6', marginBottom: '30px' }}>
               Sie brauchen ein neues Handy und möchten die beste Netzqualität, um jederzeit online im Internet zu sein und telefonieren zu können? Wir reparieren nicht nur Mobiltelefone, sondern beraten Sie gerne bei der Suche nach dem für Sie günstigsten Handytarif.
             </p>
-            <a href="/kontakt" style={{ display: 'inline-block', backgroundColor: '#0056b3', color: '#fff', padding: '15px 30px', borderRadius: '6px', fontSize: '18px', fontWeight: 'bold', textDecoration: 'none', transition: 'background-color 0.2s' }}>
+            <a href="/#preisanfrage" style={{ display: 'inline-block', backgroundColor: '#0056b3', color: '#fff', padding: '15px 30px', borderRadius: '6px', fontSize: '18px', fontWeight: 'bold', textDecoration: 'none', transition: 'background-color 0.2s' }}>
               Jetzt Kontakt aufnehmen
             </a>
           </div>
@@ -89,9 +96,8 @@ const Handyvertrag = () => {
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '20px' }}>
             {providers.map((provider, idx) => (
-              <div key={idx} style={{ backgroundColor: '#f8f9fa', borderRadius: '8px', padding: '30px 40px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)', border: '1px solid #eaeaea', textAlign: 'center', width: '250px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                <h3 style={{ margin: 0, color: '#0056b3', fontSize: '28px', fontWeight: '900' }}>{provider.logo}</h3>
-                {provider.name === "Lycamobile" && <span style={{ fontSize: '14px', color: '#0056b3', fontWeight: 'bold' }}>Mobile</span>}
+              <div key={idx} style={{ backgroundColor: '#ffffff', borderRadius: '8px', padding: '20px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)', border: '1px solid #eaeaea', textAlign: 'center', width: '250px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', transition: 'transform 0.2s', cursor: 'pointer' }} onMouseOver={e => e.currentTarget.style.transform = 'translateY(-3px)'} onMouseOut={e => e.currentTarget.style.transform = 'translateY(0)'}>
+                <img src={provider.image} alt={provider.name} style={{ maxWidth: '180px', maxHeight: '60px', objectFit: 'contain' }} />
               </div>
             ))}
           </div>
@@ -106,8 +112,15 @@ const Handyvertrag = () => {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '15px' }}>
             {brands.map((brand, idx) => (
-              <div key={idx} style={{ backgroundColor: '#ffffff', borderRadius: '6px', padding: '20px', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', border: '1px solid #eaeaea', textAlign: 'center', transition: 'transform 0.2s', cursor: 'pointer' }} onMouseOver={e => e.currentTarget.style.transform = 'translateY(-3px)'} onMouseOut={e => e.currentTarget.style.transform = 'translateY(0)'}>
-                <div style={{ fontSize: '18px', color: '#1a1a1a', fontWeight: '600' }}>{brand}</div>
+              <div key={idx} style={{ backgroundColor: '#ffffff', borderRadius: '8px', padding: '20px', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', border: '1px solid #eaeaea', display: 'flex', alignItems: 'center', gap: '15px', transition: 'transform 0.2s', cursor: 'pointer' }} onMouseOver={e => e.currentTarget.style.transform = 'translateY(-3px)'} onMouseOut={e => e.currentTarget.style.transform = 'translateY(0)'}>
+                {brand.icon ? (
+                  <i className={brand.icon} style={{ color: brand.color, fontSize: '28px', width: '32px', textAlign: 'center' }}></i>
+                ) : (
+                  <div style={{ width: '32px', height: '32px', backgroundColor: brand.color, color: '#fff', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '16px', fontWeight: 'bold' }}>
+                    {brand.name.charAt(0)}
+                  </div>
+                )}
+                <div style={{ fontSize: '16px', color: '#1a1a1a', fontWeight: 'bold' }}>{brand.name}</div>
               </div>
             ))}
           </div>
@@ -122,9 +135,6 @@ const Handyvertrag = () => {
 
       {/* 7. FAQ Section */}
       <FAQs customFaqs={customFaqs} />
-
-      {/* 8. Footer / Standorte */}
-      <Locations />
     </>
   );
 };

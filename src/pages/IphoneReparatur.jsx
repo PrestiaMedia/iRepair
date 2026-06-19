@@ -64,7 +64,7 @@ const IphoneReparatur = () => {
               ))}
             </ul>
 
-            <a href="/kontakt" style={{ display: 'inline-block', backgroundColor: '#0056b3', color: '#fff', padding: '15px 30px', borderRadius: '6px', fontSize: '18px', fontWeight: 'bold', textDecoration: 'none', transition: 'background-color 0.2s' }}>
+            <a href="/#preisanfrage" style={{ display: 'inline-block', backgroundColor: '#0056b3', color: '#fff', padding: '15px 30px', borderRadius: '6px', fontSize: '18px', fontWeight: 'bold', textDecoration: 'none', transition: 'background-color 0.2s' }}>
               Jetzt Kontakt aufnehmen
             </a>
           </div>
@@ -98,12 +98,23 @@ const IphoneReparatur = () => {
             <h2 style={{ fontSize: '32px', color: '#1a1a1a', fontWeight: 'bold' }}>Unsere Geräte</h2>
             <p style={{ fontSize: '16px', color: '#4a4a4a' }}>Wir reparieren alle Generationen des Apple iPhone.</p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '15px' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center', marginTop: '20px' }}>
             {models.map((model, idx) => (
-              <div key={idx} style={{ backgroundColor: '#ffffff', borderRadius: '6px', padding: '15px', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', border: '1px solid #eaeaea', textAlign: 'center', transition: 'transform 0.2s', cursor: 'pointer' }} onMouseOver={e => e.currentTarget.style.transform = 'translateY(-3px)'} onMouseOut={e => e.currentTarget.style.transform = 'translateY(0)'}>
-                <i className="fab fa-apple" style={{ color: '#1a1a1a', fontSize: '24px', marginBottom: '10px' }}></i>
-                <div style={{ fontSize: '15px', color: '#1a1a1a', fontWeight: '600' }}>{model}</div>
-              </div>
+              <span key={idx} style={{ 
+                backgroundColor: '#f1f3f5', 
+                color: '#495057', 
+                padding: '8px 16px', 
+                borderRadius: '20px', 
+                fontSize: '14px', 
+                fontWeight: '600',
+                border: '1px solid #e9ecef',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px'
+              }}>
+                <i className="fab fa-apple" style={{ fontSize: '14px' }}></i>
+                {model}
+              </span>
             ))}
           </div>
         </div>
@@ -117,9 +128,6 @@ const IphoneReparatur = () => {
 
       {/* 6. FAQ Section */}
       <FAQs />
-
-      {/* 7. Footer / Standorte */}
-      <Locations />
     </>
   );
 };

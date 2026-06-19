@@ -30,6 +30,11 @@ const Westpark = () => {
                 <i className="fas fa-envelope" style={{ color: '#0056b3', fontSize: '20px', width: '20px', textAlign: 'center' }}></i>
                 <a href="mailto:westpark@irepairstore24.de" style={{ color: '#0056b3', textDecoration: 'none', fontWeight: 'bold', fontSize: '18px' }}>westpark@irepairstore24.de</a>
               </div>
+              <div style={{ marginTop: '10px' }}>
+                <a href="/#preisanfrage" style={{ display: 'inline-block', backgroundColor: '#0056b3', color: '#fff', padding: '12px 25px', borderRadius: '6px', fontSize: '16px', fontWeight: 'bold', textDecoration: 'none', transition: 'background-color 0.2s' }}>
+                  Jetzt Kontakt aufnehmen
+                </a>
+              </div>
             </div>
           </div>
           <div style={{ width: '100%', height: '450px', borderRadius: '8px', overflow: 'hidden' }}>

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import GoogleReviews from '../components/GoogleReviews';
 import AboutUs from '../components/AboutUs';
+import DividerImage from '../components/DividerImage';
 import FAQs from '../components/FAQs';
 import Locations from '../components/Locations';
 
@@ -22,14 +23,26 @@ const Handyvertrag = () => {
   ];
 
   const brands = [
-    { name: "Samsung", icon: null, color: "#1428A0" },
-    { name: "OnePlus", icon: null, color: "#F5010C" },
     { name: "Apple", icon: "fab fa-apple", color: "#555555" },
-    { name: "Oppo", icon: null, color: "#006633" },
+    { name: "Samsung", icon: null, color: "#1428A0" },
     { name: "Huawei", icon: null, color: "#FF0000" },
     { name: "Xiaomi", icon: null, color: "#FF6900" },
-    { name: "Pixel", icon: "fab fa-google", color: "#4285F4" },
-    { name: "Honor", icon: null, color: "#000000" }
+    { name: "Sony", icon: null, color: "#000000" },
+    { name: "LG", icon: null, color: "#A50034" },
+    { name: "HTC", icon: null, color: "#8DC63F" },
+    { name: "Motorola", icon: null, color: "#001428" },
+    { name: "Nokia", icon: null, color: "#124191" },
+    { name: "Google", icon: "fab fa-google", color: "#4285F4" },
+    { name: "OnePlus", icon: null, color: "#F5010C" },
+    { name: "Oppo", icon: null, color: "#006633" },
+    { name: "Vivo", icon: null, color: "#415FFF" },
+    { name: "Realme", icon: null, color: "#FFC915" },
+    { name: "ZTE", icon: null, color: "#0055A5" },
+    { name: "Asus", icon: null, color: "#00539B" },
+    { name: "BlackBerry", icon: null, color: "#000000" },
+    { name: "Lenovo", icon: null, color: "#E2231A" },
+    { name: "Alcatel", icon: null, color: "#18B5E8" },
+    { name: "Microsoft", icon: "fab fa-microsoft", color: "#00A4EF" }
   ];
 
   const customFaqs = [
@@ -132,6 +145,7 @@ const Handyvertrag = () => {
 
       {/* 6. Über Uns / Stats Section */}
       <AboutUs />
+      <DividerImage />
 
       {/* 7. FAQ Section */}
       <FAQs customFaqs={customFaqs} />

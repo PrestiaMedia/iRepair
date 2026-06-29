@@ -15,7 +15,6 @@ import Stadtmitte from './pages/Stadtmitte';
 import Westpark from './pages/Westpark';
 
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 
 function ScrollToHash() {
   const { hash, pathname } = useLocation();

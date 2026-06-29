@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import ContactFooterInfo from './components/ContactFooterInfo';
 import CookieBanner from './components/CookieBanner';
@@ -13,6 +13,28 @@ import DeviceRepairTemplate from './pages/DeviceRepairTemplate';
 import Handyvertrag from './pages/Handyvertrag';
 import Stadtmitte from './pages/Stadtmitte';
 import Westpark from './pages/Westpark';
+
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
+function ScrollToHash() {
+  const { hash, pathname } = useLocation();
+  
+  useEffect(() => {
+    if (hash) {
+      setTimeout(() => {
+        const element = document.getElementById(hash.substring(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [hash, pathname]);
+  return null;
+}
+
 function App() {
   return (
     <Router>

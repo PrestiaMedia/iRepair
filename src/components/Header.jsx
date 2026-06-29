@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { repairCategories, repairBrands } from '../data/repairData';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -86,6 +87,37 @@ const Header = () => {
                         }
                         .main-navigation:not(.toggled) ul.main-header-menu > li {
                           white-space: nowrap !important;
+                          position: relative;
+                        }
+                        ul.sub-menu {
+                          position: absolute;
+                          top: 100%;
+                          left: 0;
+                          display: none;
+                          background: #fff;
+                          min-width: 200px;
+                          box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                          padding: 10px 0;
+                          z-index: 9999;
+                        }
+                        li:hover > ul.sub-menu {
+                          display: block;
+                        }
+                        ul.nested-sub-menu {
+                          top: 0 !important;
+                          left: 100% !important;
+                        }
+                        ul.sub-menu li {
+                          position: relative;
+                          padding: 8px 20px;
+                        }
+                        ul.sub-menu li a {
+                          color: #333;
+                          text-decoration: none;
+                          display: block;
+                        }
+                        ul.sub-menu li:hover {
+                          background: #f5f5f5;
                         }
                       }
                     `}</style>
@@ -131,11 +163,25 @@ const Header = () => {
                             <span className="screen-reader-text">Menü umschalten</span><span className="ast-icon icon-arrow"></span>
                           </button>
                           <ul className="sub-menu">
-                            <li id="menu-item-9842" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-9842">
-                              <a href="/leistungen/iphone-reparatur" className="menu-link"><span className="ast-icon icon-arrow"></span><span className="menu-text">iPhone Reparatur</span></a>
-                            </li>
-                            <li id="menu-item-9906" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-9906">
-                              <a href="/leistungen/handyvertrag" className="menu-link"><span className="ast-icon icon-arrow"></span><span className="menu-text">Handyvertrag</span></a>
+                            {repairCategories.map(cat => (
+                              <li key={cat.id} className="menu-item menu-item-has-children">
+                                <a href="#" className="menu-link" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                  <span className="menu-text">{cat.name}</span>
+                                  <svg className="menu-chevron" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'rotate(-90deg)' }}><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </a>
+                                <ul className="sub-menu nested-sub-menu">
+                                  {repairBrands[cat.id]?.map(brand => (
+                                    <li key={brand.slug} className="menu-item">
+                                      <a href={`/leistungen/${cat.slug}/${brand.slug}`} className="menu-link">
+                                        <span className="menu-text">{brand.name}</span>
+                                      </a>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </li>
+                            ))}
+                            <li className="menu-item">
+                              <a href="/leistungen/handyvertrag" className="menu-link"><span className="menu-text">Handyvertrag</span></a>
                             </li>
                           </ul>
                         </li>

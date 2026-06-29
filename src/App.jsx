@@ -9,7 +9,7 @@ import Datenschutz from './pages/Datenschutz';
 import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
 import UsedPhones from './pages/UsedPhones';
-import IphoneReparatur from './pages/IphoneReparatur';
+import DeviceRepairTemplate from './pages/DeviceRepairTemplate';
 import Handyvertrag from './pages/Handyvertrag';
 import Stadtmitte from './pages/Stadtmitte';
 import Westpark from './pages/Westpark';
@@ -32,7 +32,7 @@ function App() {
                         <Route path="/admin/login" element={<AdminLogin />} />
                         <Route path="/admin" element={<AdminDashboard />} />
                         <Route path="/gebrauchte-handys" element={<UsedPhones />} />
-                        <Route path="/leistungen/iphone-reparatur" element={<IphoneReparatur />} />
+                        <Route path="/leistungen/:categorySlug/:brandSlug" element={<DeviceRepairTemplate />} />
                         <Route path="/leistungen/handyvertrag" element={<Handyvertrag />} />
                         <Route path="/standorte/stadtmitte" element={<Stadtmitte />} />
                         <Route path="/standorte/westpark" element={<Westpark />} />

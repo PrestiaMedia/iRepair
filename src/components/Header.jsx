@@ -90,6 +90,8 @@ const Header = () => {
                             box-sizing: border-box;
                           }
                           .main-navigation.toggled ul.sub-menu {
+                            opacity: 1 !important;
+                            visibility: visible !important;
                             display: none;
                             position: static !important;
                             width: 100% !important;
@@ -122,6 +124,8 @@ const Header = () => {
                           .main-navigation.toggled li.menu-item-has-children:active > ul.sub-menu,
                           .main-navigation.toggled li.menu-item-has-children:focus-within > ul.sub-menu,
                           .main-navigation.toggled li.menu-item-has-children:hover > ul.sub-menu {
+                            opacity: 1 !important;
+                            visibility: visible !important;
                             display: block !important;
                           }
                           .main-navigation.toggled .ast-menu-toggle {
@@ -192,12 +196,10 @@ const Header = () => {
                             <span className="menu-text">Handy Reparatur Ingolstadt</span>
                             <svg className="menu-chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginLeft: '4px'}}><polyline points="6 9 12 15 18 9"></polyline></svg>
                           </a>
-                          <button className="ast-menu-toggle" aria-expanded="false">
-                            <span className="screen-reader-text">Menü umschalten</span><span className="ast-icon icon-arrow"></span>
-                          </button>
+                          
                           <ul className="sub-menu">
                             <li id="menu-item-10053" className="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-10053">
-                              <a href="/#ueberuns" className="menu-link"><span className="ast-icon icon-arrow"></span><span className="menu-text">Über uns</span></a>
+                              <a href="/#ueberuns" className="menu-link"><span className="menu-text">Über uns</span></a>
                             </li>
                           </ul>
                         </li>
@@ -207,9 +209,7 @@ const Header = () => {
                             <span className="menu-text">Leistungen</span>
                             <svg className="menu-chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginLeft: '4px'}}><polyline points="6 9 12 15 18 9"></polyline></svg>
                           </a>
-                          <button className="ast-menu-toggle" aria-expanded="false">
-                            <span className="screen-reader-text">Menü umschalten</span><span className="ast-icon icon-arrow"></span>
-                          </button>
+                          
                           <ul className="sub-menu">
                             {repairCategories.map(cat => (
                               <li key={cat.id} className="menu-item menu-item-has-children">
@@ -239,15 +239,13 @@ const Header = () => {
                             <span className="menu-text">Standorte</span>
                             <svg className="menu-chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginLeft: '4px'}}><polyline points="6 9 12 15 18 9"></polyline></svg>
                           </a>
-                          <button className="ast-menu-toggle" aria-expanded="false">
-                            <span className="screen-reader-text">Menü umschalten</span><span className="ast-icon icon-arrow"></span>
-                          </button>
+                          
                           <ul className="sub-menu">
                             <li id="menu-item-10052" className="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-10052">
-                              <a href="/standorte/stadtmitte" className="menu-link"><span className="ast-icon icon-arrow"></span><span className="menu-text">iRepairStore – Stadtmitte</span></a>
+                              <a href="/standorte/stadtmitte" className="menu-link"><span className="menu-text">iRepairStore – Stadtmitte</span></a>
                             </li>
                             <li id="menu-item-10054" className="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-10054">
-                              <a href="/standorte/westpark" className="menu-link"><span className="ast-icon icon-arrow"></span><span className="menu-text">iRepairStore – Westpark</span></a>
+                              <a href="/standorte/westpark" className="menu-link"><span className="menu-text">iRepairStore – Westpark</span></a>
                             </li>
                           </ul>
                         </li>

@@ -52,17 +52,14 @@ const Header = () => {
                           }
                           .main-navigation.toggled {
                             display: block !important;
-                            position: fixed !important;
-                            top: 0 !important;
+                            position: absolute !important;
+                            top: 100% !important;
                             left: 0 !important;
-                            width: 100vw !important;
-                            height: 100vh !important;
+                            width: 100% !important;
                             background-color: #ffffff !important;
                             z-index: 999999 !important;
-                            overflow-y: auto !important;
-                            overflow-x: hidden !important;
-                            padding: 70px 0 20px 0 !important;
-                            box-sizing: border-box !important;
+                            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+                            border-top: 1px solid #eaeaea;
                           }
                           .main-navigation.toggled ul {
                             list-style: none !important;
@@ -108,18 +105,18 @@ const Header = () => {
                             padding: 10px 25px 10px 55px !important;
                             border-bottom: 1px solid #e5e5e5 !important;
                           }
-                          .main-navigation.toggled li.menu-item-has-children:active > ul.sub-menu,
-                          .main-navigation.toggled li.menu-item-has-children:focus-within > ul.sub-menu {
-                            display: block !important;
-                          }
                           .main-navigation.toggled .menu-chevron {
                             transition: transform 0.2s;
                           }
-                          .main-navigation.toggled li.menu-item-has-children:focus-within > a .menu-chevron {
+                          .main-navigation.toggled li.menu-item-has-children:focus-within > a .menu-chevron,
+                          .main-navigation.toggled li.menu-item-has-children:hover > a .menu-chevron,
+                          .main-navigation.toggled li.menu-item-has-children:active > a .menu-chevron {
                             transform: rotate(90deg) !important;
                           }
-                          .ast-menu-toggle {
-                            display: none !important;
+                          .main-navigation.toggled li.menu-item-has-children:active > ul.sub-menu,
+                          .main-navigation.toggled li.menu-item-has-children:focus-within > ul.sub-menu,
+                          .main-navigation.toggled li.menu-item-has-children:hover > ul.sub-menu {
+                            display: block !important;
                           }
                           .button-custom-menu-item {
                             padding: 20px 25px !important;
@@ -176,18 +173,6 @@ const Header = () => {
                       }
                     `}</style>
                     <div className={`main-navigation ${isMobileMenuOpen ? 'toggled' : ''}`}>
-                      {isMobileMenuOpen && (
-                        <button 
-                          onClick={() => setIsMobileMenuOpen(false)} 
-                          style={{ position: 'absolute', top: '20px', right: '20px', background: 'transparent', border: 'none', cursor: 'pointer', zIndex: 1000000, padding: '10px' }}
-                          aria-label="Menü schließen"
-                        >
-                          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1d3a8f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <line x1="18" y1="6" x2="6" y2="18"></line>
-                            <line x1="6" y1="6" x2="18" y2="18"></line>
-                          </svg>
-                        </button>
-                      )}
                       <ul 
                         id="primary-menu" 
                         className="main-header-menu ast-menu-shadow ast-nav-menu ast-flex ast-justify-content-flex-end submenu-with-border ast-mega-menu-enabled"

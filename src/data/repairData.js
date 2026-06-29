@@ -206,7 +206,7 @@ export const repairBrands = {
       brandColor: "#003791",
       description: "Ein abgerissener HDMI-Port an der PS5 (BLOD - Blue Light of Death), ein defektes Laufwerk oder eine Konsole, die wegen Überhitzung laut piept und ausgeht: Wir kennen alle Kinderkrankheiten der Sony PlayStations und beheben sie schnell und zuverlässig mit Profi-Lötequipment.",
       brandIcon: "fab fa-playstation",
-      heroImage: "/images/playstation_repair.png",
+      heroImage: "/images/playstation_repair.jpg",
       models: ["PlayStation 5 Pro", "PlayStation 5 Slim", "PlayStation 5 (Disc Edition)", "PlayStation 5 (Digital Edition)", "PlayStation 4 Pro", "PlayStation 4 Slim", "PlayStation 4 (Fat)", "... und noch mehr"]
     },
     {
@@ -215,7 +215,7 @@ export const repairBrands = {
       brandColor: "#107C10",
       description: "Die Xbox Series X ist ein massiver Power-Tower. Geht das Netzteil kaputt, liest sie keine Discs mehr oder gibt kein Bild mehr aus, kümmern wir uns darum. Auch ältere Modelle mit Festplattenfehlern oder Software-Crashes bringen wir wieder ins Spiel.",
       brandIcon: "fab fa-xbox",
-      heroImage: "/images/xbox_repair.png",
+      heroImage: "/images/xbox_repair.jpg",
       models: ["Xbox Series X", "Xbox Series S", "Xbox One X", "Xbox One S", "Xbox One", "Xbox 360", "... und noch mehr"]
     },
     {
@@ -254,7 +254,7 @@ export const repairBrands = {
       brandColor: "#107C10",
       description: "Ein klemmender Bumper (RB/LB) beim Elite Series 2 Controller oder abgenutzte Gummierungen stören das Spielgefühl massiv. Warum neu kaufen, wenn eine Reparatur viel günstiger ist? Wir machen Ihren Xbox Controller wieder wettbewerbsfähig.",
       brandIcon: "fab fa-xbox",
-      heroImage: "/images/xbox_repair.png", // Reusing Xbox generic image due to rate limit
+      heroImage: "/images/xbox_controller_repair.jpg",
       models: ["Xbox Elite Wireless Controller Series 2", "Xbox Elite Wireless Controller", "Xbox Wireless Controller (Series X/S)", "Xbox One Controller", "... und noch mehr"]
     },
     {
@@ -275,7 +275,7 @@ export const repairBrands = {
       brandColor: "#1d1d1f",
       description: "Die Apple Watch ist ein filigranes Meisterwerk. Ein Kratzer im Saphirglas oder ein geblähte Akku können die teure Uhr unbrauchbar machen. Wir öffnen die Watch mit Spezialwerkzeug, tauschen defekte Teile aus und versiegeln sie danach wieder sorgfältig.",
       brandIcon: "fab fa-apple",
-      heroImage: "/images/apple_repair.png", // Reusing Apple image
+      heroImage: "/images/apple_watch_repair.jpg",
       models: ["Apple Watch Ultra 2", "Apple Watch Ultra", "Apple Watch Series 9", "Apple Watch Series 8", "Apple Watch SE (2. Gen)", "Apple Watch Series 7", "Apple Watch Series 6", "Apple Watch Series 5", "... und noch mehr"]
     },
     {
@@ -284,7 +284,7 @@ export const repairBrands = {
       brandColor: "#1428A0",
       description: "Egal ob Samsung Galaxy Watch, Google Pixel Watch, Garmin Fenix oder Huawei Watch: Wenn das Display nach dem Sport gerissen ist oder die Sensorik spinnt, haben wir die Lösung. Wir verlängern die Lebensdauer Ihrer smarten Uhr deutlich.",
       brandIcon: "fas fa-clock",
-      heroImage: "/images/samsung_repair.png", // Reusing Samsung image
+      heroImage: "/images/weitere_smartwatches_repair.jpg",
       models: ["Samsung Galaxy Watch6 / 7", "Samsung Galaxy Watch5 Pro", "Google Pixel Watch 3 / 2", "Garmin Fenix 8 / 7 / Epix", "Huawei Watch 4 Pro", "Huawei Watch GT 4", "... und noch mehr"]
     }
   ]

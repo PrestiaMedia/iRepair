@@ -101,7 +101,7 @@ const Header = () => {
                           .main-navigation.toggled ul.sub-menu {
                             opacity: 1 !important;
                             visibility: visible !important;
-                            display: none;
+                            display: none !important;
                             position: static !important;
                             width: 100% !important;
                             box-shadow: none !important;

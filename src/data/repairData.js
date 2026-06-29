@@ -126,7 +126,7 @@ export const repairBrands = {
       brandColor: "#0056b3",
       description: "Egal ob das rasante OnePlus 13, das innovative Oppo Find X8 oder das filmreife Sony Xperia 1 VII: Auch wenn diese Premium-Smartphones seltener auf der Straße zu sehen sind als ein iPhone, haben wir in Ingolstadt die passenden Werkzeuge, Ersatzteile und das Know-how für eine professionelle Rettung.",
       brandIcon: "fas fa-mobile",
-      heroImage: "/images/oneplus_repair.png",
+      heroImage: "/images/oppo_repair.jpg",
       models: ["OnePlus 13", "OnePlus 13R", "OnePlus 12", "OnePlus 11", "Oppo Find X8 Pro", "Oppo Find X8", "Oppo Find N5", "Sony Xperia 1 VII", "Sony Xperia 1 VI", "Motorola Edge 60 Ultra", "Nothing Phone (3a)", "Fairphone 6", "Nano Banana Pro", "... und noch mehr"]
     }
   ],
@@ -223,7 +223,7 @@ export const repairBrands = {
       slug: "switch",
       brandColor: "#E60012",
       description: "Die Switch ist ideal für unterwegs, fällt aber dadurch auch leichter mal runter. Defekte Ladebuchsen (USB-C), zerkratzte Displays, Bluescreens (BSOD) oder abgebrochene Joy-Con-Schienen reparieren wir in kürzester Zeit, damit Mario und Zelda nicht lange warten müssen.",
-      brandIconSlug: "nintendo",
+      brandIconSlug: "nintendoswitch",
       brandIconColor: "E60012",
       heroImage: "/images/switch_repair.png",
       models: ["Nintendo Switch OLED", "Nintendo Switch (V2)", "Nintendo Switch Lite", "Nintendo Switch (V1)", "Switch 2 (kommend)", "... und noch mehr"]
@@ -262,7 +262,7 @@ export const repairBrands = {
       slug: "nintendo-controller",
       brandColor: "#E60012",
       description: "Der legendäre Joy-Con-Drift bringt selbst den ruhigsten Gamer zur Weißglut. Wir tauschen die fehlerhaften Analog-Sticks gegen verbesserte Versionen aus. Auch defekte Tasten am Switch Pro Controller reparieren wir fachgerecht.",
-      brandIconSlug: "nintendo",
+      brandIconSlug: "nintendoswitch",
       brandIconColor: "E60012",
       heroImage: "/images/switch_repair.png", // Reusing Switch image
       models: ["Joy-Con (Links/Rechts)", "Nintendo Switch Pro Controller", "Nintendo GameCube Controller (Smash Bros)", "... und noch mehr"]

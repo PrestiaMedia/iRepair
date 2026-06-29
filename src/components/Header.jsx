@@ -3,6 +3,15 @@ import { repairCategories, repairBrands } from '../data/repairData';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [expandedMenus, setExpandedMenus] = useState({});
+
+  const toggleSubMenu = (e, menuId) => {
+    e.preventDefault();
+    setExpandedMenus(prev => ({
+      ...prev,
+      [menuId]: !prev[menuId]
+    }));
+  };
 
   return (
     <header className="site-header header-main-layout-1 ast-primary-menu-enabled ast-menu-toggle-icon ast-mobile-header-stack ast-above-header-mobile-stack ast-below-header-mobile-stack" id="masthead" itemType="https://schema.org/WPHeader" itemScope itemID="#masthead">
@@ -116,14 +125,10 @@ const Header = () => {
                           .main-navigation.toggled .menu-chevron {
                             transition: transform 0.2s;
                           }
-                          .main-navigation.toggled li.menu-item-has-children:focus-within > a .menu-chevron,
-                          .main-navigation.toggled li.menu-item-has-children:hover > a .menu-chevron,
-                          .main-navigation.toggled li.menu-item-has-children:active > a .menu-chevron {
+                          .main-navigation.toggled li.expanded > a .menu-chevron {
                             transform: rotate(90deg) !important;
                           }
-                          .main-navigation.toggled li.menu-item-has-children:active > ul.sub-menu,
-                          .main-navigation.toggled li.menu-item-has-children:focus-within > ul.sub-menu,
-                          .main-navigation.toggled li.menu-item-has-children:hover > ul.sub-menu {
+                          .main-navigation.toggled li.expanded > ul.sub-menu {
                             opacity: 1 !important;
                             visibility: visible !important;
                             display: block !important;
@@ -191,8 +196,8 @@ const Header = () => {
                         className="main-header-menu ast-menu-shadow ast-nav-menu ast-flex ast-justify-content-flex-end submenu-with-border ast-mega-menu-enabled"
                       >
                         
-                        <li id="menu-item-9691" className="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home current-menu-ancestor current-menu-parent menu-item-has-children menu-item-9691">
-                          <a aria-expanded="false" href="/" className="menu-link" style={{display: 'flex', alignItems: 'center'}}>
+                        <li id="menu-item-9691" className={`menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home current-menu-ancestor current-menu-parent menu-item-has-children menu-item-9691 ${expandedMenus['home'] ? 'expanded' : ''}`}>
+                          <a aria-expanded={expandedMenus['home'] ? "true" : "false"} href="#" onClick={(e) => toggleSubMenu(e, 'home')} className="menu-link" style={{display: 'flex', alignItems: 'center'}}>
                             <span className="menu-text">Handy Reparatur Ingolstadt</span>
                             <svg className="menu-chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginLeft: '4px'}}><polyline points="6 9 12 15 18 9"></polyline></svg>
                           </a>
@@ -204,15 +209,15 @@ const Header = () => {
                           </ul>
                         </li>
 
-                        <li id="menu-item-9918" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-9918">
-                          <a aria-expanded="false" href="#" className="menu-link" style={{display: 'flex', alignItems: 'center'}}>
+                        <li id="menu-item-9918" className={`menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-9918 ${expandedMenus['leistungen'] ? 'expanded' : ''}`}>
+                          <a aria-expanded={expandedMenus['leistungen'] ? "true" : "false"} href="#" onClick={(e) => toggleSubMenu(e, 'leistungen')} className="menu-link" style={{display: 'flex', alignItems: 'center'}}>
                             <span className="menu-text">Leistungen</span>
                             <svg className="menu-chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginLeft: '4px'}}><polyline points="6 9 12 15 18 9"></polyline></svg>
                           </a>
                           
                           <ul className="sub-menu">
                             {repairCategories.map(cat => (
-                              <li key={cat.id} className="menu-item menu-item-has-children">
+                              <li key={cat.id} className={`menu-item menu-item-has-children ${expandedMenus[`cat-${cat.id}`] ? 'expanded' : ''}`}>
                                 <a href="#" className="menu-link" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                   <span className="menu-text">{cat.name}</span>
                                   <svg className="menu-chevron" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'rotate(-90deg)' }}><polyline points="6 9 12 15 18 9"></polyline></svg>
@@ -234,8 +239,8 @@ const Header = () => {
                           </ul>
                         </li>
 
-                        <li id="menu-item-10051" className="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-10051">
-                          <a aria-expanded="false" href="#" className="menu-link" style={{display: 'flex', alignItems: 'center'}}>
+                        <li id="menu-item-10051" className={`menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-10051 ${expandedMenus['standorte'] ? 'expanded' : ''}`}>
+                          <a aria-expanded={expandedMenus['standorte'] ? "true" : "false"} href="#" onClick={(e) => toggleSubMenu(e, 'standorte')} className="menu-link" style={{display: 'flex', alignItems: 'center'}}>
                             <span className="menu-text">Standorte</span>
                             <svg className="menu-chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginLeft: '4px'}}><polyline points="6 9 12 15 18 9"></polyline></svg>
                           </a>

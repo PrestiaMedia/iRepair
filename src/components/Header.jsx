@@ -61,40 +61,74 @@ const Header = () => {
                             z-index: 999999 !important;
                             overflow-y: auto !important;
                             overflow-x: hidden !important;
-                            padding: 80px 20px 20px 20px !important;
+                            padding: 70px 0 20px 0 !important;
                             box-sizing: border-box !important;
+                          }
+                          .main-navigation.toggled ul {
+                            list-style: none !important;
+                            margin: 0 !important;
+                            padding: 0 !important;
                           }
                           .main-navigation.toggled ul.main-header-menu {
                             display: flex !important;
                             flex-direction: column !important;
                             width: 100% !important;
-                            margin: 0 !important;
-                            padding: 0 !important;
-                            background-color: transparent !important;
                           }
                           .main-navigation.toggled ul.main-header-menu > li {
                             width: 100% !important;
-                            margin-bottom: 15px !important;
+                            margin: 0 !important;
+                            padding: 0 !important;
                           }
-                          ul.sub-menu {
+                          .main-navigation.toggled a.menu-link {
+                            padding: 15px 25px !important;
+                            font-size: 18px !important;
+                            color: #1a1a1a !important;
+                            text-decoration: none !important;
+                            border-bottom: 1px solid #eaeaea !important;
+                            display: flex !important;
+                            justify-content: space-between !important;
+                            align-items: center !important;
+                            width: 100%;
+                            box-sizing: border-box;
+                          }
+                          .main-navigation.toggled ul.sub-menu {
                             display: none;
-                            padding-left: 15px;
-                            margin-top: 10px;
-                            background: #fafafa;
-                            border-radius: 8px;
-                            padding-top: 10px;
-                            padding-bottom: 10px;
+                            background: #f8f9fa !important;
                           }
-                          li.menu-item-has-children:active > ul.sub-menu,
-                          li.menu-item-has-children:focus-within > ul.sub-menu {
+                          .main-navigation.toggled ul.sub-menu a.menu-link {
+                            font-size: 16px !important;
+                            padding: 12px 25px 12px 40px !important;
+                            border-bottom: 1px solid #f1f1f1 !important;
+                          }
+                          .main-navigation.toggled ul.nested-sub-menu {
+                            background: #f1f1f1 !important;
+                          }
+                          .main-navigation.toggled ul.nested-sub-menu a.menu-link {
+                            font-size: 15px !important;
+                            padding: 10px 25px 10px 55px !important;
+                            border-bottom: 1px solid #e5e5e5 !important;
+                          }
+                          .main-navigation.toggled li.menu-item-has-children:active > ul.sub-menu,
+                          .main-navigation.toggled li.menu-item-has-children:focus-within > ul.sub-menu {
                             display: block !important;
-                            position: static !important;
                           }
-                          ul.nested-sub-menu {
-                            padding-left: 15px !important;
+                          .main-navigation.toggled .menu-chevron {
+                            transition: transform 0.2s;
+                          }
+                          .main-navigation.toggled li.menu-item-has-children:focus-within > a .menu-chevron {
+                            transform: rotate(90deg) !important;
                           }
                           .ast-menu-toggle {
                             display: none !important;
+                          }
+                          .button-custom-menu-item {
+                            padding: 20px 25px !important;
+                            border-bottom: none !important;
+                          }
+                          .ast-custom-button-link {
+                            display: block !important;
+                            width: 100% !important;
+                            text-align: center !important;
                           }
                         }
                       @media (min-width: 922px) {

@@ -79,6 +79,7 @@ const Header = () => {
                           .main-navigation.toggled a.menu-link {
                             padding: 15px 25px !important;
                             font-size: 18px !important;
+                            line-height: 1.5 !important;
                             color: #1a1a1a !important;
                             text-decoration: none !important;
                             border-bottom: 1px solid #eaeaea !important;
@@ -94,6 +95,7 @@ const Header = () => {
                           }
                           .main-navigation.toggled ul.sub-menu a.menu-link {
                             font-size: 16px !important;
+                            line-height: 1.5 !important;
                             padding: 12px 25px 12px 40px !important;
                             border-bottom: 1px solid #f1f1f1 !important;
                           }
@@ -102,6 +104,7 @@ const Header = () => {
                           }
                           .main-navigation.toggled ul.nested-sub-menu a.menu-link {
                             font-size: 15px !important;
+                            line-height: 1.5 !important;
                             padding: 10px 25px 10px 55px !important;
                             border-bottom: 1px solid #e5e5e5 !important;
                           }

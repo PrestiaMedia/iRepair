@@ -84,6 +84,8 @@ const DeviceRepairTemplate = () => {
                 <i className={brand.brandIcon} style={{ fontSize: '28px', color: themeColor }}></i>
               ) : brand.brandIconSlug ? (
                 <img src={`https://cdn.simpleicons.org/${brand.brandIconSlug}/${themeColor.replace('#','')}`} alt="" style={{ width: '28px', height: '28px' }} />
+              ) : brand.brandIconCustom ? (
+                <img src={brand.brandIconCustom} alt={`${brand.name} Logo`} style={{ width: '28px', height: '28px', objectFit: 'contain' }} />
               ) : (
                 <i className={category.icon} style={{ fontSize: '28px', color: themeColor }}></i>
               )}

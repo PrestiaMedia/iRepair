@@ -46,37 +46,57 @@ const Header = () => {
                 <div className="main-header-bar-navigation">
                   <nav className="site-navigation ast-flex-grow-1 navigation-accessibility" id="primary-site-navigation" aria-label="Seiten-Navigation" itemType="https://schema.org/SiteNavigationElement" itemScope>
                     <style>{`
-                      @media (max-width: 921px) {
-                        .main-navigation:not(.toggled) {
-                          display: none !important;
+                        @media (max-width: 921px) {
+                          .main-navigation:not(.toggled) {
+                            display: none !important;
+                          }
+                          .main-navigation.toggled {
+                            display: block !important;
+                            position: fixed !important;
+                            top: 0 !important;
+                            left: 0 !important;
+                            width: 100vw !important;
+                            height: 100vh !important;
+                            background-color: #ffffff !important;
+                            z-index: 999999 !important;
+                            overflow-y: auto !important;
+                            overflow-x: hidden !important;
+                            padding: 80px 20px 20px 20px !important;
+                            box-sizing: border-box !important;
+                          }
+                          .main-navigation.toggled ul.main-header-menu {
+                            display: flex !important;
+                            flex-direction: column !important;
+                            width: 100% !important;
+                            margin: 0 !important;
+                            padding: 0 !important;
+                            background-color: transparent !important;
+                          }
+                          .main-navigation.toggled ul.main-header-menu > li {
+                            width: 100% !important;
+                            margin-bottom: 15px !important;
+                          }
+                          ul.sub-menu {
+                            display: none;
+                            padding-left: 15px;
+                            margin-top: 10px;
+                            background: #fafafa;
+                            border-radius: 8px;
+                            padding-top: 10px;
+                            padding-bottom: 10px;
+                          }
+                          li.menu-item-has-children:active > ul.sub-menu,
+                          li.menu-item-has-children:focus-within > ul.sub-menu {
+                            display: block !important;
+                            position: static !important;
+                          }
+                          ul.nested-sub-menu {
+                            padding-left: 15px !important;
+                          }
+                          .ast-menu-toggle {
+                            display: none !important;
+                          }
                         }
-                        .main-navigation.toggled {
-                          display: block !important;
-                          position: fixed !important;
-                          top: 0 !important;
-                          left: 0 !important;
-                          width: 100vw !important;
-                          height: 100vh !important;
-                          background-color: #ffffff !important;
-                          z-index: 999999 !important;
-                          overflow-y: auto !important;
-                          overflow-x: hidden !important;
-                          padding: 80px 20px 20px 20px !important;
-                          box-sizing: border-box !important;
-                        }
-                        .main-navigation.toggled ul.main-header-menu {
-                          display: flex !important;
-                          flex-direction: column !important;
-                          width: 100% !important;
-                          margin: 0 !important;
-                          padding: 0 !important;
-                          background-color: transparent !important;
-                        }
-                        .main-navigation.toggled ul.main-header-menu > li {
-                          width: 100% !important;
-                          margin-bottom: 15px !important;
-                        }
-                      }
                       @media (min-width: 922px) {
                         .main-navigation:not(.toggled) ul.main-header-menu {
                           display: flex !important;
@@ -209,11 +229,11 @@ const Header = () => {
                         </li>
 
                         <li id="menu-item-9690" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-9690">
-                          <a href="/kontakt" className="menu-link" style={{display: 'flex', alignItems: 'center'}}><span className="menu-text">Kontakt</span></a>
+                          <a href="/#preisanfrage" className="menu-link" style={{display: 'flex', alignItems: 'center'}} onClick={() => setIsMobileMenuOpen(false)}><span className="menu-text">Kontakt</span></a>
                         </li>
                         
                         <li className="ast-masthead-custom-menu-items button-custom-menu-item">
-                          <a className="ast-custom-button-link" href="/#preisanfrage" target="_self" role="button" aria-label="Preis anfragen">
+                          <a className="ast-custom-button-link" href="/#preisanfrage" target="_self" role="button" aria-label="Preis anfragen" onClick={() => setIsMobileMenuOpen(false)}>
                             <div className="ast-button">Preis anfragen</div>
                           </a>
                         </li>

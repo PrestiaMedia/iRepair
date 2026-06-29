@@ -223,7 +223,7 @@ export const repairBrands = {
       slug: "switch",
       brandColor: "#E60012",
       description: "Die Switch ist ideal für unterwegs, fällt aber dadurch auch leichter mal runter. Defekte Ladebuchsen (USB-C), zerkratzte Displays, Bluescreens (BSOD) oder abgebrochene Joy-Con-Schienen reparieren wir in kürzester Zeit, damit Mario und Zelda nicht lange warten müssen.",
-      brandIcon: "fas fa-gamepad",
+      brandIconCustom: "/images/nintendo.svg",
       heroImage: "/images/switch_repair.png",
       models: ["Nintendo Switch OLED", "Nintendo Switch (V2)", "Nintendo Switch Lite", "Nintendo Switch (V1)", "Switch 2 (kommend)", "... und noch mehr"]
     },
@@ -261,7 +261,7 @@ export const repairBrands = {
       slug: "nintendo-controller",
       brandColor: "#E60012",
       description: "Der legendäre Joy-Con-Drift bringt selbst den ruhigsten Gamer zur Weißglut. Wir tauschen die fehlerhaften Analog-Sticks gegen verbesserte Versionen aus. Auch defekte Tasten am Switch Pro Controller reparieren wir fachgerecht.",
-      brandIcon: "fas fa-gamepad",
+      brandIconCustom: "/images/nintendo.svg",
       heroImage: "/images/switch_repair.png", // Reusing Switch image
       models: ["Joy-Con (Links/Rechts)", "Nintendo Switch Pro Controller", "Nintendo GameCube Controller (Smash Bros)", "... und noch mehr"]
     }

@@ -91,6 +91,9 @@ const Header = () => {
                           }
                           .main-navigation.toggled ul.sub-menu {
                             display: none;
+                            position: static !important;
+                            width: 100% !important;
+                            box-shadow: none !important;
                             background: #f8f9fa !important;
                           }
                           .main-navigation.toggled ul.sub-menu a.menu-link {
@@ -120,6 +123,9 @@ const Header = () => {
                           .main-navigation.toggled li.menu-item-has-children:focus-within > ul.sub-menu,
                           .main-navigation.toggled li.menu-item-has-children:hover > ul.sub-menu {
                             display: block !important;
+                          }
+                          .main-navigation.toggled .ast-menu-toggle {
+                            display: none !important;
                           }
                           .button-custom-menu-item {
                             padding: 20px 25px !important;

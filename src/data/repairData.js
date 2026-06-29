@@ -75,6 +75,8 @@ export const repairBrands = {
     {
       name: "iPhone",
       slug: "iphone",
+      brandColor: "#000000",
+      description: "Apples iPhone ist ein Premium-Gerät und verdient eine absolut fachmännische Reparatur. Wir verwenden für Ihr iPhone ausschließlich hochwertige Ersatzteile, damit Face ID, True Tone und andere wichtige Features erhalten bleiben.",
       brandIcon: "fab fa-apple",
       heroImage: "https://handy-reparatur-ingolstadt.de/wp-content/uploads/iphone-reparatur.png",
       models: ["iPhone 16 Pro Max", "iPhone 16 Pro", "iPhone 16 Plus", "iPhone 16", "iPhone 15 Pro Max", "iPhone 15 Pro", "iPhone 15 Plus", "iPhone 15", "iPhone 14 Pro Max", "iPhone 14 Pro", "iPhone 14 Plus", "iPhone 14", "iPhone 13 Pro Max", "iPhone 13 Pro", "iPhone 13 mini", "iPhone 13", "iPhone 12", "iPhone 11", "iPhone SE"]
@@ -82,6 +84,8 @@ export const repairBrands = {
     {
       name: "Samsung Galaxy",
       slug: "samsung",
+      brandColor: "#1428A0",
+      description: "Die Galaxy-Reihe von Samsung bietet hochauflösende AMOLED-Displays und brillante Kameras. Bei einem Defekt sorgen wir dafür, dass Ihr Samsung Smartphone schnell wieder im alten Glanz erstrahlt – professionell und mit Liebe zum Detail.",
       brandIconSlug: "samsung",
       brandIconColor: "1428A0",
       heroImage: "https://handy-reparatur-ingolstadt.de/wp-content/uploads/handy-reparatur.png",
@@ -90,6 +94,8 @@ export const repairBrands = {
     {
       name: "Google Pixel",
       slug: "google",
+      brandColor: "#4285F4",
+      description: "Ein Google Pixel Smartphone besticht durch seine reine Android-Erfahrung und unglaubliche Kamera. Egal ob Glasbruch oder ein schwacher Akku, wir machen Ihr Pixel wieder fit für den perfekten Schnappschuss.",
       brandIcon: "fab fa-google",
       heroImage: "https://handy-reparatur-ingolstadt.de/wp-content/uploads/handy-reparatur.png",
       models: ["Pixel 8 Pro", "Pixel 8", "Pixel 7a", "Pixel 7 Pro", "Pixel 7", "Pixel 6a", "Pixel 6 Pro", "Pixel 6", "Pixel Fold"]
@@ -97,6 +103,8 @@ export const repairBrands = {
     {
       name: "Xiaomi / Redmi / Poco",
       slug: "xiaomi",
+      brandColor: "#FF6900",
+      description: "Xiaomi-Geräte überzeugen mit einem enormen Preis-Leistungs-Verhältnis. Fällt das Handy runter, ist eine Reparatur meist deutlich günstiger als ein Neukauf. Wir übernehmen das für Sie!",
       brandIconSlug: "xiaomi",
       brandIconColor: "FF6900",
       heroImage: "https://handy-reparatur-ingolstadt.de/wp-content/uploads/handy-reparatur.png",
@@ -105,6 +113,8 @@ export const repairBrands = {
     {
       name: "Huawei / Honor",
       slug: "huawei",
+      brandColor: "#FF0000",
+      description: "Sie nutzen ein leistungsstarkes Huawei oder Honor Smartphone? Wir sind Experten für den Austausch von gebogenen OLED-Displays und Kamerasystemen bei diesen speziellen Marken.",
       brandIconSlug: "huawei",
       brandIconColor: "FF0000",
       heroImage: "https://handy-reparatur-ingolstadt.de/wp-content/uploads/handy-reparatur.png",
@@ -113,15 +123,19 @@ export const repairBrands = {
     {
       name: "OnePlus / Oppo / Sony",
       slug: "weitere",
+      brandColor: "#0056b3",
+      description: "Egal ob Sie ein seltenes Sony Xperia, ein superschnelles OnePlus oder ein innovatives Oppo-Smartphone haben, unser erfahrenes Techniker-Team in Ingolstadt kennt sich mit allen Exoten aus.",
       brandIcon: "fas fa-mobile",
       heroImage: "https://handy-reparatur-ingolstadt.de/wp-content/uploads/handy-reparatur.png",
-      models: ["OnePlus 12", "OnePlus 11", "OnePlus Nord 3", "Oppo Find X5 Pro", "Oppo Reno 10", "Sony Xperia 1 V", "Sony Xperia 5 V", "Sony Xperia 10 V"]
+      models: ["OnePlus 12", "OnePlus 11", "OnePlus Nord 3", "Oppo Find X5 Pro", "Oppo Reno 10", "Sony Xperia 1 V", "Sony Xperia 5 V", "Sony Xperia 10 V", "Nano Banana Pro"]
     }
   ],
   tablets: [
     {
       name: "iPad",
       slug: "ipad",
+      brandColor: "#000000",
+      description: "Vom iPad mini bis zum riesigen iPad Pro: Wir reparieren Ihr Apple Tablet fachgerecht. Zersplitterte Gläser oder defekte Akkus tauschen wir zügig aus, damit Sie schnell weiterarbeiten oder Filme schauen können.",
       brandIcon: "fab fa-apple",
       heroImage: "https://handy-reparatur-ingolstadt.de/wp-content/uploads/tablet-reparatur.png",
       models: ["iPad Pro 12.9 (M2)", "iPad Pro 11 (M2)", "iPad Air (5. Gen)", "iPad (10. Gen)", "iPad mini (6. Gen)", "iPad Pro 2021", "iPad Pro 2020", "iPad Air 4", "iPad 9"]
@@ -129,6 +143,8 @@ export const repairBrands = {
     {
       name: "Samsung Galaxy Tab",
       slug: "samsung-tab",
+      brandColor: "#1428A0",
+      description: "Ein Samsung Galaxy Tab ist perfekt zum Zeichnen und Medienkonsum. Bei einem Glasschaden oder Ladehemmungen sind wir in Ingolstadt Ihr kompetenter Ansprechpartner.",
       brandIconSlug: "samsung",
       brandIconColor: "1428A0",
       heroImage: "https://handy-reparatur-ingolstadt.de/wp-content/uploads/tablet-reparatur.png",
@@ -137,6 +153,8 @@ export const repairBrands = {
     {
       name: "Microsoft Surface",
       slug: "surface",
+      brandColor: "#00A4EF",
+      description: "Die Microsoft Surface Tablets sind extrem kompakt und komplex aufgebaut. Unsere Spezialisten wissen, wie man diese Geräte schonend öffnet, um Display oder Batterie sicher zu ersetzen.",
       brandIcon: "fab fa-microsoft",
       heroImage: "https://handy-reparatur-ingolstadt.de/wp-content/uploads/tablet-reparatur.png",
       models: ["Surface Pro 9", "Surface Pro 8", "Surface Pro 7", "Surface Go 3", "Surface Go 2", "Surface Book 3", "Surface Pro X"]
@@ -144,6 +162,8 @@ export const repairBrands = {
     {
       name: "Lenovo Tab",
       slug: "lenovo-tab",
+      brandColor: "#E2231A",
+      description: "Zuverlässige Lenovo Tablets lassen sich meist kostengünstig reparieren. Wenn das Display gebrochen ist oder die Ladebuchse Wackelkontakt hat, reparieren wir das gerne.",
       brandIconSlug: "lenovo",
       brandIconColor: "E2231A",
       heroImage: "https://handy-reparatur-ingolstadt.de/wp-content/uploads/tablet-reparatur.png",
@@ -152,6 +172,8 @@ export const repairBrands = {
     {
       name: "Huawei MatePad",
       slug: "matepad",
+      brandColor: "#FF0000",
+      description: "Ein Defekt an Ihrem Huawei MatePad ist ärgerlich, aber kein Weltuntergang. Vertrauen Sie auf unsere Expertise bei der Tablet-Instandsetzung.",
       brandIconSlug: "huawei",
       brandIconColor: "FF0000",
       heroImage: "https://handy-reparatur-ingolstadt.de/wp-content/uploads/tablet-reparatur.png",
@@ -162,6 +184,8 @@ export const repairBrands = {
     {
       name: "MacBook Air / Pro",
       slug: "macbook",
+      brandColor: "#333333",
+      description: "MacBooks sind Arbeitsmaschinen. Ein defektes Retina-Display, eine klemmende Butterfly-Tastatur oder ein defekter Akku werden von uns schnell und zuverlässig behoben.",
       brandIcon: "fab fa-apple",
       heroImage: "https://handy-reparatur-ingolstadt.de/wp-content/uploads/notebook-reparatur.png",
       models: ["MacBook Pro 16 (M3 Max)", "MacBook Pro 14 (M3 Pro)", "MacBook Pro 14 (M3)", "MacBook Air 15 (M2)", "MacBook Air 13 (M2)", "MacBook Pro 16 (M2 Pro/Max)", "MacBook Pro 14 (M1 Pro/Max)", "MacBook Air (M1)", "MacBook Pro (Intel)"]
@@ -169,6 +193,8 @@ export const repairBrands = {
     {
       name: "Windows Laptops",
       slug: "windows",
+      brandColor: "#00A4EF",
+      description: "Ob Office-Laptop oder Multimedianotebook – wir kümmern uns um Displaybruch, Systemabstürze, kaputte Festplatten und gebrochene Scharniere bei allen Windows-Notebooks.",
       brandIcon: "fab fa-windows",
       heroImage: "https://handy-reparatur-ingolstadt.de/wp-content/uploads/notebook-reparatur.png",
       models: ["Windows 11 Laptops", "Windows 10 Laptops", "Gaming Laptops", "Ultrabooks", "Convertibles", "Business Notebooks"]
@@ -176,6 +202,8 @@ export const repairBrands = {
     {
       name: "Lenovo / HP / Dell",
       slug: "business-laptops",
+      brandColor: "#1d3a8f",
+      description: "Business-Geräte wie ThinkPads, EliteBooks oder Latitude-Laptops brauchen eine rasche Instandsetzung, damit Sie weiterarbeiten können. Von der Tastatur bis zur Datenrettung sind Sie bei uns richtig.",
       brandIcon: "fas fa-laptop",
       heroImage: "https://handy-reparatur-ingolstadt.de/wp-content/uploads/notebook-reparatur.png",
       models: ["Lenovo ThinkPad X1 Carbon", "Lenovo ThinkPad T-Serie", "Lenovo IdeaPad", "HP Spectre x360", "HP Envy", "HP EliteBook", "Dell XPS 15", "Dell XPS 13", "Dell Latitude"]
@@ -183,6 +211,8 @@ export const repairBrands = {
     {
       name: "Asus / Acer / MSI",
       slug: "gaming-laptops",
+      brandColor: "#E60012",
+      description: "Gaming Laptops laufen oft am Limit. Wenn die Lüfter laut werden, das System heiß läuft oder das Display nach einer hitzigen Runde beschädigt wurde, reinigen und reparieren wir Ihr Gerät.",
       brandIcon: "fas fa-laptop",
       heroImage: "https://handy-reparatur-ingolstadt.de/wp-content/uploads/notebook-reparatur.png",
       models: ["Asus ROG Zephyrus", "Asus ZenBook", "Asus TUF Gaming", "Acer Predator", "Acer Swift", "Acer Nitro", "MSI Stealth", "MSI Raider", "MSI Katana"]
@@ -190,6 +220,8 @@ export const repairBrands = {
     {
       name: "Surface Laptop",
       slug: "surface-laptop",
+      brandColor: "#00A4EF",
+      description: "Die edlen Surface Laptops von Microsoft erfordern beim Öffnen spezielles Know-how. Wir haben die nötige Erfahrung, um diese feinen Geräte sicher und professionell zu reparieren.",
       brandIcon: "fab fa-microsoft",
       heroImage: "https://handy-reparatur-ingolstadt.de/wp-content/uploads/notebook-reparatur.png",
       models: ["Surface Laptop Studio 2", "Surface Laptop 5", "Surface Laptop Go 3", "Surface Laptop 4", "Surface Book 3", "Surface Laptop Go 2"]
@@ -199,6 +231,8 @@ export const repairBrands = {
     {
       name: "PlayStation",
       slug: "playstation",
+      brandColor: "#003791",
+      description: "Kein Bild am Fernseher? Die PlayStation 4 oder 5 piept nur noch kurz? Wir reparieren defekte HDMI-Ports, Netzteile, reinigen das Gerät und tauschen das Laufwerk aus.",
       brandIcon: "fab fa-playstation",
       heroImage: "https://handy-reparatur-ingolstadt.de/wp-content/uploads/konsolen-reparatur-2.png",
       models: ["PlayStation 5 Pro", "PlayStation 5 Slim", "PlayStation 5 (Disc Edition)", "PlayStation 5 (Digital Edition)", "PlayStation 4 Pro", "PlayStation 4 Slim", "PlayStation 4 (Fat)"]
@@ -206,6 +240,8 @@ export const repairBrands = {
     {
       name: "Xbox",
       slug: "xbox",
+      brandColor: "#107C10",
+      description: "Von Überhitzungsproblemen bei der Xbox Series X bis hin zu Softwarefehlern bei der Xbox One: Bringen Sie Ihre Konsole vorbei, damit Sie bald wieder zocken können.",
       brandIcon: "fab fa-xbox",
       heroImage: "https://handy-reparatur-ingolstadt.de/wp-content/uploads/konsolen-reparatur-2.png",
       models: ["Xbox Series X", "Xbox Series S", "Xbox One X", "Xbox One S", "Xbox One (Original)", "Xbox 360"]
@@ -213,6 +249,8 @@ export const repairBrands = {
     {
       name: "Nintendo Switch",
       slug: "switch",
+      brandColor: "#E60012",
+      description: "Die Nintendo Switch leidet oft unter defekten Ladebuchsen, gebrochenen Displays oder dem berüchtigten Joy-Con Drift. All diese Hardware-Fehler lösen wir schnell und unkompliziert.",
       brandIconSlug: "nintendoswitch",
       brandIconColor: "E60012",
       heroImage: "https://handy-reparatur-ingolstadt.de/wp-content/uploads/konsolen-reparatur-2.png",
@@ -221,6 +259,8 @@ export const repairBrands = {
     {
       name: "Steam Deck",
       slug: "steam-deck",
+      brandColor: "#1a1a1a",
+      description: "Auch Premium-Handhelds wie das Valve Steam Deck gehen mal kaputt. Ob Display-Tausch, Akku-Wechsel oder Reparatur an den Schultertasten – wir helfen kompetent weiter.",
       brandIcon: "fab fa-steam",
       heroImage: "https://handy-reparatur-ingolstadt.de/wp-content/uploads/konsolen-reparatur-2.png",
       models: ["Steam Deck OLED 1TB", "Steam Deck OLED 512GB", "Steam Deck LCD 512GB", "Steam Deck LCD 256GB", "Steam Deck LCD 64GB"]
@@ -228,6 +268,8 @@ export const repairBrands = {
     {
       name: "ROG Ally",
       slug: "rog-ally",
+      brandColor: "#ff0000",
+      description: "Der starke Windows-Handheld von Asus hat ein tolles Display und starke Sticks, doch auch hier können Stürze Schäden verursachen. Wir reparieren Ihr ROG Ally fachgerecht.",
       brandIcon: "fas fa-gamepad",
       heroImage: "https://handy-reparatur-ingolstadt.de/wp-content/uploads/konsolen-reparatur-2.png",
       models: ["ASUS ROG Ally (Ryzen Z1 Extreme)", "ASUS ROG Ally (Ryzen Z1)", "ROG Ally X"]
@@ -237,6 +279,8 @@ export const repairBrands = {
     {
       name: "PlayStation Controller",
       slug: "playstation-controller",
+      brandColor: "#003791",
+      description: "Stick Drift beim DualSense oder defekte Schultertasten beim DualShock 4? Ein Neukauf ist meist extrem teuer. Wir reparieren Ihre Controller und sparen Ihnen bares Geld.",
       brandIcon: "fab fa-playstation",
       heroImage: "https://handy-reparatur-ingolstadt.de/wp-content/uploads/konsolen-reparatur-2.png",
       models: ["DualSense Edge (PS5)", "DualSense (PS5)", "DualShock 4 V2 (PS4)", "DualShock 4 V1 (PS4)"]
@@ -244,6 +288,8 @@ export const repairBrands = {
     {
       name: "Xbox Controller",
       slug: "xbox-controller",
+      brandColor: "#107C10",
+      description: "Gerade der teure Xbox Elite Controller leidet manchmal unter abgenutzten Gummierungen oder defekten Bumpern. Bringen Sie ihn zu uns, wir kümmern uns um den Controller-Service.",
       brandIcon: "fab fa-xbox",
       heroImage: "https://handy-reparatur-ingolstadt.de/wp-content/uploads/konsolen-reparatur-2.png",
       models: ["Xbox Elite Wireless Controller Series 2", "Xbox Elite Wireless Controller", "Xbox Wireless Controller (Series X/S)", "Xbox One Controller"]
@@ -251,6 +297,8 @@ export const repairBrands = {
     {
       name: "Nintendo Controller",
       slug: "nintendo-controller",
+      brandColor: "#E60012",
+      description: "Ihre Spielfigur bei Zelda läuft von alleine? Der berüchtigte Stick-Drift bei Joy-Cons lässt sich von uns durch den Einbau neuer und langlebigerer Analog-Sticks beheben.",
       brandIconSlug: "nintendoswitch",
       brandIconColor: "E60012",
       heroImage: "https://handy-reparatur-ingolstadt.de/wp-content/uploads/konsolen-reparatur-2.png",
@@ -261,6 +309,8 @@ export const repairBrands = {
     {
       name: "Apple Watch",
       slug: "apple-watch",
+      brandColor: "#000000",
+      description: "Ihre Apple Watch ist bei Sport und Alltag immer dabei. Wenn das Glas beim Training zersplittert ist oder der Akku sofort schlapp macht, tauschen wir die betroffenen Komponenten aus.",
       brandIcon: "fab fa-apple",
       heroImage: "https://handy-reparatur-ingolstadt.de/wp-content/uploads/handy-reparatur.png",
       models: ["Apple Watch Ultra 2", "Apple Watch Ultra", "Apple Watch Series 9", "Apple Watch Series 8", "Apple Watch SE (2. Gen)", "Apple Watch Series 7", "Apple Watch Series 6", "Apple Watch SE", "Apple Watch Series 5", "Apple Watch Series 4"]
@@ -268,6 +318,8 @@ export const repairBrands = {
     {
       name: "Samsung Galaxy Watch",
       slug: "galaxy-watch",
+      brandColor: "#1428A0",
+      description: "Ob Glasbruch am runden Display, ein defekter Sensor oder eine abgenutzte Lünette: Wir bringen Ihre Samsung Galaxy Watch wieder auf Vordermann.",
       brandIconSlug: "samsung",
       brandIconColor: "1428A0",
       heroImage: "https://handy-reparatur-ingolstadt.de/wp-content/uploads/handy-reparatur.png",
@@ -276,6 +328,8 @@ export const repairBrands = {
     {
       name: "Google Pixel Watch",
       slug: "pixel-watch",
+      brandColor: "#4285F4",
+      description: "Die runde Glaskuppel der Pixel Watch ist wunderschön, aber empfindlich. Wir bieten Displayreparaturen und Akkuwechsel für alle Modelle der Google Pixel Watch an.",
       brandIcon: "fab fa-google",
       heroImage: "https://handy-reparatur-ingolstadt.de/wp-content/uploads/handy-reparatur.png",
       models: ["Pixel Watch 2", "Pixel Watch (1. Gen)"]
@@ -283,6 +337,8 @@ export const repairBrands = {
     {
       name: "Huawei Watch",
       slug: "huawei-watch",
+      brandColor: "#FF0000",
+      description: "Huawei Watches sind für extrem lange Akkulaufzeiten bekannt. Falls Ihre Uhr doch mal streikt oder das Glas gebrochen ist, reparieren wir sie zuverlässig in Ingolstadt.",
       brandIconSlug: "huawei",
       brandIconColor: "FF0000",
       heroImage: "https://handy-reparatur-ingolstadt.de/wp-content/uploads/handy-reparatur.png",
@@ -291,6 +347,8 @@ export const repairBrands = {
     {
       name: "Garmin Smartwatch",
       slug: "garmin",
+      brandColor: "#1a1a1a",
+      description: "Als robuste Sportuhr wird der Garmin Smartwatch viel abverlangt. Wir reparieren defekte Tasten, gesprungene Displays und tauschen schwache Akkus für Ihre nächsten Abenteuer.",
       brandIconSlug: "garmin",
       brandIconColor: "000000",
       heroImage: "https://handy-reparatur-ingolstadt.de/wp-content/uploads/handy-reparatur.png",

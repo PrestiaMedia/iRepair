@@ -34,6 +34,46 @@ function ScrollToHash() {
   return null;
 }
 
+
+function DynamicTitle() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    let title = "Handy Reparatur in Ingolstadt | iRepairStore24";
+    
+    if (pathname === '/') {
+      title = "Handy Reparatur in Ingolstadt | iRepairStore24";
+    } else if (pathname === '/impressum') {
+      title = "Impressum | iRepairStore24";
+    } else if (pathname === '/datenschutz') {
+      title = "Datenschutz | iRepairStore24";
+    } else if (pathname === '/gebrauchte-handys') {
+      title = "Gebrauchte Handys kaufen Ingolstadt | Geprüft mit Garantie | iRepairStore24";
+    } else if (pathname === '/leistungen/handyvertrag') {
+      title = "Handyvertrag & Tarife in Ingolstadt | iRepairStore24";
+    } else if (pathname === '/standorte/stadtmitte') {
+      title = "iRepairStore Stadtmitte Ingolstadt | Reparatur vor Ort";
+    } else if (pathname === '/standorte/westpark') {
+      title = "iRepairStore Westpark Ingolstadt | Reparatur & Service";
+    } else if (pathname.startsWith('/leistungen/')) {
+      const parts = pathname.split('/');
+      if (parts.length >= 4) {
+        let brand = parts[2].charAt(0).toUpperCase() + parts[2].slice(1);
+        let device = parts[3].split('-').map(word => {
+          if (word.toLowerCase() === 'iphone') return 'iPhone';
+          if (word.toLowerCase() === 'ipad') return 'iPad';
+          return word.charAt(0).toUpperCase() + word.slice(1);
+        }).join(' ');
+        title = `${brand} ${device} Reparatur in Ingolstadt | iRepairStore24`;
+      }
+    }
+    
+    document.title = title;
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   return (
     <Router>

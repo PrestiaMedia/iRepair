@@ -70,7 +70,7 @@ const ServicesSection = () => {
               </div>
               
               {/* Brands Grid (Pills) */}
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '25px', flexGrow: 1 }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '25px', flexGrow: 1, alignItems: 'flex-start', alignContent: 'flex-start' }}>
                 {repairBrands[category.id]?.map(brand => (
                   <Link 
                     key={brand.slug} 

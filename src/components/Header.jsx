@@ -133,8 +133,15 @@ const Header = () => {
                             visibility: visible !important;
                             display: block !important;
                           }
-                          .main-navigation.toggled .ast-menu-toggle {
+                          .main-navigation .ast-menu-toggle,
+                          .main-navigation .ast-icon,
+                          .main-navigation .menu-item-has-children > a::after {
                             display: none !important;
+                            opacity: 0 !important;
+                            visibility: hidden !important;
+                            content: none !important;
+                            width: 0 !important;
+                            height: 0 !important;
                           }
                           .button-custom-menu-item {
                             padding: 20px 25px !important;
